@@ -33,16 +33,33 @@ Fetch products from the SaaS API:
 
 Products are configured in the SaaS dashboard. The gem fetches them via the API at `/api/v1/apps/:app_id/products/:id`.
 
+## Purchase::Intent API
+
+Create a purchase intent before triggering the native purchase:
+
+```ruby
+intent = PurchaseKit::Purchase::Intent.create(
+  product_id: "prod_XXXXX",
+  customer_id: customer.id,
+  success_path: "/paid",
+  environment: "sandbox"
+)
+
+intent.id       # => "pi_QCCWGR8F"
+intent.uuid     # => "550e8400-e29b-41d4-a716-446655440000" (for Apple correlation)
+intent.product  # => PurchaseKit::Product
+```
+
 ## Data flow
 
 ```
 User taps Subscribe
     -> Form submits to PurchasesController
-    -> Creates purchase intent with SaaS (TODO)
-    -> Returns correlation ID to native app
-    -> Native app triggers App Store purchase
-    -> Apple sends webhook to SaaS
-    -> SaaS normalizes and POSTs to Rails app
+    -> Creates Purchase::Intent with SaaS API
+    -> Returns UUID and product IDs to native app via Turbo Stream
+    -> Native app triggers App Store purchase with UUID as appAccountToken
+    -> Apple sends webhook to SaaS with UUID
+    -> SaaS looks up intent, forwards normalized webhook to Rails app
     -> Webhook handler creates Pay::Subscription
     -> Broadcasts Turbo Stream redirect via ActionCable
     -> User redirected to success_path
@@ -73,7 +90,11 @@ Registered in `lib/pay/purchasekit.rb` via `Pay::Webhooks.configure`:
 
 Host app must import: `import "purchasekit-pay/turbo_actions"`
 
-The paywall controller sends both `appleStoreProductId` and `googleStoreProductId` to the native bridge, letting the native code pick the right one for its platform.
+The paywall controller:
+- Sends both `appleStoreProductId` and `googleStoreProductId` to the native bridge
+- Receives `environment` from native bridge's `prices` response and stores it in a hidden field
+- Passes environment through to SaaS when creating purchase intent
+- Shows spinner on submit button while processing (via `data-processing-text` attribute)
 
 ## Key decisions
 

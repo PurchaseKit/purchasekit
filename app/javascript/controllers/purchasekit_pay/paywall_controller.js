@@ -2,7 +2,7 @@ import { BridgeComponent } from "@hotwired/hotwire-native-bridge"
 
 export default class extends BridgeComponent {
   static component = "paywall"
-  static targets = ["planRadio", "price", "submitButton", "response"]
+  static targets = ["planRadio", "price", "submitButton", "response", "environment"]
 
   connect() {
     super.connect()
@@ -46,7 +46,7 @@ export default class extends BridgeComponent {
     const products = this.priceTargets.map(el => this.#productIds(el))
 
     this.send("prices", { products }, message => {
-      const { prices, error } = message.data
+      const { prices, environment, error } = message.data
 
       if (error) {
         console.error(error)
@@ -55,9 +55,16 @@ export default class extends BridgeComponent {
 
       if (prices) {
         this.#setPrices(prices)
+        this.#setEnvironment(environment)
         this.#enableForm()
       }
     })
+  }
+
+  #setEnvironment(environment) {
+    if (this.hasEnvironmentTarget && environment) {
+      this.environmentTarget.value = environment
+    }
   }
 
   #setPrices(prices) {
@@ -74,7 +81,6 @@ export default class extends BridgeComponent {
   }
 
   #productIds(element) {
-    debugger
     return {
       appleStoreProductId: element.dataset.appleStoreProductId,
       googleStoreProductId: element.dataset.googleStoreProductId
@@ -85,13 +91,21 @@ export default class extends BridgeComponent {
     this.planRadioTargets.forEach(radio => radio.disabled = false)
     if (this.hasSubmitButtonTarget) {
       this.submitButtonTarget.disabled = false
+      if (this.#originalButtonText) {
+        this.submitButtonTarget.innerHTML = this.#originalButtonText
+      }
     }
   }
 
   #disableForm() {
     this.planRadioTargets.forEach(radio => radio.disabled = true)
     if (this.hasSubmitButtonTarget) {
+      this.#originalButtonText = this.submitButtonTarget.innerHTML
       this.submitButtonTarget.disabled = true
+      const processingText = this.submitButtonTarget.dataset.processingText || "Processing..."
+      this.submitButtonTarget.innerHTML = processingText
     }
   }
+
+  #originalButtonText = null
 }

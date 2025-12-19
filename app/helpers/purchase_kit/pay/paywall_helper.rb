@@ -18,6 +18,7 @@ module PurchaseKit
         form_with(url: purchasekit_pay.purchases_path, id: "purchasekit_paywall", data: form_data, **options) do |form|
           hidden = hidden_field_tag(:customer_id, customer.id)
           hidden += hidden_field_tag(:success_path, success_path)
+          hidden += hidden_field_tag(:environment, "sandbox", data: {purchasekit_pay__paywall_target: "environment"})
           hidden + capture { yield builder }
         end
       end

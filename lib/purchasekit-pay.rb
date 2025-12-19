@@ -4,6 +4,7 @@ require "purchasekit/pay/configuration"
 require "purchasekit/pay/engine"
 require "purchasekit/pay/webhooks"
 require "purchasekit/product"
+require "purchasekit/purchase/intent"
 require "pay/purchasekit"
 
 module PurchaseKit
