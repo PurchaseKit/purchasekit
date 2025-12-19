@@ -1,7 +1,7 @@
 module PurchaseKit
   module Pay
     class Configuration
-      attr_accessor :api_key, :api_url, :webhook_secret
+      attr_accessor :api_key, :api_url, :app_id, :webhook_secret
 
       def initialize
         @api_url = "https://api.purchasekit.dev"

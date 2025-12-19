@@ -2,12 +2,36 @@
 
 Pay gem integration for in-app purchases.
 
+## Configuration
+
+```ruby
+PurchaseKit::Pay.configure do |config|
+  config.api_url = Rails.application.credentials.purchasekit[:api_url]
+  config.api_key = Rails.application.credentials.purchasekit[:api_key]
+  config.app_id = Rails.application.credentials.purchasekit[:app_id]
+  config.webhook_secret = Rails.application.credentials.purchasekit[:webhook_secret]
+end
+```
+
 ## Architecture
 
 The gem acts as a bridge between:
 1. **Rails app** - Renders paywall, handles webhooks, manages subscriptions
-2. **PurchaseKit SaaS** - Normalizes Apple/Google webhooks, manages purchase intents
+2. **PurchaseKit SaaS** - Normalizes Apple/Google webhooks, manages products and purchase intents
 3. **Native app** - Handles App Store/Play Store purchase flow via Hotwire Native Bridge
+
+## Product API
+
+Fetch products from the SaaS API:
+
+```ruby
+@product = PurchaseKit::Product.find("prod_XXXXX")
+@product.id                 # => "prod_XXXXX"
+@product.apple_product_id   # => "com.example.pro.annual"
+@product.google_product_id  # => "pro_annual"
+```
+
+Products are configured in the SaaS dashboard. The gem fetches them via the API at `/api/v1/apps/:app_id/products/:id`.
 
 ## Data flow
 
@@ -49,6 +73,8 @@ Registered in `lib/pay/purchasekit.rb` via `Pay::Webhooks.configure`:
 
 Host app must import: `import "purchasekit-pay/turbo_actions"`
 
+The paywall controller sends both `appleStoreProductId` and `googleStoreProductId` to the native bridge, letting the native code pick the right one for its platform.
+
 ## Key decisions
 
 - SaaS normalizes Apple/Google payloads (gem never sees raw data)
@@ -56,3 +82,4 @@ Host app must import: `import "purchasekit-pay/turbo_actions"`
 - Real-time UI updates via Turbo Streams over ActionCable
 - `success_path` passed through SaaS in webhook payload (no Rails.cache)
 - ActionCable `async` adapter won't work for console testing (in-memory only)
+- Products fetched from SaaS API; display text (name, description) lives in the view for i18n support

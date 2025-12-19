@@ -1,3 +1,5 @@
+require "httparty"
+
 module PurchaseKit
   class Product
     attr_reader :id, :apple_product_id, :google_product_id
@@ -18,29 +20,32 @@ module PurchaseKit
 
     class << self
       def find(id)
-        # TODO: Fetch from PurchaseKit SaaS API
-        # For now, return stubbed products for development
-        stubbed_products[id] || raise(NotFoundError, "Product not found: #{id}")
-      end
+        config = PurchaseKit::Pay.config
 
-      private
+        response = HTTParty.get(
+          "#{config.api_url}/api/v1/apps/#{config.app_id}/products/#{id}",
+          headers: {
+            "Authorization" => "Bearer #{config.api_key}",
+            "Accept" => "application/json"
+          }
+        )
 
-      def stubbed_products
-        @stubbed_products ||= {
-          "prod_3VC24F5M" => new(
-            id: "prod_3VC24F5M",
-            apple_product_id: "dev.purchasekit.pro.annual",
-            google_product_id: "pro_annual"
-          ),
-          "prod_28VWPCQ7" => new(
-            id: "prod_28VWPCQ7",
-            apple_product_id: "dev.purchasekit.pro.monthly",
-            google_product_id: "pro_monthly"
+        case response.code
+        when 200
+          new(
+            id: response["id"],
+            apple_product_id: response["apple_product_id"],
+            google_product_id: response["google_product_id"]
           )
-        }
+        when 404
+          raise NotFoundError, "Product not found: #{id}"
+        else
+          raise Error, "API error: #{response.code} #{response.message}"
+        end
       end
     end
 
     class NotFoundError < StandardError; end
+    class Error < StandardError; end
   end
 end
