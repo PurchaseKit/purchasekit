@@ -3,10 +3,7 @@ module PurchaseKit
     module Webhooks
       class SubscriptionUpdated < Base
         def call(event)
-          pay_subscription = find_subscription(event)
-          return unless pay_subscription
-
-          pay_subscription.update!(
+          update_subscription(event,
             processor_plan: event["store_product_id"],
             status: event["status"],
             current_period_start: parse_time(event["current_period_start"]),

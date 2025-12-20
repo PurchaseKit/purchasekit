@@ -4,6 +4,13 @@ module PurchaseKit
       class Base
         private
 
+        def update_subscription(event, attributes)
+          pay_subscription = find_subscription(event)
+          return unless pay_subscription
+
+          pay_subscription.update!(attributes)
+        end
+
         def find_subscription(event)
           ::Pay::Subscription.find_by(processor_id: event["subscription_id"])
         end

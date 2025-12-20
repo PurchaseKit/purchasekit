@@ -1,5 +1,3 @@
-require "httparty"
-
 module PurchaseKit
   class Product
     attr_reader :id, :apple_product_id, :google_product_id
@@ -20,15 +18,7 @@ module PurchaseKit
 
     class << self
       def find(id)
-        config = PurchaseKit::Pay.config
-
-        response = HTTParty.get(
-          "#{config.api_url}/api/v1/apps/#{config.app_id}/products/#{id}",
-          headers: {
-            "Authorization" => "Bearer #{config.api_key}",
-            "Accept" => "application/json"
-          }
-        )
+        response = ApiClient.new.get("/products/#{id}")
 
         case response.code
         when 200
@@ -38,14 +28,11 @@ module PurchaseKit
             google_product_id: response["google_product_id"]
           )
         when 404
-          raise NotFoundError, "Product not found: #{id}"
+          raise Pay::NotFoundError, "Product not found: #{id}"
         else
-          raise Error, "API error: #{response.code} #{response.message}"
+          raise Pay::Error, "API error: #{response.code} #{response.message}"
         end
       end
     end
-
-    class NotFoundError < StandardError; end
-    class Error < StandardError; end
   end
 end
