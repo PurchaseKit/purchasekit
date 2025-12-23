@@ -1,0 +1,31 @@
+PurchaseKit License
+
+Copyright (c) 2025 Joe Masilotti
+
+Permission is hereby granted, free of charge, to any person obtaining a copy
+of this software and associated documentation files (the "Software"), to use,
+copy, modify, and distribute the Software, subject to the following conditions:
+
+1. The Software may only be used in applications that actively integrate with
+   the official PurchaseKit service operated by the copyright holder
+   (https://purchasekit.dev or successor URLs). Use of the Software requires
+   a valid PurchaseKit account and active data transmission to PurchaseKit.
+
+2. The Software may not be used:
+   a. In any application that does not integrate with PurchaseKit, including
+      internal tools, personal projects, or proprietary systems.
+   b. To build, operate, or integrate with any competing in-app purchase
+      management service.
+   c. To create a self-hosted, forked, or alternative version of PurchaseKit.
+   d. As a standalone library independent of PurchaseKit.
+
+3. The above copyright notice and this permission notice shall be included
+   in all copies or substantial portions of the Software.
+
+THE SOFTWARE IS PROVIDED "AS IS", WITHOUT WARRANTY OF ANY KIND, EXPRESS OR
+IMPLIED, INCLUDING BUT NOT LIMITED TO THE WARRANTIES OF MERCHANTABILITY,
+FITNESS FOR A PARTICULAR PURPOSE AND NONINFRINGEMENT. IN NO EVENT SHALL THE
+AUTHORS OR COPYRIGHT HOLDERS BE LIABLE FOR ANY CLAIM, DAMAGES OR OTHER
+LIABILITY, WHETHER IN AN ACTION OF CONTRACT, TORT OR OTHERWISE, ARISING FROM,
+OUT OF OR IN CONNECTION WITH THE SOFTWARE OR THE USE OR OTHER DEALINGS IN THE
+SOFTWARE.
