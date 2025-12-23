@@ -1,1 +1,5 @@
 *.gem
+test/dummy/log/*.log
+test/dummy/storage/*.sqlite3
+test/dummy/storage/*.sqlite
+test/dummy/tmp/

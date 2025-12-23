@@ -2,7 +2,7 @@
 
 PurchaseKit payment processor for the [Pay gem](https://github.com/pay-rails/pay).
 
-Add mobile in-app purchases (IAP) to your Rails app with PurchaseKit and Pay.
+Add mobile in-app purchases (IAP) to your Rails app with [PurchaseKit](https://purchasekit.dev) and Pay.
 
 ## Installation
 
@@ -68,28 +68,31 @@ First, ensure your user has a PurchaseKit payment processor:
 current_user.set_payment_processor(:purchasekit)
 ```
 
+Fetch products in your controller:
+
+```ruby
+@annual = PurchaseKit::Product.find("prod_XXX")
+@monthly = PurchaseKit::Product.find("prod_YYY")
+```
+
 Then render a paywall using the builder pattern:
 
 ```erb
 <%# Subscribe to ActionCable for real-time redirect after purchase %>
-<%= turbo_stream_from dom_id(Current.user.payment_processor) %>
+<%= turbo_stream_from dom_id(current_user.payment_processor) %>
 
-<%= purchasekit_paywall customer: Current.user.payment_processor, success_path: dashboard_path do |paywall| %>
-  <%# Plan options with radio buttons %>
-  <%= paywall.plan_option store_product_id: "com.example.annual", selected: true do %>
+<%= purchasekit_paywall customer: current_user.payment_processor, success_path: dashboard_path do |paywall| %>
+  <%= paywall.plan_option product: @annual, selected: true do %>
     <span>Annual</span>
-    <%= paywall.price store_product_id: "com.example.annual" %>
+    <%= paywall.price %>
   <% end %>
 
-  <%= paywall.plan_option store_product_id: "com.example.monthly" do %>
-    <span>Monthly</span>
-    <%= paywall.price store_product_id: "com.example.monthly" %>
+  <%= paywall.plan_option product: @monthly do %>
+    <span>Monthl</span>
+    <%= paywall.price %>
   <% end %>
 
-  <%# Submit button %>
   <%= paywall.submit "Subscribe", class: "btn btn-primary" %>
-
-  <%# Restore purchases link %>
   <%= paywall.restore_link %>
 <% end %>
 ```
@@ -101,8 +104,8 @@ Then render a paywall using the builder pattern:
 
 ### Builder methods
 
-- `plan_option(store_product_id:, selected: false)` - Radio button for a plan
-- `price(store_product_id:)` - Displays the localized price (fetched from native app)
+- `plan_option(product:, selected: false)` - Radio button and label for a plan
+- `price` - Displays the localized price (must be inside `plan_option` block)
 - `submit(text)` - Submit button (disabled until prices load)
 - `restore_link(text: "Restore purchases")` - Link to restore previous purchases
 
@@ -110,15 +113,15 @@ Then render a paywall using the builder pattern:
 
 1. Page loads, Stimulus controller requests prices from native app via Hotwire Native Bridge
 2. User selects a plan and taps subscribe
-3. Form submits to PurchasesController, which creates a purchase intent with the SaaS
+3. Form submits to PurchasesController, which creates a purchase intent with PurchaseKit
 4. Native app handles the App Store/Play Store purchase flow
-5. SaaS receives webhook from Apple/Google, normalizes it, and POSTs to your app
+5. PurchaseKit receives webhook from Apple/Google, normalizes it, and POSTs to your app
 6. Webhook handler creates `Pay::Subscription` and broadcasts a Turbo Stream redirect
 7. User is redirected to `success_path`
 
 ## Webhook events
 
-The gem handles these webhook events from the PurchaseKit SaaS:
+The gem handles these webhook events from the PurchaseKit:
 
 - `subscription.created` - Creates a new `Pay::Subscription`
 - `subscription.updated` - Updates subscription status and period
