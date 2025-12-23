@@ -28,11 +28,11 @@ module PurchaseKit
             )
             new(id: response["id"], uuid: response["uuid"], product: product)
           when 402
-            raise Pay::SubscriptionRequiredError, response["error"] || "Subscription required for production purchases"
+            raise PurchaseKit::Pay::SubscriptionRequiredError, response["error"] || "Subscription required for production purchases"
           when 404
-            raise Pay::NotFoundError, "App or product not found"
+            raise PurchaseKit::Pay::NotFoundError, "App or product not found"
           else
-            raise Pay::Error, "API error: #{response.code} #{response.message}"
+            raise PurchaseKit::Pay::Error, "API error: #{response.code} #{response.message}"
           end
         end
       end

@@ -26,6 +26,7 @@ Configure your PurchaseKit API key:
 # config/initializers/purchasekit.rb
 PurchaseKit::Pay.configure do |config|
   config.api_key = Rails.application.credentials.dig(:purchasekit, :api_key)
+  config.app_id = Rails.application.credentials.dig(:purchasekit, :app_id)
   config.webhook_secret = Rails.application.credentials.dig(:purchasekit, :webhook_secret)
 end
 ```
@@ -126,8 +127,9 @@ The gem handles these webhook events from the PurchaseKit SaaS:
 
 ## Requirements
 
-- Rails 7.0+
-- Pay 11.0+
+- Ruby 3.1+
+- Rails 7.0 - 8.x
+- Pay 11.4+
 - Turbo Rails (for ActionCable broadcasts)
 - Stimulus
 - Hotwire Native app with PurchaseKit bridge component
@@ -139,6 +141,15 @@ This gem vendors and pins:
 - **@hotwired/hotwire-native-bridge** (v1.2.2)
 
 If your app already pins this package, your version takes precedence.
+
+## Development
+
+After cloning the repo, run:
+
+```bash
+bundle install
+bundle exec rake test
+```
 
 ## License
 

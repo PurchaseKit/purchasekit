@@ -8,7 +8,8 @@ module PurchaseKit
         def call(event)
           customer = ::Pay::Customer.find(event["customer_id"])
 
-          subscription = customer.subscriptions.find_or_initialize_by(
+          subscription = ::Pay::Purchasekit::Subscription.find_or_initialize_by(
+            customer: customer,
             processor_id: event["subscription_id"]
           )
           is_new = subscription.new_record?

@@ -1,6 +1,2 @@
-module PurchaseKit
-  module Pay
-    class ApplicationController < ActionController::Base
-    end
-  end
+class PurchaseKit::Pay::ApplicationController < ActionController::Base
 end

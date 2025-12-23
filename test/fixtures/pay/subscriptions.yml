@@ -1,0 +1,11 @@
+existing_subscription:
+  id: 1
+  customer_id: 1
+  type: Pay::Purchasekit::Subscription
+  name: pro
+  processor_id: sub_existing
+  processor_plan: com.example.annual
+  status: active
+  quantity: 1
+  current_period_start: <%= 1.month.ago.to_fs(:db) %>
+  current_period_end: <%= 1.month.from_now.to_fs(:db) %>

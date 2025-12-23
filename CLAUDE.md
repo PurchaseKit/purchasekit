@@ -74,14 +74,26 @@ The engine (`lib/purchasekit/pay/engine.rb`) handles:
 3. **Importmap** - Adds gem's JavaScript (turbo_actions, controllers) to app's importmap
 4. **Helpers** - Makes `PaywallHelper` available in views
 
+## Pay STI integration
+
+Pay uses Single Table Inheritance (STI) via a `type` column. The gem defines processor-specific subclasses:
+
+- `Pay::Purchasekit::Customer` - Raises errors for unsupported operations (`charge`, `subscribe`, `add_payment_method`)
+- `Pay::Purchasekit::Subscription` - Raises errors for store-managed operations (`cancel`, `pause`, `resume`, `swap`)
+- `Pay::Purchasekit::Charge` - Raises errors for `refund!` (must use App Store Connect / Play Console)
+
+Webhook handlers create records via the subclass (e.g., `Pay::Purchasekit::Subscription.find_or_initialize_by`) to ensure the `type` column is set correctly. This allows Rails STI to instantiate the correct subclass when loading records.
+
 ## Webhook handlers
 
 Registered in `lib/pay/purchasekit.rb` via `Pay::Webhooks.configure`:
 
-- `purchasekit.subscription.created` → Creates `Pay::Subscription`, broadcasts redirect
-- `purchasekit.subscription.updated` → Updates status and period dates
+- `purchasekit.subscription.created` → Creates `Pay::Purchasekit::Subscription`, broadcasts redirect
+- `purchasekit.subscription.updated` → Updates status and period dates, optionally broadcasts redirect
 - `purchasekit.subscription.canceled` → Sets status to canceled
 - `purchasekit.subscription.expired` → Sets status to expired
+
+Webhook queueing logic lives in `PurchaseKit::Pay::Webhook` (extracted from controller for cleaner architecture).
 
 ## JavaScript
 
@@ -104,3 +116,25 @@ The paywall controller:
 - `success_path` passed through SaaS in webhook payload (no Rails.cache)
 - ActionCable `async` adapter won't work for console testing (in-memory only)
 - Products fetched from SaaS API; display text (name, description) lives in the view for i18n support
+
+## Testing
+
+Run tests with:
+
+```bash
+bundle exec rake test
+```
+
+Tests use:
+- **VCR** for HTTP request recording/replay (cassettes in `test/fixtures/vcr_cassettes/`)
+- **Fixtures** for Pay::Customer and Pay::Subscription models
+- **Dummy Rails app** in `test/dummy/` for integration testing
+
+When adding new API tests, VCR cassettes should filter sensitive data (`<API_KEY>`, `<API_URL>`).
+
+## Error classes
+
+Custom errors are in `PurchaseKit::Pay` namespace:
+- `PurchaseKit::Pay::Error` - Base error (inherits from `Pay::Error`)
+- `PurchaseKit::Pay::NotFoundError` - 404 responses
+- `PurchaseKit::Pay::SubscriptionRequiredError` - 402 responses (production requires subscription)

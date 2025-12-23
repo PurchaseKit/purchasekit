@@ -1,0 +1,7 @@
+test_customer:
+  id: 1
+  type: Pay::Purchasekit::Customer
+  owner_type: User
+  owner_id: 1
+  processor: purchasekit
+  processor_id: cus_test123

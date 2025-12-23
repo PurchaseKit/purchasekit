@@ -25,8 +25,10 @@ module PurchaseKit
       end
 
       initializer "purchasekit_pay.assets" do |app|
-        app.config.assets.paths << root.join("app/javascript")
-        app.config.assets.precompile += %w[purchasekit-pay/manifest.js]
+        if app.config.respond_to?(:assets) && app.config.assets.respond_to?(:paths)
+          app.config.assets.paths << root.join("app/javascript")
+          app.config.assets.precompile += %w[purchasekit-pay/manifest.js]
+        end
       end
     end
   end

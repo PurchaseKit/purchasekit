@@ -28,9 +28,9 @@ module PurchaseKit
             google_product_id: response["google_product_id"]
           )
         when 404
-          raise Pay::NotFoundError, "Product not found: #{id}"
+          raise PurchaseKit::Pay::NotFoundError, "Product not found: #{id}"
         else
-          raise Pay::Error, "API error: #{response.code} #{response.message}"
+          raise PurchaseKit::Pay::Error, "API error: #{response.code} #{response.message}"
         end
       end
     end
