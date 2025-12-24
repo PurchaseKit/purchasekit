@@ -2,6 +2,7 @@
   <div data-purchasekit-pay--paywall-target="response"
        data-correlation-id="<%= @intent.uuid %>"
        data-apple-store-product-id="<%= @intent.product.apple_product_id %>"
-       data-google-store-product-id="<%= @intent.product.google_product_id %>">
+       data-google-store-product-id="<%= @intent.product.google_product_id %>"
+       data-xcode-completion-url="<%= PurchaseKit::Pay.config.api_url %>/api/v1/purchase/intents/<%= @intent.uuid %>/completions">
   </div>
 <% end %>

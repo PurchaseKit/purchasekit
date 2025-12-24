@@ -12,10 +12,11 @@ export default class extends BridgeComponent {
   responseTargetConnected(element) {
     const correlationId = element.dataset.correlationId
     const productIds = this.#productIds(element)
+    const xcodeCompletionUrl = element.dataset.xcodeCompletionUrl
 
     element.remove()
     this.#disableForm()
-    this.#triggerNativePurchase(productIds, correlationId)
+    this.#triggerNativePurchase(productIds, correlationId, xcodeCompletionUrl)
   }
 
   restore(event) {
@@ -23,8 +24,8 @@ export default class extends BridgeComponent {
     this.send("restore")
   }
 
-  #triggerNativePurchase(productIds, correlationId) {
-    this.send("purchase", { ...productIds, correlationId }, message => {
+  #triggerNativePurchase(productIds, correlationId, xcodeCompletionUrl) {
+    this.send("purchase", { ...productIds, correlationId, xcodeCompletionUrl }, message => {
       const { status, error } = message.data
 
       if (error) {
