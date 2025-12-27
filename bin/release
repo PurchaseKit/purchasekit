@@ -1,0 +1,42 @@
+#!/usr/bin/env bash
+set -euo pipefail
+
+VERSION=${1:-}
+
+if [[ -z "$VERSION" ]]; then
+  echo "Usage: bin/release VERSION"
+  echo "Example: bin/release 0.2.0"
+  exit 1
+fi
+
+# 1. Check clean git status
+if [[ -n $(git status --porcelain) ]]; then
+  echo "Error: Working directory not clean. Commit or stash changes first."
+  exit 1
+fi
+
+# 2. Bump version
+VERSION_FILE="lib/purchasekit/pay/version.rb"
+sed -i '' "s/VERSION = \".*\"/VERSION = \"$VERSION\"/" "$VERSION_FILE"
+
+# Commit version bump
+git add "$VERSION_FILE"
+git commit -m "Bump version to $VERSION"
+
+# 3. Tag with version
+git tag "v$VERSION"
+
+# 4. Push to git + tags
+git push origin main
+git push origin "v$VERSION"
+
+# 5. Build gem
+gem build purchasekit-pay.gemspec
+
+# 6. Release gem
+gem push "purchasekit-pay-$VERSION.gem"
+
+# Cleanup
+rm "purchasekit-pay-$VERSION.gem"
+
+echo "Released purchasekit-pay v$VERSION"
