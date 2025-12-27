@@ -11,8 +11,7 @@ module PurchaseKit
             status: event["status"],
             current_period_start: parse_time(event["current_period_start"]),
             current_period_end: parse_time(event["current_period_end"]),
-            ends_at: parse_time(event["ends_at"])
-          )
+            ends_at: parse_time(event["ends_at"]))
 
           broadcast_redirect(event) if event["success_path"].present?
         end

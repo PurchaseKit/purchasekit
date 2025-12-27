@@ -11,6 +11,16 @@ module PurchaseKit
 
       class << self
         def create(product_id:, customer_id:, success_path: nil, environment: nil)
+          if PurchaseKit::Pay.config.demo_mode?
+            DemoIntent.create(product_id: product_id, customer_id: customer_id, success_path: success_path)
+          else
+            create_remote(product_id: product_id, customer_id: customer_id, success_path: success_path, environment: environment)
+          end
+        end
+
+        private
+
+        def create_remote(product_id:, customer_id:, success_path:, environment:)
           response = ApiClient.new.post("/purchase/intents", {
             product_id: product_id,
             customer_id: customer_id,

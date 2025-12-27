@@ -4,6 +4,8 @@ Pay gem integration for in-app purchases.
 
 ## Configuration
 
+### Production mode
+
 ```ruby
 PurchaseKit::Pay.configure do |config|
   config.api_url = Rails.application.credentials.purchasekit[:api_url]
@@ -14,6 +16,26 @@ end
 ```
 
 **Note:** `webhook_secret` is required in production. Webhooks without a valid signature will be rejected. In development/test, signature verification is skipped if the secret is blank.
+
+### Demo mode
+
+Demo mode enables local development without a PurchaseKit account. Products are defined locally and purchases complete without API calls. Designed for use with Xcode's StoreKit local testing.
+
+```ruby
+PurchaseKit::Pay.configure do |config|
+  config.demo_mode = true
+  config.demo_products = {
+    "annual" => { apple_product_id: "com.example.pro.annual" },
+    "monthly" => { apple_product_id: "com.example.pro.monthly" }
+  }
+end
+```
+
+In demo mode:
+- `Product.find` returns from `demo_products` instead of calling the API
+- `Purchase::Intent.create` generates a local intent (stored in memory via `DemoIntent`)
+- The iOS app's Xcode completion callback POSTs directly to the local Rails app
+- The completions controller creates a `Pay::Subscription` and broadcasts a Turbo Stream redirect
 
 ## Architecture
 

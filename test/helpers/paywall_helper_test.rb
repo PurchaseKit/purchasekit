@@ -88,7 +88,7 @@ class PurchaseKit::Pay::PaywallHelperTest < ActionView::TestCase
       end
     end
 
-    assert_match '<span', html
+    assert_match "<span", html
     assert_match 'data-purchasekit-pay--paywall-target="price"', html
     assert_match "data-apple-store-product-id=\"#{@product.apple_product_id}\"", html
     assert_match "data-google-store-product-id=\"#{@product.google_product_id}\"", html

@@ -11,6 +11,8 @@ class PurchaseKit::Pay::PurchasesController < PurchaseKit::Pay::ApplicationContr
       environment: params[:environment]
     )
 
+    @xcode_completion_url = PurchaseKit::Pay.config.xcode_completion_url(intent_uuid: @intent.uuid)
+
     respond_to do |format|
       format.turbo_stream
     end

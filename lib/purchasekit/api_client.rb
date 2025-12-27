@@ -20,7 +20,7 @@ module PurchaseKit
     end
 
     def url(path)
-      "#{config.api_url}/api/v1/apps/#{config.app_id}#{path}"
+      "#{config.base_api_url}/apps/#{config.app_id}#{path}"
     end
 
     def headers
