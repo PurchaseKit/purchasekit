@@ -18,9 +18,9 @@ module PurchaseKit
         "#{api_url}/api/v1"
       end
 
-      def xcode_completion_url(intent_uuid:)
+      def xcode_completion_url(intent_uuid:, host: nil)
         if demo_mode?
-          PurchaseKit::Pay::Engine.routes.url_helpers.purchase_intent_completions_url(intent_uuid: intent_uuid)
+          PurchaseKit::Pay::Engine.routes.url_helpers.purchase_intent_completions_url(intent_uuid: intent_uuid, host: host)
         else
           "#{base_api_url}/purchase/intents/#{intent_uuid}/completions"
         end

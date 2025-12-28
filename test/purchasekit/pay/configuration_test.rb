@@ -56,4 +56,31 @@ class PurchaseKit::Pay::ConfigurationTest < Minitest::Test
 
     assert_same config1, config2
   end
+
+  def test_xcode_completion_url_in_demo_mode_without_host_raises_error
+    config = PurchaseKit::Pay::Configuration.new
+    config.demo_mode = true
+
+    assert_raises(ArgumentError) do
+      config.xcode_completion_url(intent_uuid: "test-uuid")
+    end
+  end
+
+  def test_xcode_completion_url_in_demo_mode_with_host_returns_url
+    config = PurchaseKit::Pay::Configuration.new
+    config.demo_mode = true
+
+    url = config.xcode_completion_url(intent_uuid: "test-uuid", host: "http://localhost:3000")
+
+    assert_equal "http://localhost:3000/purchasekit/purchase/intents/test-uuid/completions", url
+  end
+
+  def test_xcode_completion_url_in_production_mode_ignores_host
+    config = PurchaseKit::Pay::Configuration.new
+    config.demo_mode = false
+
+    url = config.xcode_completion_url(intent_uuid: "test-uuid")
+
+    assert_equal "https://purchasekit.dev/api/v1/purchase/intents/test-uuid/completions", url
+  end
 end
