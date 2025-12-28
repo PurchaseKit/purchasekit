@@ -156,6 +156,14 @@ bundle install
 bundle exec rake test
 ```
 
+## Releasing
+
+```bash
+bin/release 1.2.0
+```
+
+This bumps the version, commits, tags, pushes, and publishes to RubyGems.
+
 ## License
 
 The gem is available as open source under the terms of the [MIT License](https://opensource.org/licenses/MIT).
