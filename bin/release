@@ -1,0 +1,58 @@
+#!/usr/bin/env bash
+set -euo pipefail
+
+DRY_RUN=false
+if [[ "${1:-}" == "--dry-run" ]]; then
+  DRY_RUN=true
+  shift
+fi
+
+VERSION=${1:-}
+
+if [[ -z "$VERSION" ]]; then
+  echo "Usage: bin/release [--dry-run] VERSION"
+  echo "Example: bin/release 0.2.0"
+  exit 1
+fi
+
+if [[ -n $(git status --porcelain) ]]; then
+  echo "Error: Working directory not clean. Commit or stash changes first."
+  exit 1
+fi
+
+VERSION_FILE="lib/purchasekit/version.rb"
+CURRENT_VERSION=$(grep -o 'VERSION = "[^"]*"' "$VERSION_FILE" | cut -d'"' -f2)
+
+if [[ "$CURRENT_VERSION" == "$VERSION" ]]; then
+  echo "Error: Version is already $VERSION"
+  exit 1
+fi
+
+if [[ "$DRY_RUN" == true ]]; then
+  echo "gem/: $CURRENT_VERSION -> $VERSION"
+  exit 0
+fi
+
+sed -i '' "s/VERSION = \".*\"/VERSION = \"$VERSION\"/" "$VERSION_FILE"
+
+# Commit version bump
+git add "$VERSION_FILE"
+git commit -m "Bump purchasekit version to $VERSION"
+
+# Tag with version (prefixed to differentiate from iOS package)
+git tag "purchasekit-$VERSION"
+
+# Push to git + tags
+git push origin main
+git push origin "purchasekit-$VERSION"
+
+# Build gem
+gem build purchasekit.gemspec
+
+# Release gem
+gem push "purchasekit-$VERSION.gem"
+
+# Cleanup
+rm "purchasekit-$VERSION.gem"
+
+echo "Released purchasekit v$VERSION"
