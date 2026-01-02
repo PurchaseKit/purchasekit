@@ -9,6 +9,12 @@ export default class extends BridgeComponent {
     this.#fetchPrices()
   }
 
+  disconnect() {
+    if (this.#fallbackTimeoutId) {
+      clearTimeout(this.#fallbackTimeoutId)
+    }
+  }
+
   responseTargetConnected(element) {
     const error = element.dataset.error
 
@@ -46,15 +52,17 @@ export default class extends BridgeComponent {
         return
       }
 
-      // On success, redirect to success path after a short delay
-      // to allow the completion callback to finish processing
-      if (status == "success" && successPath) {
-        setTimeout(() => {
+      // On success, Turbo Stream will broadcast redirect when webhook completes.
+      // Fallback: redirect after 30 seconds in case ActionCable isn't connected.
+      if (successPath) {
+        this.#fallbackTimeoutId = setTimeout(() => {
           window.Turbo.visit(successPath)
-        }, 500)
+        }, 30000)
       }
     })
   }
+
+  #fallbackTimeoutId = null
 
   #fetchPrices() {
     const products = this.priceTargets.map(el => this.#productIds(el))

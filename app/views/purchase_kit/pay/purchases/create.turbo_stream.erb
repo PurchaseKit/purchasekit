@@ -1,5 +1,5 @@
 <%= turbo_stream.append "purchasekit_paywall" do %>
-  <div data-purchasekit-pay--paywall-target="response"
+  <div data-purchasekit--paywall-target="response"
        data-correlation-id="<%= @intent.uuid %>"
        data-apple-store-product-id="<%= @intent.product.apple_product_id %>"
        data-google-store-product-id="<%= @intent.product.google_product_id %>"

@@ -9,14 +9,14 @@ module PurchaseKit::Pay::PaywallHelper
     builder = PurchaseKit::Pay::PaywallBuilder.new(self, customer)
 
     form_data = (options.delete(:data) || {}).merge(
-      controller: "purchasekit-pay--paywall",
-      purchasekit_pay__paywall_customer_id_value: customer.id
+      controller: "purchasekit--paywall",
+      purchasekit__paywall_customer_id_value: customer.id
     )
 
     form_with(url: purchasekit_pay.purchases_path, id: "purchasekit_paywall", data: form_data, **options) do |form|
       hidden = hidden_field_tag(:customer_id, customer.id)
       hidden += hidden_field_tag(:success_path, success_path)
-      hidden += hidden_field_tag(:environment, "sandbox", data: {purchasekit_pay__paywall_target: "environment"})
+      hidden += hidden_field_tag(:environment, "sandbox", data: {purchasekit__paywall_target: "environment"})
       hidden + capture { yield builder }
     end
   end
@@ -40,7 +40,7 @@ class PurchaseKit::Pay::PaywallBuilder
       class: input_class,
       autocomplete: "off",
       data: {
-        purchasekit_pay__paywall_target: "planRadio",
+        purchasekit__paywall_target: "planRadio",
         apple_store_product_id: product.apple_product_id,
         google_store_product_id: product.google_product_id
       }
@@ -57,7 +57,7 @@ class PurchaseKit::Pay::PaywallBuilder
     raise "price must be called within a plan_option block" unless @current_product
 
     data = (options.delete(:data) || {}).merge(
-      purchasekit_pay__paywall_target: "price",
+      purchasekit__paywall_target: "price",
       apple_store_product_id: @current_product.apple_product_id,
       google_store_product_id: @current_product.google_product_id
     )
@@ -68,7 +68,7 @@ class PurchaseKit::Pay::PaywallBuilder
 
   def submit(text = "Subscribe", **options)
     data = (options.delete(:data) || {}).merge(
-      purchasekit_pay__paywall_target: "submitButton",
+      purchasekit__paywall_target: "submitButton",
       turbo_submits_with: text
     )
 

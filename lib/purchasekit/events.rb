@@ -8,9 +8,13 @@ module PurchaseKit
     ].freeze
 
     class << self
+      include ActionView::Helpers::TagHelper
+      include Turbo::Streams::ActionHelper
+
       # Publish an event to all registered handlers.
       #
       # Also publishes via ActiveSupport::Notifications for additional flexibility.
+      # Broadcasts redirect for subscription_created when Pay is not handling it.
       #
       # @param type [Symbol] Event type (e.g., :subscription_created)
       # @param payload [Hash] Event payload from the webhook
@@ -27,7 +31,23 @@ module PurchaseKit
         # Also publish via ActiveSupport::Notifications for subscribers
         ActiveSupport::Notifications.instrument("purchasekit.#{type}", event: event)
 
+        # Broadcast redirect for new subscriptions (Pay handles its own broadcasts)
+        if type == :subscription_created && !PurchaseKit.pay_enabled?
+          broadcast_redirect(event)
+        end
+
         event
+      end
+
+      private
+
+      def broadcast_redirect(event)
+        return if event.success_path.blank?
+
+        Turbo::StreamsChannel.broadcast_stream_to(
+          "purchasekit_customer_#{event.customer_id}",
+          content: turbo_stream_action_tag(:redirect, url: event.success_path)
+        )
       end
     end
 

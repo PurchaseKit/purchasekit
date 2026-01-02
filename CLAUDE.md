@@ -44,6 +44,7 @@ This adds:
 - `PurchaseKit::WebhooksController` - Verifies signature, publishes events via callback system, queues for Pay if available
 - `PurchaseKit::PurchasesController` - Creates intents, appends response div via Turbo Stream (form stays visible but disabled)
 - `PurchaseKit::Purchase::CompletionsController` - Demo mode only, skips CSRF (called directly by iOS), publishes events and redirects
+- `PurchaseKit::ApplicationController` - Base controller with `rescue_from` for `NotFoundError` (404) and `SubscriptionRequiredError` (402)
 
 ### Helpers
 
@@ -62,9 +63,12 @@ The helper accepts `customer_id:` (a simple ID). When using Pay gem, pass `curre
 
 ### JavaScript
 
-The gem provides:
+The gem provides a single unified Stimulus controller for both Pay and non-Pay integrations:
+
 - `purchasekit--paywall` Stimulus controller for Hotwire Native bridge communication
 - `purchasekit/turbo_actions` custom Turbo Stream action for redirects
+
+The controller handles prices, purchases, errors, and includes a 30-second fallback redirect if ActionCable isn't connected.
 
 Import in your application:
 
@@ -108,7 +112,10 @@ Handlers are stored in `@event_handlers` hash, keyed by event type symbol.
 
 1. Calls all registered block handlers from `config.handlers_for(type)`
 2. Publishes via `ActiveSupport::Notifications` for additional subscribers
-3. Returns an `Event` object with parsed payload
+3. Broadcasts Turbo Stream redirect for `subscription_created` (when Pay is not enabled)
+4. Returns an `Event` object with parsed payload
+
+**Turbo Stream broadcasts:** For non-Pay users, `Events.publish` broadcasts a redirect action to `purchasekit_customer_#{customer_id}`. Views should subscribe with `turbo_stream_from "purchasekit_customer_#{current_user.id}"`. A 30-second fallback redirect fires if ActionCable isn't connected.
 
 ### Event class
 
@@ -154,7 +161,7 @@ Demo mode enables local development:
 4. iOS shows StoreKit sheet, user completes purchase
 5. iOS detects Xcode environment, POSTs to `xcodeCompletionUrl` (absolute URL built by JS)
 6. CompletionsController publishes `:subscription_created` event
-7. JS receives success status, calls `Turbo.visit(successPath)` to redirect
+7. Event system broadcasts redirect via ActionCable (or JS fallback redirects after 30 seconds)
 
 ### Remote mode
 
@@ -266,3 +273,4 @@ Tests should cover:
 - **Event object**: Parsed payload with time conversion, not raw hash
 - **Signature verification extracted**: Reusable outside controllers
 - **Demo mode completions**: Xcode StoreKit testing can complete purchases without real webhooks
+- **Unified JS controller**: Single `purchasekit--paywall` controller for both Pay and non-Pay, with ActionCable broadcasts and fallback timeout

@@ -18,8 +18,8 @@ Renders a form that posts to the gem's PurchasesController.
 ```html
 <form action="/purchasekit/purchases" method="post"
       id="purchasekit_paywall"
-      data-controller="purchasekit-pay--paywall"
-      data-purchasekit-pay--paywall-customer-id-value="123">
+      data-controller="purchasekit--paywall"
+      data-purchasekit--paywall-customer-id-value="123">
   <input type="hidden" name="customer_id" value="123">
   <input type="hidden" name="success_path" value="/dashboard">
   <!-- yielded content -->
@@ -34,9 +34,9 @@ Builder yielded by the paywall helper.
 
 | Method | Purpose | Data attributes |
 |--------|---------|-----------------|
-| `plan_option(product:, selected:)` | Radio + label for a plan | `purchasekit_pay__paywall_target: "planRadio"` |
-| `price` | Span for localized price (must be within `plan_option` block) | `purchasekit_pay__paywall_target: "price"` |
-| `submit(text)` | Submit button (starts disabled) | `purchasekit_pay__paywall_target: "submitButton"` |
+| `plan_option(product:, selected:)` | Radio + label for a plan | `purchasekit__paywall_target: "planRadio"` |
+| `price` | Span for localized price (must be within `plan_option` block) | `purchasekit__paywall_target: "price"` |
+| `submit(text)` | Submit button (starts disabled) | `purchasekit__paywall_target: "submitButton"` |
 
 ## Usage
 

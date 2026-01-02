@@ -120,9 +120,11 @@ end
 
 ## Paywall helper
 
-Build a paywall using the included helper:
+Build a paywall using the included helper. Subscribe to the Turbo Stream for real-time redirects:
 
 ```erb
+<%= turbo_stream_from "purchasekit_customer_#{current_user.id}" %>
+
 <%= purchasekit_paywall customer_id: current_user.id, success_path: dashboard_path do |paywall| %>
   <%= paywall.plan_option product: @annual, selected: true do %>
     Annual - <%= paywall.price %>/year

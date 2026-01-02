@@ -30,8 +30,8 @@ class PurchaseKit::Pay::PaywallHelperTest < ActionView::TestCase
 
     assert_match 'id="purchasekit_paywall"', html
     assert_match 'action="/purchasekit/purchases"', html
-    assert_match 'data-controller="purchasekit-pay--paywall"', html
-    assert_match "data-purchasekit-pay--paywall-customer-id-value=\"#{@customer.id}\"", html
+    assert_match 'data-controller="purchasekit--paywall"', html
+    assert_match "data-purchasekit--paywall-customer-id-value=\"#{@customer.id}\"", html
   end
 
   def test_purchasekit_paywall_includes_hidden_fields
@@ -42,7 +42,7 @@ class PurchaseKit::Pay::PaywallHelperTest < ActionView::TestCase
     assert_match 'name="success_path"', html
     assert_match 'value="/dashboard"', html
     assert_match 'name="environment"', html
-    assert_match 'data-purchasekit-pay--paywall-target="environment"', html
+    assert_match 'data-purchasekit--paywall-target="environment"', html
   end
 
   def test_purchasekit_paywall_defaults_success_path_to_root
@@ -67,7 +67,7 @@ class PurchaseKit::Pay::PaywallHelperTest < ActionView::TestCase
     assert_match 'name="product_id"', html
     assert_match "value=\"#{@product.id}\"", html
     assert_match 'checked="checked"', html
-    assert_match 'data-purchasekit-pay--paywall-target="planRadio"', html
+    assert_match 'data-purchasekit--paywall-target="planRadio"', html
     assert_match "data-apple-store-product-id=\"#{@product.apple_product_id}\"", html
     assert_match "data-google-store-product-id=\"#{@product.google_product_id}\"", html
     assert_match "Annual Plan", html
@@ -89,7 +89,7 @@ class PurchaseKit::Pay::PaywallHelperTest < ActionView::TestCase
     end
 
     assert_match "<span", html
-    assert_match 'data-purchasekit-pay--paywall-target="price"', html
+    assert_match 'data-purchasekit--paywall-target="price"', html
     assert_match "data-apple-store-product-id=\"#{@product.apple_product_id}\"", html
     assert_match "data-google-store-product-id=\"#{@product.google_product_id}\"", html
     assert_match "Loading...", html
@@ -122,7 +122,7 @@ class PurchaseKit::Pay::PaywallHelperTest < ActionView::TestCase
     assert_match 'type="submit"', html
     assert_match 'value="Subscribe Now"', html
     assert_match 'disabled="disabled"', html
-    assert_match 'data-purchasekit-pay--paywall-target="submitButton"', html
+    assert_match 'data-purchasekit--paywall-target="submitButton"', html
     assert_match 'data-turbo-submits-with="Subscribe Now"', html
   end
 
