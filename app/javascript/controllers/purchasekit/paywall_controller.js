@@ -10,6 +10,15 @@ export default class extends BridgeComponent {
   }
 
   responseTargetConnected(element) {
+    const error = element.dataset.error
+
+    if (error) {
+      element.remove()
+      alert(error)
+      this.#enableForm()
+      return
+    }
+
     const correlationId = element.dataset.correlationId
     const productIds = this.#productIds(element)
     const relativeUrl = element.dataset.xcodeCompletionUrl
