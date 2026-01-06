@@ -186,4 +186,4 @@ Works with Xcode's StoreKit local testing.
 
 ## License
 
-This software is licensed under a custom PurchaseKit License. The gem may only be used in applications that actively integrate with the official PurchaseKit service at https://purchasekit.dev. See LICENSE for full details.
+MIT License. See LICENSE for details.

@@ -8,7 +8,7 @@ Gem::Specification.new do |spec|
   spec.homepage = "https://purchasekit.dev"
   spec.summary = "In-app purchase infrastructure for Rails"
   spec.description = "Receive normalized Apple and Google in-app purchase webhooks in your Rails app. Optionally integrates with the Pay gem automatically."
-  spec.license = "LicenseRef-PurchaseKit"
+  spec.license = "MIT"
   spec.required_ruby_version = ">= 3.1"
 
   spec.metadata["homepage_uri"] = spec.homepage
