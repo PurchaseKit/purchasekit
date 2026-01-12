@@ -1,7 +1,7 @@
 source "https://rubygems.org"
 
 # Parent gem
-gem "purchasekit-pay", path: "../.."
+gem "purchasekit", path: "../.."
 
 # Bundle edge Rails instead: gem "rails", github: "rails/rails", branch: "main"
 gem "rails", "~> 8.1.1"
@@ -16,6 +16,7 @@ gem "puma", ">= 5.0"
 gem "tzinfo-data", platforms: %i[windows jruby]
 
 gem "turbo-rails"
+gem "pay", "~> 11.0"
 
 group :development, :test do
   # See https://guides.rubyonrails.org/debugging_rails_applications.html#debugging-with-the-debug-gem

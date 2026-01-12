@@ -1,6 +1,6 @@
 require "test_helper"
 
-class PurchaseKit::Pay::PurchasesControllerTest < ActionDispatch::IntegrationTest
+class PurchaseKit::PurchasesControllerTest < ActionDispatch::IntegrationTest
   fixtures "pay/customers"
 
   def setup
@@ -40,20 +40,24 @@ class PurchaseKit::Pay::PurchasesControllerTest < ActionDispatch::IntegrationTes
       assert_response :success
       assert_match "turbo-stream", response.body
       assert_match "purchasekit_paywall", response.body
-      assert_match "purchasekit-error", response.body
+      assert_match "data-error", response.body
     end
   end
 
-  def test_create_returns_not_found_for_missing_customer
-    post "/purchasekit/purchases",
-      params: {
-        customer_id: 999999,
-        product_id: "prod_TEST123",
-        success_path: "/dashboard",
-        environment: "sandbox"
-      },
-      headers: {"Accept" => "text/vnd.turbo-stream.html"}
+  def test_create_handles_not_found_product
+    VCR.use_cassette("intent_create_not_found") do
+      post "/purchasekit/purchases",
+        params: {
+          customer_id: @customer.id,
+          product_id: "prod_MISSING",
+          success_path: "/dashboard",
+          environment: "sandbox"
+        },
+        headers: {"Accept" => "text/vnd.turbo-stream.html"}
 
-    assert_response :not_found
+      assert_response :success
+      assert_match "turbo-stream", response.body
+      assert_match "data-error", response.body
+    end
   end
 end

@@ -24,7 +24,7 @@ module PurchaseKit
         purchasekit__paywall_customer_id_value: customer_id
       )
 
-      form_with(url: purchasekit.purchases_path, id: "purchasekit_paywall", data: form_data, **options) do |form|
+      form_with(url: purchase_kit.purchases_path, id: "purchasekit_paywall", data: form_data, **options) do |form|
         hidden = hidden_field_tag(:customer_id, customer_id)
         hidden += hidden_field_tag(:success_path, success_path)
         hidden += hidden_field_tag(:environment, "sandbox", data: {purchasekit__paywall_target: "environment"})

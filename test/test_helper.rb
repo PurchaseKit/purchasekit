@@ -19,12 +19,12 @@ VCR.configure do |config|
   config.default_cassette_options = {record: :once}
 
   # Filter sensitive data
-  config.filter_sensitive_data("<API_KEY>") { PurchaseKit::Pay.config.api_key }
-  config.filter_sensitive_data("<API_URL>") { PurchaseKit::Pay.config.api_url }
+  config.filter_sensitive_data("<API_KEY>") { PurchaseKit.config.api_key }
+  config.filter_sensitive_data("<API_URL>") { PurchaseKit.config.api_url }
 end
 
 # Configure PurchaseKit with test values
-PurchaseKit::Pay.configure do |config|
+PurchaseKit.configure do |config|
   config.api_url = "http://localhost:3000"
   config.api_key = "sk_test_key"
   config.app_id = "app_TEST123"

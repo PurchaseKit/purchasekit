@@ -1,5 +1,5 @@
 Rails.application.routes.draw do
-  mount PurchaseKit::Pay::Engine, at: "/purchasekit"
+  mount PurchaseKit::Engine, at: "/purchasekit"
 
   get "up" => "rails/health#show", :as => :rails_health_check
 

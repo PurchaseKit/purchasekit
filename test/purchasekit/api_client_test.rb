@@ -35,7 +35,7 @@ class PurchaseKit::ApiClientTest < PurchaseKit::TestCase
     @client.get("/test")
 
     assert_requested :get, /.*/, headers: {
-      "Authorization" => "Bearer #{PurchaseKit::Pay.config.api_key}"
+      "Authorization" => "Bearer #{PurchaseKit.config.api_key}"
     }
   end
 
@@ -57,7 +57,7 @@ class PurchaseKit::ApiClientTest < PurchaseKit::TestCase
 
     @client.get("/products/123")
 
-    expected_url = "#{PurchaseKit::Pay.config.api_url}/api/v1/apps/#{PurchaseKit::Pay.config.app_id}/products/123"
+    expected_url = "#{PurchaseKit.config.api_url}/api/v1/apps/#{PurchaseKit.config.app_id}/products/123"
     assert_requested :get, expected_url
   end
 

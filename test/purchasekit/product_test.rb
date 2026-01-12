@@ -13,7 +13,7 @@ class PurchaseKit::ProductTest < PurchaseKit::TestCase
 
   def test_find_raises_not_found_error_for_missing_product
     with_cassette("product_find_not_found") do
-      error = assert_raises(PurchaseKit::Pay::NotFoundError) do
+      error = assert_raises(PurchaseKit::NotFoundError) do
         PurchaseKit::Product.find("prod_MISSING")
       end
 
@@ -23,7 +23,7 @@ class PurchaseKit::ProductTest < PurchaseKit::TestCase
 
   def test_find_raises_error_for_api_failure
     with_cassette("product_find_error") do
-      assert_raises(PurchaseKit::Pay::Error) do
+      assert_raises(PurchaseKit::Error) do
         PurchaseKit::Product.find("prod_ERROR")
       end
     end

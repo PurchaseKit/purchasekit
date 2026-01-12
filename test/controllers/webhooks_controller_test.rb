@@ -1,6 +1,6 @@
 require "test_helper"
 
-class PurchaseKit::Pay::WebhooksControllerTest < ActionDispatch::IntegrationTest
+class PurchaseKit::WebhooksControllerTest < ActionDispatch::IntegrationTest
   fixtures "pay/customers"
 
   def setup
@@ -18,7 +18,7 @@ class PurchaseKit::Pay::WebhooksControllerTest < ActionDispatch::IntegrationTest
       success_path: "/dashboard"
     }
     @payload = @event.to_json
-    @secret = PurchaseKit::Pay.config.webhook_secret
+    @secret = PurchaseKit.config.webhook_secret
   end
 
   def test_accepts_valid_signature
@@ -60,8 +60,8 @@ class PurchaseKit::Pay::WebhooksControllerTest < ActionDispatch::IntegrationTest
   end
 
   def test_accepts_request_without_signature_when_secret_blank_in_development
-    original_secret = PurchaseKit::Pay.config.webhook_secret
-    PurchaseKit::Pay.config.webhook_secret = nil
+    original_secret = PurchaseKit.config.webhook_secret
+    PurchaseKit.config.webhook_secret = nil
 
     assert_difference "Pay::Webhook.count", 1 do
       post "/purchasekit/webhooks",
@@ -71,12 +71,12 @@ class PurchaseKit::Pay::WebhooksControllerTest < ActionDispatch::IntegrationTest
 
     assert_response :ok
   ensure
-    PurchaseKit::Pay.config.webhook_secret = original_secret
+    PurchaseKit.config.webhook_secret = original_secret
   end
 
   def test_rejects_request_when_secret_blank_in_production
-    original_secret = PurchaseKit::Pay.config.webhook_secret
-    PurchaseKit::Pay.config.webhook_secret = nil
+    original_secret = PurchaseKit.config.webhook_secret
+    PurchaseKit.config.webhook_secret = nil
 
     Rails.stub(:env, ActiveSupport::StringInquirer.new("production")) do
       assert_no_difference "Pay::Webhook.count" do
@@ -88,7 +88,7 @@ class PurchaseKit::Pay::WebhooksControllerTest < ActionDispatch::IntegrationTest
       assert_response :bad_request
     end
   ensure
-    PurchaseKit::Pay.config.webhook_secret = original_secret
+    PurchaseKit.config.webhook_secret = original_secret
   end
 
   def test_ignores_unregistered_event_types

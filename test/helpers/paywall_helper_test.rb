@@ -1,13 +1,10 @@
 require "test_helper"
 require "ostruct"
 
-class PurchaseKit::Pay::PaywallHelperTest < ActionView::TestCase
-  include PurchaseKit::Pay::PaywallHelper
-
-  fixtures "pay/customers"
+class PurchaseKit::PaywallHelperTest < ActionView::TestCase
+  include PurchaseKit::PaywallHelper
 
   def setup
-    @customer = pay_customers(:test_customer)
     @product = PurchaseKit::Product.new(
       id: "prod_TEST123",
       apple_product_id: "com.example.annual",
@@ -16,7 +13,7 @@ class PurchaseKit::Pay::PaywallHelperTest < ActionView::TestCase
   end
 
   # Mock the engine routes helper
-  def purchasekit_pay
+  def purchase_kit
     OpenStruct.new(purchases_path: "/purchasekit/purchases")
   end
 
@@ -26,19 +23,19 @@ class PurchaseKit::Pay::PaywallHelperTest < ActionView::TestCase
   end
 
   def test_purchasekit_paywall_renders_form_with_correct_attributes
-    html = purchasekit_paywall(customer: @customer, success_path: "/dashboard") { "" }
+    html = purchasekit_paywall(customer_id: 123, success_path: "/dashboard") { "" }
 
     assert_match 'id="purchasekit_paywall"', html
     assert_match 'action="/purchasekit/purchases"', html
     assert_match 'data-controller="purchasekit--paywall"', html
-    assert_match "data-purchasekit--paywall-customer-id-value=\"#{@customer.id}\"", html
+    assert_match 'data-purchasekit--paywall-customer-id-value="123"', html
   end
 
   def test_purchasekit_paywall_includes_hidden_fields
-    html = purchasekit_paywall(customer: @customer, success_path: "/dashboard") { "" }
+    html = purchasekit_paywall(customer_id: 123, success_path: "/dashboard") { "" }
 
     assert_match 'name="customer_id"', html
-    assert_match "value=\"#{@customer.id}\"", html
+    assert_match 'value="123"', html
     assert_match 'name="success_path"', html
     assert_match 'value="/dashboard"', html
     assert_match 'name="environment"', html
@@ -46,20 +43,20 @@ class PurchaseKit::Pay::PaywallHelperTest < ActionView::TestCase
   end
 
   def test_purchasekit_paywall_defaults_success_path_to_root
-    html = purchasekit_paywall(customer: @customer) { "" }
+    html = purchasekit_paywall(customer_id: 123) { "" }
 
     assert_match 'name="success_path"', html
     assert_match 'value="/"', html
   end
 
-  def test_purchasekit_paywall_raises_without_customer
+  def test_purchasekit_paywall_raises_without_customer_id
     assert_raises(ArgumentError) do
-      purchasekit_paywall(customer: nil) { "" }
+      purchasekit_paywall(customer_id: nil) { "" }
     end
   end
 
   def test_plan_option_renders_radio_and_label
-    html = purchasekit_paywall(customer: @customer, success_path: "/") do |paywall|
+    html = purchasekit_paywall(customer_id: 123, success_path: "/") do |paywall|
       paywall.plan_option(product: @product, selected: true) { "Annual Plan" }
     end
 
@@ -74,7 +71,7 @@ class PurchaseKit::Pay::PaywallHelperTest < ActionView::TestCase
   end
 
   def test_plan_option_not_selected_by_default
-    html = purchasekit_paywall(customer: @customer, success_path: "/") do |paywall|
+    html = purchasekit_paywall(customer_id: 123, success_path: "/") do |paywall|
       paywall.plan_option(product: @product) { "Monthly" }
     end
 
@@ -82,7 +79,7 @@ class PurchaseKit::Pay::PaywallHelperTest < ActionView::TestCase
   end
 
   def test_price_renders_span_with_data_attributes
-    html = purchasekit_paywall(customer: @customer, success_path: "/") do |paywall|
+    html = purchasekit_paywall(customer_id: 123, success_path: "/") do |paywall|
       paywall.plan_option(product: @product) do
         paywall.price
       end
@@ -96,7 +93,7 @@ class PurchaseKit::Pay::PaywallHelperTest < ActionView::TestCase
   end
 
   def test_price_with_custom_loading_content
-    html = purchasekit_paywall(customer: @customer, success_path: "/") do |paywall|
+    html = purchasekit_paywall(customer_id: 123, success_path: "/") do |paywall|
       paywall.plan_option(product: @product) do
         paywall.price { "..." }
       end
@@ -107,7 +104,7 @@ class PurchaseKit::Pay::PaywallHelperTest < ActionView::TestCase
   end
 
   def test_price_raises_outside_plan_option_block
-    builder = PurchaseKit::Pay::PaywallBuilder.new(self, @customer)
+    builder = PurchaseKit::PaywallBuilder.new(self)
 
     assert_raises(RuntimeError) do
       builder.price
@@ -115,7 +112,7 @@ class PurchaseKit::Pay::PaywallHelperTest < ActionView::TestCase
   end
 
   def test_submit_renders_disabled_button_with_data_attributes
-    html = purchasekit_paywall(customer: @customer, success_path: "/") do |paywall|
+    html = purchasekit_paywall(customer_id: 123, success_path: "/") do |paywall|
       paywall.submit("Subscribe Now")
     end
 

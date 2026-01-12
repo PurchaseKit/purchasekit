@@ -19,7 +19,7 @@ class PurchaseKit::Purchase::IntentTest < PurchaseKit::TestCase
 
   def test_create_raises_subscription_required_for_production_without_subscription
     with_cassette("intent_create_subscription_required") do
-      error = assert_raises(PurchaseKit::Pay::SubscriptionRequiredError) do
+      error = assert_raises(PurchaseKit::SubscriptionRequiredError) do
         PurchaseKit::Purchase::Intent.create(
           product_id: "prod_TEST123",
           customer_id: 1,
@@ -34,7 +34,7 @@ class PurchaseKit::Purchase::IntentTest < PurchaseKit::TestCase
 
   def test_create_raises_not_found_for_missing_product
     with_cassette("intent_create_not_found") do
-      assert_raises(PurchaseKit::Pay::NotFoundError) do
+      assert_raises(PurchaseKit::NotFoundError) do
         PurchaseKit::Purchase::Intent.create(
           product_id: "prod_MISSING",
           customer_id: 1,
