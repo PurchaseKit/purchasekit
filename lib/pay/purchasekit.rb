@@ -1,4 +1,5 @@
 require "purchasekit/pay/webhooks"
+require "purchasekit/pay/webhook"
 
 module Pay
   module Purchasekit
