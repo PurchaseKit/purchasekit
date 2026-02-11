@@ -2,10 +2,8 @@ module PurchaseKit
   class Engine < ::Rails::Engine
     isolate_namespace PurchaseKit
 
-    initializer "purchasekit.helpers" do
-      ActiveSupport.on_load(:action_controller_base) do
-        helper PurchaseKit::PaywallHelper
-      end
+    config.to_prepare do
+      ActionController::Base.helper(PurchaseKit::PaywallHelper)
     end
 
     initializer "purchasekit.importmap", before: "importmap" do |app|
