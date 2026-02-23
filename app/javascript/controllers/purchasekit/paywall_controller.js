@@ -2,7 +2,7 @@ import { BridgeComponent } from "@hotwired/hotwire-native-bridge"
 
 export default class extends BridgeComponent {
   static component = "paywall"
-  static targets = ["planRadio", "price", "submitButton", "response", "environment"]
+  static targets = ["planRadio", "price", "submitButton", "response", "environment", "restoreButton"]
 
   connect() {
     super.connect()
@@ -13,6 +13,26 @@ export default class extends BridgeComponent {
     if (this.#fallbackTimeoutId) {
       clearTimeout(this.#fallbackTimeoutId)
     }
+  }
+
+  restore() {
+    if (this.hasRestoreButtonTarget) {
+      this.restoreButtonTarget.disabled = true
+    }
+
+    this.send("restore", {}, message => {
+      if (this.hasRestoreButtonTarget) {
+        this.restoreButtonTarget.disabled = false
+      }
+
+      const { subscriptionIds, error } = message.data
+      this.dispatch("restore", { detail: { subscriptionIds, error } })
+
+      const restoreUrl = this.hasRestoreButtonTarget && this.restoreButtonTarget.dataset.restoreUrl
+      if (!error && restoreUrl) {
+        this.#submitRestore(restoreUrl, subscriptionIds || [])
+      }
+    })
   }
 
   responseTargetConnected(element) {
@@ -59,6 +79,26 @@ export default class extends BridgeComponent {
           window.Turbo.visit(successPath)
         }, 30000)
       }
+    })
+  }
+
+  #submitRestore(url, subscriptionIds) {
+    const csrfToken = document.querySelector("meta[name=csrf-token]")?.content
+
+    fetch(url, {
+      method: "POST",
+      headers: {
+        "Content-Type": "application/json",
+        ...(csrfToken && { "X-CSRF-Token": csrfToken })
+      },
+      body: JSON.stringify({ subscription_ids: subscriptionIds })
+    }).then(response => {
+      if (response.redirected) {
+        window.Turbo.visit(response.url)
+      }
+    }).catch(error => {
+      console.error("Restore request failed:", error)
+      alert("Something went wrong restoring purchases. Please try again.")
     })
   }
 

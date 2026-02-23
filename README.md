@@ -140,12 +140,23 @@ Build a paywall using the included helper. Subscribe to the Turbo Stream for rea
   <% end %>
 
   <%= paywall.submit "Subscribe" %>
+  <%= paywall.restore url: restore_purchases_path, class: "btn btn-link" %>
 <% end %>
-
-<%= button_to "Restore purchases", restore_purchases_path %>
 ```
 
-The restore link checks your server for an active subscription. Implement the endpoint in your app:
+### Restore purchases
+
+Apple requires apps with in-app purchases to include a "Restore purchases" button. This handles users who switch devices or reinstall the app.
+
+The `paywall.restore` helper renders a button that reads active subscriptions directly from StoreKit (iOS) or Play Billing (Android) via the native bridge. Pass a `url:` to automatically POST the subscription IDs to your server:
+
+```erb
+<%= paywall.restore url: restore_purchases_path, class: "btn btn-link" %>
+```
+
+When the user taps restore, the JS controller sends a bridge message to the native app, receives the active subscription IDs, and POSTs them as JSON to your URL. If the server responds with a redirect, the page navigates automatically.
+
+On the server, match the IDs against your stored subscriptions. The `subscription_ids` match the `subscription_id` field in PurchaseKit webhook payloads (Apple's `originalTransactionId`, Google's order ID):
 
 ```ruby
 # routes.rb
@@ -153,12 +164,23 @@ post "restore_purchases", to: "subscriptions#restore"
 
 # subscriptions_controller.rb
 def restore
-  if current_user.subscribed?
+  ids = params[:subscription_ids] || []
+
+  if ids.any? && current_user.subscriptions.where(processor_id: ids).active.any?
     redirect_to dashboard_path, notice: "Your subscription is active."
   else
     redirect_to paywall_path, alert: "No active subscription found."
   end
 end
+```
+
+If you need custom behavior, omit the `url:` and listen for the DOM event instead:
+
+```javascript
+document.addEventListener("purchasekit--paywall:restore", (event) => {
+  const { subscriptionIds, error } = event.detail
+  // Handle as needed
+})
 ```
 
 Products are fetched from the PurchaseKit API:

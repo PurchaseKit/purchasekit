@@ -85,5 +85,15 @@ module PurchaseKit
       @template.submit_tag(text, disabled: true, data: data, **options)
     end
 
+    def restore(text = "Restore purchases", url: nil, **options)
+      data = (options.delete(:data) || {}).merge(
+        purchasekit__paywall_target: "restoreButton",
+        action: "purchasekit--paywall#restore"
+      )
+      data[:restore_url] = url if url
+
+      @template.content_tag(:button, text, type: "button", data: data, **options)
+    end
+
   end
 end

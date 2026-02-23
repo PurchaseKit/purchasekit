@@ -3031,3 +3031,1403 @@ PurchaseKit::Pay::Webhooks::SubscriptionCreatedTest: test_creates_new_subscripti
   [1m[36mTRANSACTION (0.0ms)[0m  [1m[35mRELEASE SAVEPOINT active_record_1[0m
   [1m[36mPay::Subscription Load (0.0ms)[0m  [1m[34mSELECT "pay_subscriptions".* FROM "pay_subscriptions" WHERE "pay_subscriptions"."customer_id" = ? AND "pay_subscriptions"."processor_id" = ? LIMIT ?[0m  [["customer_id", 1], ["processor_id", "sub_new123"], ["LIMIT", 1]]
   [1m[36mTRANSACTION (0.0ms)[0m  [1m[31mROLLBACK TRANSACTION[0m
+  [1m[36mActiveRecord::InternalMetadata Load (0.3ms)[0m  [1m[34mSELECT * FROM "ar_internal_metadata" WHERE "ar_internal_metadata"."key" = ? ORDER BY "ar_internal_metadata"."key" ASC LIMIT 1[0m  [[nil, "schema_sha1"]]
+  [1m[36mActiveRecord::SchemaMigration Load (0.0ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+  [1m[36mTRANSACTION (0.0ms)[0m  [1m[36mBEGIN deferred TRANSACTION[0m
+--------------------------------------------------------------------------------------
+PurchaseKit::PaywallHelperTest: test_purchasekit_paywall_defaults_success_path_to_root
+--------------------------------------------------------------------------------------
+  [1m[36mTRANSACTION (0.0ms)[0m  [1m[31mROLLBACK TRANSACTION[0m
+  [1m[36mTRANSACTION (0.0ms)[0m  [1m[36mBEGIN deferred TRANSACTION[0m
+----------------------------------------------------------------------
+PurchaseKit::PaywallHelperTest: test_price_with_custom_loading_content
+----------------------------------------------------------------------
+  [1m[36mTRANSACTION (0.0ms)[0m  [1m[31mROLLBACK TRANSACTION[0m
+  [1m[36mTRANSACTION (0.0ms)[0m  [1m[36mBEGIN deferred TRANSACTION[0m
+-------------------------------------------------------------------------------
+PurchaseKit::PaywallHelperTest: test_purchasekit_paywall_includes_hidden_fields
+-------------------------------------------------------------------------------
+  [1m[36mTRANSACTION (0.0ms)[0m  [1m[31mROLLBACK TRANSACTION[0m
+  [1m[36mTRANSACTION (0.0ms)[0m  [1m[36mBEGIN deferred TRANSACTION[0m
+---------------------------------------------------------------
+PurchaseKit::PaywallHelperTest: test_restore_renders_button_tag
+---------------------------------------------------------------
+  [1m[36mTRANSACTION (0.0ms)[0m  [1m[31mROLLBACK TRANSACTION[0m
+  [1m[36mTRANSACTION (0.0ms)[0m  [1m[36mBEGIN deferred TRANSACTION[0m
+------------------------------------------------------------------------
+PurchaseKit::PaywallHelperTest: test_plan_option_renders_radio_and_label
+------------------------------------------------------------------------
+  [1m[36mTRANSACTION (0.0ms)[0m  [1m[31mROLLBACK TRANSACTION[0m
+  [1m[36mTRANSACTION (0.0ms)[0m  [1m[36mBEGIN deferred TRANSACTION[0m
+-----------------------------------------------------------
+PurchaseKit::PaywallHelperTest: test_restore_custom_options
+-----------------------------------------------------------
+  [1m[36mTRANSACTION (0.0ms)[0m  [1m[31mROLLBACK TRANSACTION[0m
+  [1m[36mTRANSACTION (0.0ms)[0m  [1m[36mBEGIN deferred TRANSACTION[0m
+---------------------------------------------------------
+PurchaseKit::PaywallHelperTest: test_restore_default_text
+---------------------------------------------------------
+  [1m[36mTRANSACTION (0.0ms)[0m  [1m[31mROLLBACK TRANSACTION[0m
+  [1m[36mTRANSACTION (0.0ms)[0m  [1m[36mBEGIN deferred TRANSACTION[0m
+-----------------------------------------------------------------------------------
+PurchaseKit::PaywallHelperTest: test_purchasekit_paywall_raises_without_customer_id
+-----------------------------------------------------------------------------------
+  [1m[36mTRANSACTION (0.0ms)[0m  [1m[31mROLLBACK TRANSACTION[0m
+  [1m[36mTRANSACTION (0.0ms)[0m  [1m[36mBEGIN deferred TRANSACTION[0m
+---------------------------------------------------------------------------------------------
+PurchaseKit::PaywallHelperTest: test_purchasekit_paywall_renders_form_with_correct_attributes
+---------------------------------------------------------------------------------------------
+  [1m[36mTRANSACTION (0.0ms)[0m  [1m[31mROLLBACK TRANSACTION[0m
+  [1m[36mTRANSACTION (0.0ms)[0m  [1m[36mBEGIN deferred TRANSACTION[0m
+----------------------------------------------------------------------------
+PurchaseKit::PaywallHelperTest: test_price_renders_span_with_data_attributes
+----------------------------------------------------------------------------
+  [1m[36mTRANSACTION (0.0ms)[0m  [1m[31mROLLBACK TRANSACTION[0m
+  [1m[36mTRANSACTION (0.0ms)[0m  [1m[36mBEGIN deferred TRANSACTION[0m
+------------------------------------------------------------------------
+PurchaseKit::PaywallHelperTest: test_restore_has_correct_data_attributes
+------------------------------------------------------------------------
+  [1m[36mTRANSACTION (0.0ms)[0m  [1m[31mROLLBACK TRANSACTION[0m
+  [1m[36mTRANSACTION (0.0ms)[0m  [1m[36mBEGIN deferred TRANSACTION[0m
+---------------------------------------------------------------------------
+PurchaseKit::PaywallHelperTest: test_price_raises_outside_plan_option_block
+---------------------------------------------------------------------------
+  [1m[36mTRANSACTION (0.0ms)[0m  [1m[31mROLLBACK TRANSACTION[0m
+  [1m[36mTRANSACTION (0.0ms)[0m  [1m[36mBEGIN deferred TRANSACTION[0m
+----------------------------------------------------------------------------------------
+PurchaseKit::PaywallHelperTest: test_submit_renders_disabled_button_with_data_attributes
+----------------------------------------------------------------------------------------
+  [1m[36mTRANSACTION (0.0ms)[0m  [1m[31mROLLBACK TRANSACTION[0m
+  [1m[36mTRANSACTION (0.0ms)[0m  [1m[36mBEGIN deferred TRANSACTION[0m
+------------------------------------------------------------------------
+PurchaseKit::PaywallHelperTest: test_plan_option_not_selected_by_default
+------------------------------------------------------------------------
+  [1m[36mTRANSACTION (0.0ms)[0m  [1m[31mROLLBACK TRANSACTION[0m
+  [1m[36mActiveRecord::InternalMetadata Load (0.4ms)[0m  [1m[34mSELECT * FROM "ar_internal_metadata" WHERE "ar_internal_metadata"."key" = ? ORDER BY "ar_internal_metadata"."key" ASC LIMIT 1[0m  [[nil, "schema_sha1"]]
+  [1m[36mActiveRecord::SchemaMigration Load (0.1ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+  [1m[36mTRANSACTION (0.0ms)[0m  [1m[36mBEGIN immediate TRANSACTION[0m
+  [1m[35m (0.1ms)[0m  [1m[35mPRAGMA foreign_keys[0m
+  [1m[35m (0.0ms)[0m  [1m[35mPRAGMA defer_foreign_keys[0m
+  [1m[35m (0.0ms)[0m  [1m[35mPRAGMA defer_foreign_keys = ON[0m
+  [1m[35m (0.0ms)[0m  [1m[35mPRAGMA foreign_keys = OFF[0m
+  [1m[36mFixtures Load (0.8ms)[0m  [1m[31mDELETE FROM "pay_customers";
+DELETE FROM "pay_subscriptions";
+INSERT INTO "pay_customers" ("id", "created_at", "data", "default", "deleted_at", "object", "owner_id", "owner_type", "processor", "processor_id", "stripe_account", "type", "updated_at") VALUES (1, '2026-02-23 18:20:31.387446', NULL, NULL, NULL, NULL, 1, 'User', 'purchasekit', 'cus_test123', NULL, 'Pay::Purchasekit::Customer', '2026-02-23 18:20:31.387446');
+INSERT INTO "pay_subscriptions" ("id", "application_fee_percent", "created_at", "current_period_end", "current_period_start", "customer_id", "data", "ends_at", "metadata", "metered", "name", "object", "pause_behavior", "pause_resumes_at", "pause_starts_at", "payment_method_id", "processor_id", "processor_plan", "quantity", "status", "stripe_account", "trial_ends_at", "type", "updated_at") VALUES (1, NULL, '2026-02-23 18:20:31.387614', '2026-03-23 18:20:31', '2026-01-23 18:20:31', 1, NULL, NULL, NULL, NULL, 'pro', NULL, NULL, NULL, NULL, NULL, 'sub_existing', 'com.example.annual', 1, 'active', NULL, NULL, 'Pay::Purchasekit::Subscription', '2026-02-23 18:20:31.387614')[0m
+  [1m[35m (0.0ms)[0m  [1m[35mPRAGMA defer_foreign_keys = 0[0m
+  [1m[35m (0.0ms)[0m  [1m[35mPRAGMA foreign_keys = 1[0m
+  [1m[36mTRANSACTION (0.2ms)[0m  [1m[36mCOMMIT TRANSACTION[0m
+  [1m[35m (0.0ms)[0m  [1m[35mPRAGMA foreign_key_check[0m
+  [1m[36mTRANSACTION (0.0ms)[0m  [1m[36mBEGIN deferred TRANSACTION[0m
+-----------------------------------------------------------------------------------------------
+PurchaseKit::Pay::Webhooks::SubscriptionCanceledTest: test_sets_subscription_status_to_canceled
+-----------------------------------------------------------------------------------------------
+  [1m[36mPay::Customer Load (0.1ms)[0m  [1m[34mSELECT "pay_customers".* FROM "pay_customers" WHERE "pay_customers"."id" = ? LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  [1m[36mPay::Subscription Load (0.1ms)[0m  [1m[34mSELECT "pay_subscriptions".* FROM "pay_subscriptions" WHERE "pay_subscriptions"."id" = ? LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  [1m[36mPay::Subscription Load (0.1ms)[0m  [1m[34mSELECT "pay_subscriptions".* FROM "pay_subscriptions" WHERE "pay_subscriptions"."processor_id" = ? LIMIT ?[0m  [["processor_id", "sub_existing"], ["LIMIT", 1]]
+  [1m[36mTRANSACTION (0.0ms)[0m  [1m[35mSAVEPOINT active_record_1[0m
+  [1m[36mPay::Subscription Exists? (0.3ms)[0m  [1m[34mSELECT 1 AS one FROM "pay_subscriptions" WHERE "pay_subscriptions"."processor_id" = ? AND "pay_subscriptions"."id" != ? AND "pay_subscriptions"."customer_id" = ? LIMIT ?[0m  [["processor_id", "sub_existing"], ["id", 1], ["customer_id", 1], ["LIMIT", 1]]
+  [1m[36mPay::Purchasekit::Subscription Update (0.2ms)[0m  [1m[33mUPDATE "pay_subscriptions" SET "ends_at" = ?, "status" = ?, "updated_at" = ? WHERE "pay_subscriptions"."id" = ?[0m  [["ends_at", "2026-03-23 18:20:31"], ["status", "canceled"], ["updated_at", "2026-02-23 18:20:31.407295"], ["id", 1]]
+  [1m[36mTRANSACTION (0.0ms)[0m  [1m[35mRELEASE SAVEPOINT active_record_1[0m
+  [1m[36mPay::Purchasekit::Subscription Load (0.4ms)[0m  [1m[34mSELECT "pay_subscriptions".* FROM "pay_subscriptions" WHERE "pay_subscriptions"."type" = ? AND "pay_subscriptions"."id" = ? LIMIT ?[0m  [["type", "Pay::Purchasekit::Subscription"], ["id", 1], ["LIMIT", 1]]
+  [1m[36mTRANSACTION (0.0ms)[0m  [1m[31mROLLBACK TRANSACTION[0m
+  [1m[36mTRANSACTION (0.0ms)[0m  [1m[36mBEGIN deferred TRANSACTION[0m
+--------------------------------------------------------------------------------------------------
+PurchaseKit::Pay::Webhooks::SubscriptionCanceledTest: test_handles_missing_subscription_gracefully
+--------------------------------------------------------------------------------------------------
+  [1m[36mPay::Customer Load (0.2ms)[0m  [1m[34mSELECT "pay_customers".* FROM "pay_customers" WHERE "pay_customers"."id" = ? LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  [1m[36mPay::Subscription Load (0.0ms)[0m  [1m[34mSELECT "pay_subscriptions".* FROM "pay_subscriptions" WHERE "pay_subscriptions"."id" = ? LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  [1m[36mPay::Subscription Load (0.3ms)[0m  [1m[34mSELECT "pay_subscriptions".* FROM "pay_subscriptions" WHERE "pay_subscriptions"."processor_id" = ? LIMIT ?[0m  [["processor_id", "sub_nonexistent"], ["LIMIT", 1]]
+  [1m[36mTRANSACTION (0.0ms)[0m  [1m[31mROLLBACK TRANSACTION[0m
+  [1m[36mTRANSACTION (0.0ms)[0m  [1m[36mBEGIN deferred TRANSACTION[0m
+---------------------------------------------------------------------------------------------
+PurchaseKit::Pay::Webhooks::SubscriptionExpiredTest: test_sets_subscription_status_to_expired
+---------------------------------------------------------------------------------------------
+  [1m[36mPay::Customer Load (0.0ms)[0m  [1m[34mSELECT "pay_customers".* FROM "pay_customers" WHERE "pay_customers"."id" = ? LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  [1m[36mPay::Subscription Load (0.0ms)[0m  [1m[34mSELECT "pay_subscriptions".* FROM "pay_subscriptions" WHERE "pay_subscriptions"."id" = ? LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  [1m[36mPay::Subscription Load (0.0ms)[0m  [1m[34mSELECT "pay_subscriptions".* FROM "pay_subscriptions" WHERE "pay_subscriptions"."processor_id" = ? LIMIT ?[0m  [["processor_id", "sub_existing"], ["LIMIT", 1]]
+  [1m[36mTRANSACTION (0.0ms)[0m  [1m[35mSAVEPOINT active_record_1[0m
+  [1m[36mPay::Subscription Exists? (0.3ms)[0m  [1m[34mSELECT 1 AS one FROM "pay_subscriptions" WHERE "pay_subscriptions"."processor_id" = ? AND "pay_subscriptions"."id" != ? AND "pay_subscriptions"."customer_id" = ? LIMIT ?[0m  [["processor_id", "sub_existing"], ["id", 1], ["customer_id", 1], ["LIMIT", 1]]
+  [1m[36mPay::Purchasekit::Subscription Update (0.0ms)[0m  [1m[33mUPDATE "pay_subscriptions" SET "status" = ?, "updated_at" = ? WHERE "pay_subscriptions"."id" = ?[0m  [["status", "expired"], ["updated_at", "2026-02-23 18:20:31.414889"], ["id", 1]]
+  [1m[36mTRANSACTION (0.0ms)[0m  [1m[35mRELEASE SAVEPOINT active_record_1[0m
+  [1m[36mPay::Purchasekit::Subscription Load (0.0ms)[0m  [1m[34mSELECT "pay_subscriptions".* FROM "pay_subscriptions" WHERE "pay_subscriptions"."type" = ? AND "pay_subscriptions"."id" = ? LIMIT ?[0m  [["type", "Pay::Purchasekit::Subscription"], ["id", 1], ["LIMIT", 1]]
+  [1m[36mTRANSACTION (0.0ms)[0m  [1m[31mROLLBACK TRANSACTION[0m
+  [1m[36mTRANSACTION (0.0ms)[0m  [1m[36mBEGIN deferred TRANSACTION[0m
+-------------------------------------------------------------------------------------------------
+PurchaseKit::Pay::Webhooks::SubscriptionExpiredTest: test_handles_missing_subscription_gracefully
+-------------------------------------------------------------------------------------------------
+  [1m[36mPay::Customer Load (0.0ms)[0m  [1m[34mSELECT "pay_customers".* FROM "pay_customers" WHERE "pay_customers"."id" = ? LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  [1m[36mPay::Subscription Load (0.0ms)[0m  [1m[34mSELECT "pay_subscriptions".* FROM "pay_subscriptions" WHERE "pay_subscriptions"."id" = ? LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  [1m[36mPay::Subscription Load (0.0ms)[0m  [1m[34mSELECT "pay_subscriptions".* FROM "pay_subscriptions" WHERE "pay_subscriptions"."processor_id" = ? LIMIT ?[0m  [["processor_id", "sub_nonexistent"], ["LIMIT", 1]]
+  [1m[36mTRANSACTION (0.0ms)[0m  [1m[31mROLLBACK TRANSACTION[0m
+  [1m[36mTRANSACTION (0.0ms)[0m  [1m[36mBEGIN deferred TRANSACTION[0m
+------------------------------------------------------------------------
+PurchaseKit::Pay::WebhookTest: test_queue_skips_unregistered_event_types
+------------------------------------------------------------------------
+  [1m[36mPay::Webhook Count (0.0ms)[0m  [1m[34mSELECT COUNT(*) FROM "pay_webhooks"[0m
+  [1m[36mCACHE Pay::Webhook Count (0.0ms)[0m  [1m[34mSELECT COUNT(*) FROM "pay_webhooks"[0m
+  [1m[36mTRANSACTION (0.0ms)[0m  [1m[31mROLLBACK TRANSACTION[0m
+  [1m[36mTRANSACTION (0.0ms)[0m  [1m[36mBEGIN deferred TRANSACTION[0m
+---------------------------------------------------------------------------------
+PurchaseKit::Pay::WebhookTest: test_queue_creates_webhook_record_and_enqueues_job
+---------------------------------------------------------------------------------
+  [1m[36mPay::Webhook Count (0.0ms)[0m  [1m[34mSELECT COUNT(*) FROM "pay_webhooks"[0m
+  [1m[36mTRANSACTION (0.0ms)[0m  [1m[35mSAVEPOINT active_record_1[0m
+  [1m[36mPay::Webhook Create (0.1ms)[0m  [1m[32mINSERT INTO "pay_webhooks" ("created_at", "event", "event_type", "processor", "updated_at") VALUES (?, ?, ?, ?, ?) RETURNING "id"[0m  [["created_at", "2026-02-23 18:20:31.424124"], ["event", "{\"type\":\"subscription.created\",\"customer_id\":1}"], ["event_type", "subscription.created"], ["processor", "purchasekit"], ["updated_at", "2026-02-23 18:20:31.424124"]]
+  [1m[36mTRANSACTION (0.0ms)[0m  [1m[35mRELEASE SAVEPOINT active_record_1[0m
+[ActiveJob] Enqueued PurchaseKit::Pay::Webhook::ProcessWebhookJob (Job ID: eddba340-3633-4b52-86ca-cd5704b14ed4) to Test(default) with arguments: 1
+  [1m[36mPay::Webhook Count (0.0ms)[0m  [1m[34mSELECT COUNT(*) FROM "pay_webhooks"[0m
+  [1m[36mPay::Webhook Load (0.0ms)[0m  [1m[34mSELECT "pay_webhooks".* FROM "pay_webhooks" ORDER BY "pay_webhooks"."id" DESC LIMIT ?[0m  [["LIMIT", 1]]
+  [1m[36mTRANSACTION (0.0ms)[0m  [1m[31mROLLBACK TRANSACTION[0m
+  [1m[36mTRANSACTION (0.0ms)[0m  [1m[36mBEGIN deferred TRANSACTION[0m
+-------------------------------------------------------------------
+PurchaseKit::WebhooksControllerTest: test_rejects_missing_signature
+-------------------------------------------------------------------
+  [1m[36mPay::Customer Load (0.0ms)[0m  [1m[34mSELECT "pay_customers".* FROM "pay_customers" WHERE "pay_customers"."id" = ? LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  [1m[36mPay::Webhook Count (0.0ms)[0m  [1m[34mSELECT COUNT(*) FROM "pay_webhooks"[0m
+Started POST "/purchasekit/webhooks" for 127.0.0.1 at 2026-02-23 10:20:31 -0800
+Processing by PurchaseKit::WebhooksController#create as HTML
+  Parameters: {"type"=>"subscription.created", "customer_id"=>1, "subscription_id"=>"sub_123", "store"=>"apple", "store_product_id"=>"com.example.annual", "subscription_name"=>"pro", "status"=>"active", "current_period_start"=>"2026-02-23T18:20:31Z", "current_period_end"=>"2027-02-23T18:20:31Z", "success_path"=>"/dashboard", "webhook"=>{"type"=>"subscription.created", "customer_id"=>1, "subscription_id"=>"sub_123", "store"=>"apple", "store_product_id"=>"com.example.annual", "subscription_name"=>"pro", "status"=>"active", "current_period_start"=>"2026-02-23T18:20:31Z", "current_period_end"=>"2027-02-23T18:20:31Z", "success_path"=>"/dashboard"}}
+[PurchaseKit] Webhook signature error: Missing signature
+Completed 400 Bad Request in 0ms (ActiveRecord: 0.0ms (0 queries, 0 cached) | GC: 0.0ms)
+  [1m[36mCACHE Pay::Webhook Count (0.0ms)[0m  [1m[34mSELECT COUNT(*) FROM "pay_webhooks"[0m
+  [1m[36mTRANSACTION (0.0ms)[0m  [1m[31mROLLBACK TRANSACTION[0m
+  [1m[36mTRANSACTION (0.0ms)[0m  [1m[36mBEGIN deferred TRANSACTION[0m
+-----------------------------------------------------------------
+PurchaseKit::WebhooksControllerTest: test_accepts_valid_signature
+-----------------------------------------------------------------
+  [1m[36mPay::Customer Load (0.0ms)[0m  [1m[34mSELECT "pay_customers".* FROM "pay_customers" WHERE "pay_customers"."id" = ? LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  [1m[36mPay::Webhook Count (0.0ms)[0m  [1m[34mSELECT COUNT(*) FROM "pay_webhooks"[0m
+Started POST "/purchasekit/webhooks" for 127.0.0.1 at 2026-02-23 10:20:31 -0800
+Processing by PurchaseKit::WebhooksController#create as HTML
+  Parameters: {"type"=>"subscription.created", "customer_id"=>1, "subscription_id"=>"sub_123", "store"=>"apple", "store_product_id"=>"com.example.annual", "subscription_name"=>"pro", "status"=>"active", "current_period_start"=>"2026-02-23T18:20:31Z", "current_period_end"=>"2027-02-23T18:20:31Z", "success_path"=>"/dashboard", "webhook"=>{"type"=>"subscription.created", "customer_id"=>1, "subscription_id"=>"sub_123", "store"=>"apple", "store_product_id"=>"com.example.annual", "subscription_name"=>"pro", "status"=>"active", "current_period_start"=>"2026-02-23T18:20:31Z", "current_period_end"=>"2027-02-23T18:20:31Z", "success_path"=>"/dashboard"}}
+  [1m[36mTRANSACTION (0.0ms)[0m  [1m[35mSAVEPOINT active_record_1[0m
+  [1m[36mPay::Webhook Create (0.1ms)[0m  [1m[32mINSERT INTO "pay_webhooks" ("created_at", "event", "event_type", "processor", "updated_at") VALUES (?, ?, ?, ?, ?) RETURNING "id"[0m  [["created_at", "2026-02-23 18:20:31.465204"], ["event", "{\"type\":\"subscription.created\",\"customer_id\":1,\"subscription_id\":\"sub_123\",\"store\":\"apple\",\"store_product_id\":\"com.example.annual\",\"subscription_name\":\"pro\",\"status\":\"active\",\"current_period_start\":\"2026-02-23T18:20:31Z\",\"current_period_end\":\"2027-02-23T18:20:31Z\",\"success_path\":\"/dashboard\"}"], ["event_type", "subscription.created"], ["processor", "purchasekit"], ["updated_at", "2026-02-23 18:20:31.465204"]]
+  [1m[36mTRANSACTION (0.0ms)[0m  [1m[35mRELEASE SAVEPOINT active_record_1[0m
+[ActiveJob] Enqueued PurchaseKit::Pay::Webhook::ProcessWebhookJob (Job ID: 7d9aab88-f1e3-4d1b-9a8e-9add04e93b2a) to Test(default) with arguments: 1
+Completed 200 OK in 1ms (ActiveRecord: 0.1ms (1 query, 0 cached) | GC: 0.0ms)
+  [1m[36mPay::Webhook Count (0.0ms)[0m  [1m[34mSELECT COUNT(*) FROM "pay_webhooks"[0m
+  [1m[36mTRANSACTION (0.0ms)[0m  [1m[31mROLLBACK TRANSACTION[0m
+  [1m[36mTRANSACTION (0.0ms)[0m  [1m[36mBEGIN deferred TRANSACTION[0m
+------------------------------------------------------------------------------------------------------------
+PurchaseKit::WebhooksControllerTest: test_accepts_request_without_signature_when_secret_blank_in_development
+------------------------------------------------------------------------------------------------------------
+  [1m[36mPay::Customer Load (0.0ms)[0m  [1m[34mSELECT "pay_customers".* FROM "pay_customers" WHERE "pay_customers"."id" = ? LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  [1m[36mPay::Webhook Count (0.0ms)[0m  [1m[34mSELECT COUNT(*) FROM "pay_webhooks"[0m
+Started POST "/purchasekit/webhooks" for 127.0.0.1 at 2026-02-23 10:20:31 -0800
+Processing by PurchaseKit::WebhooksController#create as HTML
+  Parameters: {"type"=>"subscription.created", "customer_id"=>1, "subscription_id"=>"sub_123", "store"=>"apple", "store_product_id"=>"com.example.annual", "subscription_name"=>"pro", "status"=>"active", "current_period_start"=>"2026-02-23T18:20:31Z", "current_period_end"=>"2027-02-23T18:20:31Z", "success_path"=>"/dashboard", "webhook"=>{"type"=>"subscription.created", "customer_id"=>1, "subscription_id"=>"sub_123", "store"=>"apple", "store_product_id"=>"com.example.annual", "subscription_name"=>"pro", "status"=>"active", "current_period_start"=>"2026-02-23T18:20:31Z", "current_period_end"=>"2027-02-23T18:20:31Z", "success_path"=>"/dashboard"}}
+  [1m[36mTRANSACTION (0.0ms)[0m  [1m[35mSAVEPOINT active_record_1[0m
+  [1m[36mPay::Webhook Create (0.1ms)[0m  [1m[32mINSERT INTO "pay_webhooks" ("created_at", "event", "event_type", "processor", "updated_at") VALUES (?, ?, ?, ?, ?) RETURNING "id"[0m  [["created_at", "2026-02-23 18:20:31.466793"], ["event", "{\"type\":\"subscription.created\",\"customer_id\":1,\"subscription_id\":\"sub_123\",\"store\":\"apple\",\"store_product_id\":\"com.example.annual\",\"subscription_name\":\"pro\",\"status\":\"active\",\"current_period_start\":\"2026-02-23T18:20:31Z\",\"current_period_end\":\"2027-02-23T18:20:31Z\",\"success_path\":\"/dashboard\"}"], ["event_type", "subscription.created"], ["processor", "purchasekit"], ["updated_at", "2026-02-23 18:20:31.466793"]]
+  [1m[36mTRANSACTION (0.0ms)[0m  [1m[35mRELEASE SAVEPOINT active_record_1[0m
+[ActiveJob] Enqueued PurchaseKit::Pay::Webhook::ProcessWebhookJob (Job ID: 6e0e1aaa-1f32-4a44-a17f-612a7e3fd785) to Test(default) with arguments: 1
+Completed 200 OK in 0ms (ActiveRecord: 0.1ms (1 query, 0 cached) | GC: 0.0ms)
+  [1m[36mPay::Webhook Count (0.0ms)[0m  [1m[34mSELECT COUNT(*) FROM "pay_webhooks"[0m
+  [1m[36mTRANSACTION (0.0ms)[0m  [1m[31mROLLBACK TRANSACTION[0m
+  [1m[36mTRANSACTION (0.0ms)[0m  [1m[36mBEGIN deferred TRANSACTION[0m
+--------------------------------------------------------------------------
+PurchaseKit::WebhooksControllerTest: test_ignores_unregistered_event_types
+--------------------------------------------------------------------------
+  [1m[36mPay::Customer Load (0.0ms)[0m  [1m[34mSELECT "pay_customers".* FROM "pay_customers" WHERE "pay_customers"."id" = ? LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  [1m[36mPay::Webhook Count (0.0ms)[0m  [1m[34mSELECT COUNT(*) FROM "pay_webhooks"[0m
+Started POST "/purchasekit/webhooks" for 127.0.0.1 at 2026-02-23 10:20:31 -0800
+Processing by PurchaseKit::WebhooksController#create as HTML
+  Parameters: {"type"=>"unknown.event", "webhook"=>{"type"=>"unknown.event"}}
+Completed 200 OK in 0ms (ActiveRecord: 0.0ms (0 queries, 0 cached) | GC: 0.0ms)
+  [1m[36mCACHE Pay::Webhook Count (0.0ms)[0m  [1m[34mSELECT COUNT(*) FROM "pay_webhooks"[0m
+  [1m[36mTRANSACTION (0.0ms)[0m  [1m[31mROLLBACK TRANSACTION[0m
+  [1m[36mTRANSACTION (0.0ms)[0m  [1m[36mBEGIN deferred TRANSACTION[0m
+----------------------------------------------------------------------------------------
+PurchaseKit::WebhooksControllerTest: test_creates_webhook_record_with_correct_attributes
+----------------------------------------------------------------------------------------
+  [1m[36mPay::Customer Load (0.0ms)[0m  [1m[34mSELECT "pay_customers".* FROM "pay_customers" WHERE "pay_customers"."id" = ? LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+Started POST "/purchasekit/webhooks" for 127.0.0.1 at 2026-02-23 10:20:31 -0800
+Processing by PurchaseKit::WebhooksController#create as HTML
+  Parameters: {"type"=>"subscription.created", "customer_id"=>1, "subscription_id"=>"sub_123", "store"=>"apple", "store_product_id"=>"com.example.annual", "subscription_name"=>"pro", "status"=>"active", "current_period_start"=>"2026-02-23T18:20:31Z", "current_period_end"=>"2027-02-23T18:20:31Z", "success_path"=>"/dashboard", "webhook"=>{"type"=>"subscription.created", "customer_id"=>1, "subscription_id"=>"sub_123", "store"=>"apple", "store_product_id"=>"com.example.annual", "subscription_name"=>"pro", "status"=>"active", "current_period_start"=>"2026-02-23T18:20:31Z", "current_period_end"=>"2027-02-23T18:20:31Z", "success_path"=>"/dashboard"}}
+  [1m[36mTRANSACTION (0.0ms)[0m  [1m[35mSAVEPOINT active_record_1[0m
+  [1m[36mPay::Webhook Create (0.1ms)[0m  [1m[32mINSERT INTO "pay_webhooks" ("created_at", "event", "event_type", "processor", "updated_at") VALUES (?, ?, ?, ?, ?) RETURNING "id"[0m  [["created_at", "2026-02-23 18:20:31.469058"], ["event", "{\"type\":\"subscription.created\",\"customer_id\":1,\"subscription_id\":\"sub_123\",\"store\":\"apple\",\"store_product_id\":\"com.example.annual\",\"subscription_name\":\"pro\",\"status\":\"active\",\"current_period_start\":\"2026-02-23T18:20:31Z\",\"current_period_end\":\"2027-02-23T18:20:31Z\",\"success_path\":\"/dashboard\"}"], ["event_type", "subscription.created"], ["processor", "purchasekit"], ["updated_at", "2026-02-23 18:20:31.469058"]]
+  [1m[36mTRANSACTION (0.0ms)[0m  [1m[35mRELEASE SAVEPOINT active_record_1[0m
+[ActiveJob] Enqueued PurchaseKit::Pay::Webhook::ProcessWebhookJob (Job ID: d3dd72c2-1b51-4074-96ab-e2c0f2015f86) to Test(default) with arguments: 1
+Completed 200 OK in 0ms (ActiveRecord: 0.1ms (1 query, 0 cached) | GC: 0.0ms)
+  [1m[36mPay::Webhook Load (0.0ms)[0m  [1m[34mSELECT "pay_webhooks".* FROM "pay_webhooks" ORDER BY "pay_webhooks"."id" DESC LIMIT ?[0m  [["LIMIT", 1]]
+  [1m[36mTRANSACTION (0.0ms)[0m  [1m[31mROLLBACK TRANSACTION[0m
+  [1m[36mTRANSACTION (0.0ms)[0m  [1m[36mBEGIN deferred TRANSACTION[0m
+-----------------------------------------------------------------------------------------
+PurchaseKit::WebhooksControllerTest: test_rejects_request_when_secret_blank_in_production
+-----------------------------------------------------------------------------------------
+  [1m[36mPay::Customer Load (0.0ms)[0m  [1m[34mSELECT "pay_customers".* FROM "pay_customers" WHERE "pay_customers"."id" = ? LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  [1m[36mPay::Webhook Count (0.0ms)[0m  [1m[34mSELECT COUNT(*) FROM "pay_webhooks"[0m
+Started POST "/purchasekit/webhooks" for 127.0.0.1 at 2026-02-23 10:20:31 -0800
+Processing by PurchaseKit::WebhooksController#create as HTML
+  Parameters: {"type"=>"subscription.created", "customer_id"=>1, "subscription_id"=>"sub_123", "store"=>"apple", "store_product_id"=>"com.example.annual", "subscription_name"=>"pro", "status"=>"active", "current_period_start"=>"2026-02-23T18:20:31Z", "current_period_end"=>"2027-02-23T18:20:31Z", "success_path"=>"/dashboard", "webhook"=>{"type"=>"subscription.created", "customer_id"=>1, "subscription_id"=>"sub_123", "store"=>"apple", "store_product_id"=>"com.example.annual", "subscription_name"=>"pro", "status"=>"active", "current_period_start"=>"2026-02-23T18:20:31Z", "current_period_end"=>"2027-02-23T18:20:31Z", "success_path"=>"/dashboard"}}
+[PurchaseKit] Webhook signature error: webhook_secret must be configured
+Completed 400 Bad Request in 0ms (ActiveRecord: 0.0ms (0 queries, 0 cached) | GC: 0.0ms)
+  [1m[36mCACHE Pay::Webhook Count (0.0ms)[0m  [1m[34mSELECT COUNT(*) FROM "pay_webhooks"[0m
+  [1m[36mTRANSACTION (0.0ms)[0m  [1m[31mROLLBACK TRANSACTION[0m
+  [1m[36mTRANSACTION (0.0ms)[0m  [1m[36mBEGIN deferred TRANSACTION[0m
+-------------------------------------------------------------------
+PurchaseKit::WebhooksControllerTest: test_rejects_invalid_signature
+-------------------------------------------------------------------
+  [1m[36mPay::Customer Load (0.0ms)[0m  [1m[34mSELECT "pay_customers".* FROM "pay_customers" WHERE "pay_customers"."id" = ? LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  [1m[36mPay::Webhook Count (0.0ms)[0m  [1m[34mSELECT COUNT(*) FROM "pay_webhooks"[0m
+Started POST "/purchasekit/webhooks" for 127.0.0.1 at 2026-02-23 10:20:31 -0800
+Processing by PurchaseKit::WebhooksController#create as HTML
+  Parameters: {"type"=>"subscription.created", "customer_id"=>1, "subscription_id"=>"sub_123", "store"=>"apple", "store_product_id"=>"com.example.annual", "subscription_name"=>"pro", "status"=>"active", "current_period_start"=>"2026-02-23T18:20:31Z", "current_period_end"=>"2027-02-23T18:20:31Z", "success_path"=>"/dashboard", "webhook"=>{"type"=>"subscription.created", "customer_id"=>1, "subscription_id"=>"sub_123", "store"=>"apple", "store_product_id"=>"com.example.annual", "subscription_name"=>"pro", "status"=>"active", "current_period_start"=>"2026-02-23T18:20:31Z", "current_period_end"=>"2027-02-23T18:20:31Z", "success_path"=>"/dashboard"}}
+[PurchaseKit] Webhook signature error: Invalid signature
+Completed 400 Bad Request in 0ms (ActiveRecord: 0.0ms (0 queries, 0 cached) | GC: 0.0ms)
+  [1m[36mCACHE Pay::Webhook Count (0.0ms)[0m  [1m[34mSELECT COUNT(*) FROM "pay_webhooks"[0m
+  [1m[36mTRANSACTION (0.0ms)[0m  [1m[31mROLLBACK TRANSACTION[0m
+  [1m[36mTRANSACTION (0.0ms)[0m  [1m[36mBEGIN deferred TRANSACTION[0m
+----------------------------------------------------------------------------
+PurchaseKit::PaywallHelperTest: test_price_renders_span_with_data_attributes
+----------------------------------------------------------------------------
+  [1m[36mTRANSACTION (0.0ms)[0m  [1m[31mROLLBACK TRANSACTION[0m
+  [1m[36mTRANSACTION (0.0ms)[0m  [1m[36mBEGIN deferred TRANSACTION[0m
+--------------------------------------------------------------------------------------
+PurchaseKit::PaywallHelperTest: test_purchasekit_paywall_defaults_success_path_to_root
+--------------------------------------------------------------------------------------
+  [1m[36mTRANSACTION (0.0ms)[0m  [1m[31mROLLBACK TRANSACTION[0m
+  [1m[36mTRANSACTION (0.0ms)[0m  [1m[36mBEGIN deferred TRANSACTION[0m
+------------------------------------------------------------------------
+PurchaseKit::PaywallHelperTest: test_plan_option_not_selected_by_default
+------------------------------------------------------------------------
+  [1m[36mTRANSACTION (0.0ms)[0m  [1m[31mROLLBACK TRANSACTION[0m
+  [1m[36mTRANSACTION (0.0ms)[0m  [1m[36mBEGIN deferred TRANSACTION[0m
+-----------------------------------------------------
+PurchaseKit::PaywallHelperTest: test_restore_with_url
+-----------------------------------------------------
+  [1m[36mTRANSACTION (0.0ms)[0m  [1m[31mROLLBACK TRANSACTION[0m
+  [1m[36mTRANSACTION (0.0ms)[0m  [1m[36mBEGIN deferred TRANSACTION[0m
+---------------------------------------------------------------
+PurchaseKit::PaywallHelperTest: test_restore_renders_button_tag
+---------------------------------------------------------------
+  [1m[36mTRANSACTION (0.0ms)[0m  [1m[31mROLLBACK TRANSACTION[0m
+  [1m[36mTRANSACTION (0.0ms)[0m  [1m[36mBEGIN deferred TRANSACTION[0m
+-----------------------------------------------------------
+PurchaseKit::PaywallHelperTest: test_restore_custom_options
+-----------------------------------------------------------
+  [1m[36mTRANSACTION (0.0ms)[0m  [1m[31mROLLBACK TRANSACTION[0m
+  [1m[36mTRANSACTION (0.0ms)[0m  [1m[36mBEGIN deferred TRANSACTION[0m
+---------------------------------------------------------------------------------------------
+PurchaseKit::PaywallHelperTest: test_purchasekit_paywall_renders_form_with_correct_attributes
+---------------------------------------------------------------------------------------------
+  [1m[36mTRANSACTION (0.0ms)[0m  [1m[31mROLLBACK TRANSACTION[0m
+  [1m[36mTRANSACTION (0.0ms)[0m  [1m[36mBEGIN deferred TRANSACTION[0m
+--------------------------------------------------------------------------------
+PurchaseKit::PaywallHelperTest: test_restore_without_url_has_no_restore_url_data
+--------------------------------------------------------------------------------
+  [1m[36mTRANSACTION (0.0ms)[0m  [1m[31mROLLBACK TRANSACTION[0m
+  [1m[36mTRANSACTION (0.0ms)[0m  [1m[36mBEGIN deferred TRANSACTION[0m
+-------------------------------------------------------------------------------
+PurchaseKit::PaywallHelperTest: test_purchasekit_paywall_includes_hidden_fields
+-------------------------------------------------------------------------------
+  [1m[36mTRANSACTION (0.0ms)[0m  [1m[31mROLLBACK TRANSACTION[0m
+  [1m[36mTRANSACTION (0.0ms)[0m  [1m[36mBEGIN deferred TRANSACTION[0m
+------------------------------------------------------------------------
+PurchaseKit::PaywallHelperTest: test_plan_option_renders_radio_and_label
+------------------------------------------------------------------------
+  [1m[36mTRANSACTION (0.0ms)[0m  [1m[31mROLLBACK TRANSACTION[0m
+  [1m[36mTRANSACTION (0.0ms)[0m  [1m[36mBEGIN deferred TRANSACTION[0m
+-----------------------------------------------------------------------------------
+PurchaseKit::PaywallHelperTest: test_purchasekit_paywall_raises_without_customer_id
+-----------------------------------------------------------------------------------
+  [1m[36mTRANSACTION (0.0ms)[0m  [1m[31mROLLBACK TRANSACTION[0m
+  [1m[36mTRANSACTION (0.0ms)[0m  [1m[36mBEGIN deferred TRANSACTION[0m
+---------------------------------------------------------------------------
+PurchaseKit::PaywallHelperTest: test_price_raises_outside_plan_option_block
+---------------------------------------------------------------------------
+  [1m[36mTRANSACTION (0.0ms)[0m  [1m[31mROLLBACK TRANSACTION[0m
+  [1m[36mTRANSACTION (0.0ms)[0m  [1m[36mBEGIN deferred TRANSACTION[0m
+------------------------------------------------------------------------
+PurchaseKit::PaywallHelperTest: test_restore_has_correct_data_attributes
+------------------------------------------------------------------------
+  [1m[36mTRANSACTION (0.0ms)[0m  [1m[31mROLLBACK TRANSACTION[0m
+  [1m[36mTRANSACTION (0.0ms)[0m  [1m[36mBEGIN deferred TRANSACTION[0m
+---------------------------------------------------------
+PurchaseKit::PaywallHelperTest: test_restore_default_text
+---------------------------------------------------------
+  [1m[36mTRANSACTION (0.0ms)[0m  [1m[31mROLLBACK TRANSACTION[0m
+  [1m[36mTRANSACTION (0.0ms)[0m  [1m[36mBEGIN deferred TRANSACTION[0m
+----------------------------------------------------------------------------------------
+PurchaseKit::PaywallHelperTest: test_submit_renders_disabled_button_with_data_attributes
+----------------------------------------------------------------------------------------
+  [1m[36mTRANSACTION (0.0ms)[0m  [1m[31mROLLBACK TRANSACTION[0m
+  [1m[36mTRANSACTION (0.0ms)[0m  [1m[36mBEGIN deferred TRANSACTION[0m
+----------------------------------------------------------------------
+PurchaseKit::PaywallHelperTest: test_price_with_custom_loading_content
+----------------------------------------------------------------------
+  [1m[36mTRANSACTION (0.0ms)[0m  [1m[31mROLLBACK TRANSACTION[0m
+  [1m[36mTRANSACTION (0.0ms)[0m  [1m[36mBEGIN deferred TRANSACTION[0m
+-------------------------------------------------------------------------------------
+PurchaseKit::PurchasesControllerTest: test_create_handles_subscription_required_error
+-------------------------------------------------------------------------------------
+  [1m[36mPay::Customer Load (0.1ms)[0m  [1m[34mSELECT "pay_customers".* FROM "pay_customers" WHERE "pay_customers"."id" = ? LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+Started POST "/purchasekit/purchases" for 127.0.0.1 at 2026-02-23 10:20:31 -0800
+Processing by PurchaseKit::PurchasesController#create as TURBO_STREAM
+  Parameters: {"customer_id"=>"1", "product_id"=>"prod_TEST123", "success_path"=>"/dashboard", "environment"=>"production"}
+rescue_from handled PurchaseKit::SubscriptionRequiredError (Subscription required for production purchases) - /Users/joemasilotti/workspace/projects/purchasekit/gem/lib/purchasekit/purchase/intent/remote.rb:26:in `create'
+  Rendered /Users/joemasilotti/workspace/projects/purchasekit/gem/app/views/purchase_kit/purchases/_error.html.erb (Duration: 0.2ms | GC: 0.0ms)
+Completed 200 OK in 7ms (Views: 0.0ms | ActiveRecord: 0.0ms (0 queries, 0 cached) | GC: 0.1ms)
+  [1m[36mTRANSACTION (0.0ms)[0m  [1m[31mROLLBACK TRANSACTION[0m
+  [1m[36mTRANSACTION (0.0ms)[0m  [1m[36mBEGIN deferred TRANSACTION[0m
+---------------------------------------------------------------------------------------
+PurchaseKit::PurchasesControllerTest: test_create_returns_turbo_stream_with_intent_data
+---------------------------------------------------------------------------------------
+  [1m[36mPay::Customer Load (0.0ms)[0m  [1m[34mSELECT "pay_customers".* FROM "pay_customers" WHERE "pay_customers"."id" = ? LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+Started POST "/purchasekit/purchases" for 127.0.0.1 at 2026-02-23 10:20:31 -0800
+Processing by PurchaseKit::PurchasesController#create as TURBO_STREAM
+  Parameters: {"customer_id"=>"1", "product_id"=>"prod_TEST123", "success_path"=>"/dashboard", "environment"=>"sandbox"}
+  Rendered /Users/joemasilotti/workspace/projects/purchasekit/gem/app/views/purchase_kit/purchases/_intent.html.erb (Duration: 0.1ms | GC: 0.0ms)
+Completed 200 OK in 1ms (Views: 0.0ms | ActiveRecord: 0.0ms (0 queries, 0 cached) | GC: 0.0ms)
+  [1m[36mTRANSACTION (0.0ms)[0m  [1m[31mROLLBACK TRANSACTION[0m
+  [1m[36mTRANSACTION (0.0ms)[0m  [1m[36mBEGIN deferred TRANSACTION[0m
+---------------------------------------------------------------------------
+PurchaseKit::PurchasesControllerTest: test_create_handles_not_found_product
+---------------------------------------------------------------------------
+  [1m[36mPay::Customer Load (0.0ms)[0m  [1m[34mSELECT "pay_customers".* FROM "pay_customers" WHERE "pay_customers"."id" = ? LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+Started POST "/purchasekit/purchases" for 127.0.0.1 at 2026-02-23 10:20:31 -0800
+Processing by PurchaseKit::PurchasesController#create as TURBO_STREAM
+  Parameters: {"customer_id"=>"1", "product_id"=>"prod_MISSING", "success_path"=>"/dashboard", "environment"=>"sandbox"}
+rescue_from handled PurchaseKit::NotFoundError (App or product not found) - /Users/joemasilotti/workspace/projects/purchasekit/gem/lib/purchasekit/purchase/intent/remote.rb:28:in `create'
+  Rendered /Users/joemasilotti/workspace/projects/purchasekit/gem/app/views/purchase_kit/purchases/_error.html.erb (Duration: 0.0ms | GC: 0.0ms)
+Completed 200 OK in 1ms (Views: 0.0ms | ActiveRecord: 0.0ms (0 queries, 0 cached) | GC: 0.3ms)
+  [1m[36mTRANSACTION (0.0ms)[0m  [1m[31mROLLBACK TRANSACTION[0m
+  [1m[36mTRANSACTION (0.0ms)[0m  [1m[36mBEGIN deferred TRANSACTION[0m
+-------------------------------------------------------------------------------------
+PurchaseKit::Pay::Webhooks::SubscriptionCreatedTest: test_stores_google_store_in_data
+-------------------------------------------------------------------------------------
+  [1m[36mPay::Customer Load (0.0ms)[0m  [1m[34mSELECT "pay_customers".* FROM "pay_customers" WHERE "pay_customers"."id" = ? LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  [1m[36mCACHE Pay::Customer Load (0.0ms)[0m  [1m[34mSELECT "pay_customers".* FROM "pay_customers" WHERE "pay_customers"."id" = ? LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  [1m[36mPay::Purchasekit::Subscription Load (0.1ms)[0m  [1m[34mSELECT "pay_subscriptions".* FROM "pay_subscriptions" WHERE "pay_subscriptions"."type" = ? AND "pay_subscriptions"."customer_id" = ? AND "pay_subscriptions"."processor_id" = ? LIMIT ?[0m  [["type", "Pay::Purchasekit::Subscription"], ["customer_id", 1], ["processor_id", "sub_google123"], ["LIMIT", 1]]
+  [1m[36mTRANSACTION (0.0ms)[0m  [1m[35mSAVEPOINT active_record_1[0m
+  [1m[36mPay::Subscription Exists? (0.1ms)[0m  [1m[34mSELECT 1 AS one FROM "pay_subscriptions" WHERE "pay_subscriptions"."processor_id" = ? AND "pay_subscriptions"."customer_id" = ? LIMIT ?[0m  [["processor_id", "sub_google123"], ["customer_id", 1], ["LIMIT", 1]]
+  [1m[36mPay::Purchasekit::Subscription Create (0.1ms)[0m  [1m[32mINSERT INTO "pay_subscriptions" ("application_fee_percent", "created_at", "current_period_end", "current_period_start", "customer_id", "data", "ends_at", "metadata", "metered", "name", "object", "pause_behavior", "pause_resumes_at", "pause_starts_at", "payment_method_id", "processor_id", "processor_plan", "quantity", "status", "stripe_account", "trial_ends_at", "type", "updated_at") VALUES (?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?) RETURNING "id"[0m  [["application_fee_percent", nil], ["created_at", "2026-02-23 18:20:31.508964"], ["current_period_end", "2027-02-23 18:20:31"], ["current_period_start", "2026-02-23 18:20:31"], ["customer_id", 1], ["data", "{\"store\":\"google\"}"], ["ends_at", nil], ["metadata", nil], ["metered", nil], ["name", "pro"], ["object", nil], ["pause_behavior", nil], ["pause_resumes_at", nil], ["pause_starts_at", nil], ["payment_method_id", nil], ["processor_id", "sub_google123"], ["processor_plan", "annual_subscription"], ["quantity", 1], ["status", "active"], ["stripe_account", nil], ["trial_ends_at", nil], ["type", "Pay::Purchasekit::Subscription"], ["updated_at", "2026-02-23 18:20:31.508964"]]
+  [1m[36mTRANSACTION (0.0ms)[0m  [1m[35mRELEASE SAVEPOINT active_record_1[0m
+  [1m[36mPay::Subscription Load (0.1ms)[0m  [1m[34mSELECT "pay_subscriptions".* FROM "pay_subscriptions" WHERE "pay_subscriptions"."customer_id" = ? AND "pay_subscriptions"."processor_id" = ? LIMIT ?[0m  [["customer_id", 1], ["processor_id", "sub_google123"], ["LIMIT", 1]]
+  [1m[36mTRANSACTION (0.0ms)[0m  [1m[31mROLLBACK TRANSACTION[0m
+  [1m[36mTRANSACTION (0.0ms)[0m  [1m[36mBEGIN deferred TRANSACTION[0m
+-------------------------------------------------------------------------------------------------------
+PurchaseKit::Pay::Webhooks::SubscriptionCreatedTest: test_subscription_methods_raise_appropriate_errors
+-------------------------------------------------------------------------------------------------------
+  [1m[36mPay::Customer Load (0.0ms)[0m  [1m[34mSELECT "pay_customers".* FROM "pay_customers" WHERE "pay_customers"."id" = ? LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  [1m[36mCACHE Pay::Customer Load (0.0ms)[0m  [1m[34mSELECT "pay_customers".* FROM "pay_customers" WHERE "pay_customers"."id" = ? LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  [1m[36mPay::Purchasekit::Subscription Load (0.0ms)[0m  [1m[34mSELECT "pay_subscriptions".* FROM "pay_subscriptions" WHERE "pay_subscriptions"."type" = ? AND "pay_subscriptions"."customer_id" = ? AND "pay_subscriptions"."processor_id" = ? LIMIT ?[0m  [["type", "Pay::Purchasekit::Subscription"], ["customer_id", 1], ["processor_id", "sub_sti_test"], ["LIMIT", 1]]
+  [1m[36mTRANSACTION (0.0ms)[0m  [1m[35mSAVEPOINT active_record_1[0m
+  [1m[36mPay::Subscription Exists? (0.1ms)[0m  [1m[34mSELECT 1 AS one FROM "pay_subscriptions" WHERE "pay_subscriptions"."processor_id" = ? AND "pay_subscriptions"."customer_id" = ? LIMIT ?[0m  [["processor_id", "sub_sti_test"], ["customer_id", 1], ["LIMIT", 1]]
+  [1m[36mPay::Purchasekit::Subscription Create (0.1ms)[0m  [1m[32mINSERT INTO "pay_subscriptions" ("application_fee_percent", "created_at", "current_period_end", "current_period_start", "customer_id", "data", "ends_at", "metadata", "metered", "name", "object", "pause_behavior", "pause_resumes_at", "pause_starts_at", "payment_method_id", "processor_id", "processor_plan", "quantity", "status", "stripe_account", "trial_ends_at", "type", "updated_at") VALUES (?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?) RETURNING "id"[0m  [["application_fee_percent", nil], ["created_at", "2026-02-23 18:20:31.514124"], ["current_period_end", "2027-02-23 18:20:31"], ["current_period_start", "2026-02-23 18:20:31"], ["customer_id", 1], ["data", "{\"store\":\"apple\"}"], ["ends_at", nil], ["metadata", nil], ["metered", nil], ["name", "pro"], ["object", nil], ["pause_behavior", nil], ["pause_resumes_at", nil], ["pause_starts_at", nil], ["payment_method_id", nil], ["processor_id", "sub_sti_test"], ["processor_plan", "com.example.annual"], ["quantity", 1], ["status", "active"], ["stripe_account", nil], ["trial_ends_at", nil], ["type", "Pay::Purchasekit::Subscription"], ["updated_at", "2026-02-23 18:20:31.514124"]]
+  [1m[36mTRANSACTION (0.0ms)[0m  [1m[35mRELEASE SAVEPOINT active_record_1[0m
+  [1m[36mPay::Subscription Load (0.0ms)[0m  [1m[34mSELECT "pay_subscriptions".* FROM "pay_subscriptions" WHERE "pay_subscriptions"."processor_id" = ? LIMIT ?[0m  [["processor_id", "sub_sti_test"], ["LIMIT", 1]]
+  [1m[36mTRANSACTION (0.0ms)[0m  [1m[31mROLLBACK TRANSACTION[0m
+  [1m[36mTRANSACTION (0.0ms)[0m  [1m[36mBEGIN deferred TRANSACTION[0m
+---------------------------------------------------------------------------------------------------------
+PurchaseKit::Pay::Webhooks::SubscriptionCreatedTest: test_updates_existing_subscription_without_broadcast
+---------------------------------------------------------------------------------------------------------
+  [1m[36mPay::Customer Load (0.0ms)[0m  [1m[34mSELECT "pay_customers".* FROM "pay_customers" WHERE "pay_customers"."id" = ? LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  [1m[36mPay::Subscription Load (0.0ms)[0m  [1m[34mSELECT "pay_subscriptions".* FROM "pay_subscriptions" WHERE "pay_subscriptions"."id" = ? LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  [1m[36mCACHE Pay::Customer Load (0.0ms)[0m  [1m[34mSELECT "pay_customers".* FROM "pay_customers" WHERE "pay_customers"."id" = ? LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  [1m[36mPay::Purchasekit::Subscription Load (0.0ms)[0m  [1m[34mSELECT "pay_subscriptions".* FROM "pay_subscriptions" WHERE "pay_subscriptions"."type" = ? AND "pay_subscriptions"."customer_id" = ? AND "pay_subscriptions"."processor_id" = ? LIMIT ?[0m  [["type", "Pay::Purchasekit::Subscription"], ["customer_id", 1], ["processor_id", "sub_existing"], ["LIMIT", 1]]
+  [1m[36mTRANSACTION (0.0ms)[0m  [1m[35mSAVEPOINT active_record_1[0m
+  [1m[36mPay::Subscription Exists? (0.1ms)[0m  [1m[34mSELECT 1 AS one FROM "pay_subscriptions" WHERE "pay_subscriptions"."processor_id" = ? AND "pay_subscriptions"."id" != ? AND "pay_subscriptions"."customer_id" = ? LIMIT ?[0m  [["processor_id", "sub_existing"], ["id", 1], ["customer_id", 1], ["LIMIT", 1]]
+  [1m[36mPay::Purchasekit::Subscription Update (0.0ms)[0m  [1m[33mUPDATE "pay_subscriptions" SET "current_period_start" = ?, "data" = ?, "processor_plan" = ?, "updated_at" = ? WHERE "pay_subscriptions"."id" = ?[0m  [["current_period_start", "2026-02-23 18:20:31"], ["data", "{\"store\":\"apple\"}"], ["processor_plan", "com.example.monthly"], ["updated_at", "2026-02-23 18:20:31.515805"], ["id", 1]]
+  [1m[36mTRANSACTION (0.0ms)[0m  [1m[35mRELEASE SAVEPOINT active_record_1[0m
+  [1m[36mPay::Purchasekit::Subscription Load (0.0ms)[0m  [1m[34mSELECT "pay_subscriptions".* FROM "pay_subscriptions" WHERE "pay_subscriptions"."type" = ? AND "pay_subscriptions"."id" = ? LIMIT ?[0m  [["type", "Pay::Purchasekit::Subscription"], ["id", 1], ["LIMIT", 1]]
+  [1m[36mTRANSACTION (0.0ms)[0m  [1m[31mROLLBACK TRANSACTION[0m
+  [1m[36mTRANSACTION (0.0ms)[0m  [1m[36mBEGIN deferred TRANSACTION[0m
+----------------------------------------------------------------------------------------------------------
+PurchaseKit::Pay::Webhooks::SubscriptionCreatedTest: test_creates_new_subscription_and_broadcasts_redirect
+----------------------------------------------------------------------------------------------------------
+  [1m[36mPay::Customer Load (0.0ms)[0m  [1m[34mSELECT "pay_customers".* FROM "pay_customers" WHERE "pay_customers"."id" = ? LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  [1m[36mCACHE Pay::Customer Load (0.0ms)[0m  [1m[34mSELECT "pay_customers".* FROM "pay_customers" WHERE "pay_customers"."id" = ? LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  [1m[36mPay::Purchasekit::Subscription Load (0.0ms)[0m  [1m[34mSELECT "pay_subscriptions".* FROM "pay_subscriptions" WHERE "pay_subscriptions"."type" = ? AND "pay_subscriptions"."customer_id" = ? AND "pay_subscriptions"."processor_id" = ? LIMIT ?[0m  [["type", "Pay::Purchasekit::Subscription"], ["customer_id", 1], ["processor_id", "sub_new123"], ["LIMIT", 1]]
+  [1m[36mTRANSACTION (0.0ms)[0m  [1m[35mSAVEPOINT active_record_1[0m
+  [1m[36mPay::Subscription Exists? (0.0ms)[0m  [1m[34mSELECT 1 AS one FROM "pay_subscriptions" WHERE "pay_subscriptions"."processor_id" = ? AND "pay_subscriptions"."customer_id" = ? LIMIT ?[0m  [["processor_id", "sub_new123"], ["customer_id", 1], ["LIMIT", 1]]
+  [1m[36mPay::Purchasekit::Subscription Create (0.1ms)[0m  [1m[32mINSERT INTO "pay_subscriptions" ("application_fee_percent", "created_at", "current_period_end", "current_period_start", "customer_id", "data", "ends_at", "metadata", "metered", "name", "object", "pause_behavior", "pause_resumes_at", "pause_starts_at", "payment_method_id", "processor_id", "processor_plan", "quantity", "status", "stripe_account", "trial_ends_at", "type", "updated_at") VALUES (?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?) RETURNING "id"[0m  [["application_fee_percent", nil], ["created_at", "2026-02-23 18:20:31.517236"], ["current_period_end", "2027-02-23 18:20:31"], ["current_period_start", "2026-02-23 18:20:31"], ["customer_id", 1], ["data", "{\"store\":\"apple\"}"], ["ends_at", nil], ["metadata", nil], ["metered", nil], ["name", "pro"], ["object", nil], ["pause_behavior", nil], ["pause_resumes_at", nil], ["pause_starts_at", nil], ["payment_method_id", nil], ["processor_id", "sub_new123"], ["processor_plan", "com.example.annual"], ["quantity", 1], ["status", "active"], ["stripe_account", nil], ["trial_ends_at", nil], ["type", "Pay::Purchasekit::Subscription"], ["updated_at", "2026-02-23 18:20:31.517236"]]
+  [1m[36mTRANSACTION (0.0ms)[0m  [1m[35mRELEASE SAVEPOINT active_record_1[0m
+  [1m[36mPay::Subscription Load (0.0ms)[0m  [1m[34mSELECT "pay_subscriptions".* FROM "pay_subscriptions" WHERE "pay_subscriptions"."customer_id" = ? AND "pay_subscriptions"."processor_id" = ? LIMIT ?[0m  [["customer_id", 1], ["processor_id", "sub_new123"], ["LIMIT", 1]]
+  [1m[36mTRANSACTION (0.0ms)[0m  [1m[31mROLLBACK TRANSACTION[0m
+  [1m[36mTRANSACTION (0.0ms)[0m  [1m[36mBEGIN deferred TRANSACTION[0m
+------------------------------------------------------------------------------------------------------
+PurchaseKit::Pay::Webhooks::SubscriptionUpdatedTest: test_does_not_broadcast_when_success_path_missing
+------------------------------------------------------------------------------------------------------
+  [1m[36mPay::Customer Load (0.0ms)[0m  [1m[34mSELECT "pay_customers".* FROM "pay_customers" WHERE "pay_customers"."id" = ? LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  [1m[36mPay::Subscription Load (0.0ms)[0m  [1m[34mSELECT "pay_subscriptions".* FROM "pay_subscriptions" WHERE "pay_subscriptions"."id" = ? LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  [1m[36mPay::Subscription Load (0.0ms)[0m  [1m[34mSELECT "pay_subscriptions".* FROM "pay_subscriptions" WHERE "pay_subscriptions"."processor_id" = ? LIMIT ?[0m  [["processor_id", "sub_existing"], ["LIMIT", 1]]
+  [1m[36mTRANSACTION (0.0ms)[0m  [1m[35mSAVEPOINT active_record_1[0m
+  [1m[36mPay::Subscription Exists? (0.1ms)[0m  [1m[34mSELECT 1 AS one FROM "pay_subscriptions" WHERE "pay_subscriptions"."processor_id" = ? AND "pay_subscriptions"."id" != ? AND "pay_subscriptions"."customer_id" = ? LIMIT ?[0m  [["processor_id", "sub_existing"], ["id", 1], ["customer_id", 1], ["LIMIT", 1]]
+  [1m[36mPay::Purchasekit::Subscription Update (0.0ms)[0m  [1m[33mUPDATE "pay_subscriptions" SET "current_period_start" = ?, "processor_plan" = ?, "updated_at" = ? WHERE "pay_subscriptions"."id" = ?[0m  [["current_period_start", "2026-02-23 18:20:31"], ["processor_plan", "com.example.monthly"], ["updated_at", "2026-02-23 18:20:31.528830"], ["id", 1]]
+  [1m[36mTRANSACTION (0.0ms)[0m  [1m[35mRELEASE SAVEPOINT active_record_1[0m
+  [1m[36mTRANSACTION (0.0ms)[0m  [1m[31mROLLBACK TRANSACTION[0m
+  [1m[36mTRANSACTION (0.0ms)[0m  [1m[36mBEGIN deferred TRANSACTION[0m
+-------------------------------------------------------------------------------------------------
+PurchaseKit::Pay::Webhooks::SubscriptionUpdatedTest: test_handles_missing_subscription_gracefully
+-------------------------------------------------------------------------------------------------
+  [1m[36mPay::Customer Load (0.0ms)[0m  [1m[34mSELECT "pay_customers".* FROM "pay_customers" WHERE "pay_customers"."id" = ? LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  [1m[36mPay::Subscription Load (0.0ms)[0m  [1m[34mSELECT "pay_subscriptions".* FROM "pay_subscriptions" WHERE "pay_subscriptions"."id" = ? LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  [1m[36mPay::Subscription Load (0.0ms)[0m  [1m[34mSELECT "pay_subscriptions".* FROM "pay_subscriptions" WHERE "pay_subscriptions"."processor_id" = ? LIMIT ?[0m  [["processor_id", "sub_nonexistent"], ["LIMIT", 1]]
+  [1m[36mTRANSACTION (0.0ms)[0m  [1m[31mROLLBACK TRANSACTION[0m
+  [1m[36mTRANSACTION (0.0ms)[0m  [1m[36mBEGIN deferred TRANSACTION[0m
+-----------------------------------------------------------------------------------------------
+PurchaseKit::Pay::Webhooks::SubscriptionUpdatedTest: test_updates_subscription_status_and_dates
+-----------------------------------------------------------------------------------------------
+  [1m[36mPay::Customer Load (0.0ms)[0m  [1m[34mSELECT "pay_customers".* FROM "pay_customers" WHERE "pay_customers"."id" = ? LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  [1m[36mPay::Subscription Load (0.0ms)[0m  [1m[34mSELECT "pay_subscriptions".* FROM "pay_subscriptions" WHERE "pay_subscriptions"."id" = ? LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  [1m[36mPay::Subscription Load (0.0ms)[0m  [1m[34mSELECT "pay_subscriptions".* FROM "pay_subscriptions" WHERE "pay_subscriptions"."processor_id" = ? LIMIT ?[0m  [["processor_id", "sub_existing"], ["LIMIT", 1]]
+  [1m[36mTRANSACTION (0.0ms)[0m  [1m[35mSAVEPOINT active_record_1[0m
+  [1m[36mPay::Subscription Exists? (0.1ms)[0m  [1m[34mSELECT 1 AS one FROM "pay_subscriptions" WHERE "pay_subscriptions"."processor_id" = ? AND "pay_subscriptions"."id" != ? AND "pay_subscriptions"."customer_id" = ? LIMIT ?[0m  [["processor_id", "sub_existing"], ["id", 1], ["customer_id", 1], ["LIMIT", 1]]
+  [1m[36mPay::Purchasekit::Subscription Update (0.0ms)[0m  [1m[33mUPDATE "pay_subscriptions" SET "current_period_end" = ?, "current_period_start" = ?, "processor_plan" = ?, "updated_at" = ? WHERE "pay_subscriptions"."id" = ?[0m  [["current_period_end", "2026-04-23 18:20:31"], ["current_period_start", "2026-02-23 18:20:31"], ["processor_plan", "com.example.monthly"], ["updated_at", "2026-02-23 18:20:31.530710"], ["id", 1]]
+  [1m[36mTRANSACTION (0.0ms)[0m  [1m[35mRELEASE SAVEPOINT active_record_1[0m
+  [1m[36mPay::Purchasekit::Subscription Load (0.0ms)[0m  [1m[34mSELECT "pay_subscriptions".* FROM "pay_subscriptions" WHERE "pay_subscriptions"."type" = ? AND "pay_subscriptions"."id" = ? LIMIT ?[0m  [["type", "Pay::Purchasekit::Subscription"], ["id", 1], ["LIMIT", 1]]
+  [1m[36mTRANSACTION (0.0ms)[0m  [1m[31mROLLBACK TRANSACTION[0m
+  [1m[36mTRANSACTION (0.0ms)[0m  [1m[36mBEGIN deferred TRANSACTION[0m
+-------------------------------------------------------------------------------------------------------
+PurchaseKit::Pay::Webhooks::SubscriptionUpdatedTest: test_broadcasts_redirect_when_success_path_present
+-------------------------------------------------------------------------------------------------------
+  [1m[36mPay::Customer Load (0.0ms)[0m  [1m[34mSELECT "pay_customers".* FROM "pay_customers" WHERE "pay_customers"."id" = ? LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  [1m[36mPay::Subscription Load (0.0ms)[0m  [1m[34mSELECT "pay_subscriptions".* FROM "pay_subscriptions" WHERE "pay_subscriptions"."id" = ? LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  [1m[36mPay::Subscription Load (0.0ms)[0m  [1m[34mSELECT "pay_subscriptions".* FROM "pay_subscriptions" WHERE "pay_subscriptions"."processor_id" = ? LIMIT ?[0m  [["processor_id", "sub_existing"], ["LIMIT", 1]]
+  [1m[36mTRANSACTION (0.0ms)[0m  [1m[35mSAVEPOINT active_record_1[0m
+  [1m[36mPay::Subscription Exists? (0.1ms)[0m  [1m[34mSELECT 1 AS one FROM "pay_subscriptions" WHERE "pay_subscriptions"."processor_id" = ? AND "pay_subscriptions"."id" != ? AND "pay_subscriptions"."customer_id" = ? LIMIT ?[0m  [["processor_id", "sub_existing"], ["id", 1], ["customer_id", 1], ["LIMIT", 1]]
+  [1m[36mPay::Purchasekit::Subscription Update (0.0ms)[0m  [1m[33mUPDATE "pay_subscriptions" SET "current_period_start" = ?, "processor_plan" = ?, "updated_at" = ? WHERE "pay_subscriptions"."id" = ?[0m  [["current_period_start", "2026-02-23 18:20:31"], ["processor_plan", "com.example.monthly"], ["updated_at", "2026-02-23 18:20:31.532187"], ["id", 1]]
+  [1m[36mTRANSACTION (0.0ms)[0m  [1m[35mRELEASE SAVEPOINT active_record_1[0m
+  [1m[36mPay::Customer Load (0.0ms)[0m  [1m[34mSELECT "pay_customers".* FROM "pay_customers" WHERE "pay_customers"."id" = ? LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  [1m[36mTRANSACTION (0.0ms)[0m  [1m[31mROLLBACK TRANSACTION[0m
+  [1m[36mActiveRecord::InternalMetadata Load (0.1ms)[0m  [1m[34mSELECT * FROM "ar_internal_metadata" WHERE "ar_internal_metadata"."key" = ? ORDER BY "ar_internal_metadata"."key" ASC LIMIT 1[0m  [[nil, "schema_sha1"]]
+  [1m[36mActiveRecord::SchemaMigration Load (0.0ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+  [1m[36mTRANSACTION (0.0ms)[0m  [1m[36mBEGIN deferred TRANSACTION[0m
+-----------------------------------------------------------
+PurchaseKit::PaywallHelperTest: test_restore_custom_options
+-----------------------------------------------------------
+  [1m[36mTRANSACTION (0.0ms)[0m  [1m[31mROLLBACK TRANSACTION[0m
+  [1m[36mTRANSACTION (0.0ms)[0m  [1m[36mBEGIN deferred TRANSACTION[0m
+--------------------------------------------------------------------------------
+PurchaseKit::PaywallHelperTest: test_restore_without_url_has_no_restore_url_data
+--------------------------------------------------------------------------------
+  [1m[36mTRANSACTION (0.0ms)[0m  [1m[31mROLLBACK TRANSACTION[0m
+  [1m[36mTRANSACTION (0.0ms)[0m  [1m[36mBEGIN deferred TRANSACTION[0m
+--------------------------------------------------------------------------------------
+PurchaseKit::PaywallHelperTest: test_purchasekit_paywall_defaults_success_path_to_root
+--------------------------------------------------------------------------------------
+  [1m[36mTRANSACTION (0.0ms)[0m  [1m[31mROLLBACK TRANSACTION[0m
+  [1m[36mTRANSACTION (0.0ms)[0m  [1m[36mBEGIN deferred TRANSACTION[0m
+------------------------------------------------------------------------
+PurchaseKit::PaywallHelperTest: test_plan_option_renders_radio_and_label
+------------------------------------------------------------------------
+  [1m[36mTRANSACTION (0.0ms)[0m  [1m[31mROLLBACK TRANSACTION[0m
+  [1m[36mTRANSACTION (0.0ms)[0m  [1m[36mBEGIN deferred TRANSACTION[0m
+-------------------------------------------------------------------------------
+PurchaseKit::PaywallHelperTest: test_purchasekit_paywall_includes_hidden_fields
+-------------------------------------------------------------------------------
+  [1m[36mTRANSACTION (0.0ms)[0m  [1m[31mROLLBACK TRANSACTION[0m
+  [1m[36mTRANSACTION (0.0ms)[0m  [1m[36mBEGIN deferred TRANSACTION[0m
+-----------------------------------------------------------------------------------
+PurchaseKit::PaywallHelperTest: test_purchasekit_paywall_raises_without_customer_id
+-----------------------------------------------------------------------------------
+  [1m[36mTRANSACTION (0.0ms)[0m  [1m[31mROLLBACK TRANSACTION[0m
+  [1m[36mTRANSACTION (0.0ms)[0m  [1m[36mBEGIN deferred TRANSACTION[0m
+-----------------------------------------------------
+PurchaseKit::PaywallHelperTest: test_restore_with_url
+-----------------------------------------------------
+  [1m[36mTRANSACTION (0.0ms)[0m  [1m[31mROLLBACK TRANSACTION[0m
+  [1m[36mTRANSACTION (0.0ms)[0m  [1m[36mBEGIN deferred TRANSACTION[0m
+---------------------------------------------------------
+PurchaseKit::PaywallHelperTest: test_restore_default_text
+---------------------------------------------------------
+  [1m[36mTRANSACTION (0.0ms)[0m  [1m[31mROLLBACK TRANSACTION[0m
+  [1m[36mTRANSACTION (0.0ms)[0m  [1m[36mBEGIN deferred TRANSACTION[0m
+------------------------------------------------------------------------
+PurchaseKit::PaywallHelperTest: test_restore_has_correct_data_attributes
+------------------------------------------------------------------------
+  [1m[36mTRANSACTION (0.0ms)[0m  [1m[31mROLLBACK TRANSACTION[0m
+  [1m[36mTRANSACTION (0.0ms)[0m  [1m[36mBEGIN deferred TRANSACTION[0m
+------------------------------------------------------------------------
+PurchaseKit::PaywallHelperTest: test_plan_option_not_selected_by_default
+------------------------------------------------------------------------
+  [1m[36mTRANSACTION (0.0ms)[0m  [1m[31mROLLBACK TRANSACTION[0m
+  [1m[36mTRANSACTION (0.0ms)[0m  [1m[36mBEGIN deferred TRANSACTION[0m
+---------------------------------------------------------------------------
+PurchaseKit::PaywallHelperTest: test_price_raises_outside_plan_option_block
+---------------------------------------------------------------------------
+  [1m[36mTRANSACTION (0.0ms)[0m  [1m[31mROLLBACK TRANSACTION[0m
+  [1m[36mTRANSACTION (0.0ms)[0m  [1m[36mBEGIN deferred TRANSACTION[0m
+----------------------------------------------------------------------
+PurchaseKit::PaywallHelperTest: test_price_with_custom_loading_content
+----------------------------------------------------------------------
+  [1m[36mTRANSACTION (0.0ms)[0m  [1m[31mROLLBACK TRANSACTION[0m
+  [1m[36mTRANSACTION (0.0ms)[0m  [1m[36mBEGIN deferred TRANSACTION[0m
+----------------------------------------------------------------------------------------
+PurchaseKit::PaywallHelperTest: test_submit_renders_disabled_button_with_data_attributes
+----------------------------------------------------------------------------------------
+  [1m[36mTRANSACTION (0.0ms)[0m  [1m[31mROLLBACK TRANSACTION[0m
+  [1m[36mTRANSACTION (0.0ms)[0m  [1m[36mBEGIN deferred TRANSACTION[0m
+---------------------------------------------------------------------------------------------
+PurchaseKit::PaywallHelperTest: test_purchasekit_paywall_renders_form_with_correct_attributes
+---------------------------------------------------------------------------------------------
+  [1m[36mTRANSACTION (0.0ms)[0m  [1m[31mROLLBACK TRANSACTION[0m
+  [1m[36mTRANSACTION (0.0ms)[0m  [1m[36mBEGIN deferred TRANSACTION[0m
+---------------------------------------------------------------
+PurchaseKit::PaywallHelperTest: test_restore_renders_button_tag
+---------------------------------------------------------------
+  [1m[36mTRANSACTION (0.0ms)[0m  [1m[31mROLLBACK TRANSACTION[0m
+  [1m[36mTRANSACTION (0.0ms)[0m  [1m[36mBEGIN deferred TRANSACTION[0m
+----------------------------------------------------------------------------
+PurchaseKit::PaywallHelperTest: test_price_renders_span_with_data_attributes
+----------------------------------------------------------------------------
+  [1m[36mTRANSACTION (0.0ms)[0m  [1m[31mROLLBACK TRANSACTION[0m
+  [1m[36mActiveRecord::InternalMetadata Load (0.1ms)[0m  [1m[34mSELECT * FROM "ar_internal_metadata" WHERE "ar_internal_metadata"."key" = ? ORDER BY "ar_internal_metadata"."key" ASC LIMIT 1[0m  [[nil, "schema_sha1"]]
+  [1m[36mActiveRecord::SchemaMigration Load (0.0ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+  [1m[36mTRANSACTION (0.0ms)[0m  [1m[36mBEGIN deferred TRANSACTION[0m
+--------------------------------------------------------------------------------
+PurchaseKit::PaywallHelperTest: test_restore_without_url_has_no_restore_url_data
+--------------------------------------------------------------------------------
+  [1m[36mTRANSACTION (0.0ms)[0m  [1m[31mROLLBACK TRANSACTION[0m
+  [1m[36mTRANSACTION (0.0ms)[0m  [1m[36mBEGIN deferred TRANSACTION[0m
+----------------------------------------------------------------------------
+PurchaseKit::PaywallHelperTest: test_price_renders_span_with_data_attributes
+----------------------------------------------------------------------------
+  [1m[36mTRANSACTION (0.0ms)[0m  [1m[31mROLLBACK TRANSACTION[0m
+  [1m[36mTRANSACTION (0.1ms)[0m  [1m[36mBEGIN deferred TRANSACTION[0m
+---------------------------------------------------------------------------------------------
+PurchaseKit::PaywallHelperTest: test_purchasekit_paywall_renders_form_with_correct_attributes
+---------------------------------------------------------------------------------------------
+  [1m[36mTRANSACTION (0.0ms)[0m  [1m[31mROLLBACK TRANSACTION[0m
+  [1m[36mTRANSACTION (0.0ms)[0m  [1m[36mBEGIN deferred TRANSACTION[0m
+------------------------------------------------------------------------
+PurchaseKit::PaywallHelperTest: test_plan_option_not_selected_by_default
+------------------------------------------------------------------------
+  [1m[36mTRANSACTION (0.0ms)[0m  [1m[31mROLLBACK TRANSACTION[0m
+  [1m[36mTRANSACTION (0.0ms)[0m  [1m[36mBEGIN deferred TRANSACTION[0m
+-----------------------------------------------------
+PurchaseKit::PaywallHelperTest: test_restore_with_url
+-----------------------------------------------------
+  [1m[36mTRANSACTION (0.0ms)[0m  [1m[31mROLLBACK TRANSACTION[0m
+  [1m[36mTRANSACTION (0.0ms)[0m  [1m[36mBEGIN deferred TRANSACTION[0m
+-----------------------------------------------------------
+PurchaseKit::PaywallHelperTest: test_restore_custom_options
+-----------------------------------------------------------
+  [1m[36mTRANSACTION (0.0ms)[0m  [1m[31mROLLBACK TRANSACTION[0m
+  [1m[36mTRANSACTION (0.0ms)[0m  [1m[36mBEGIN deferred TRANSACTION[0m
+---------------------------------------------------------
+PurchaseKit::PaywallHelperTest: test_restore_default_text
+---------------------------------------------------------
+  [1m[36mTRANSACTION (0.0ms)[0m  [1m[31mROLLBACK TRANSACTION[0m
+  [1m[36mTRANSACTION (0.0ms)[0m  [1m[36mBEGIN deferred TRANSACTION[0m
+----------------------------------------------------------------------
+PurchaseKit::PaywallHelperTest: test_price_with_custom_loading_content
+----------------------------------------------------------------------
+  [1m[36mTRANSACTION (0.0ms)[0m  [1m[31mROLLBACK TRANSACTION[0m
+  [1m[36mTRANSACTION (0.0ms)[0m  [1m[36mBEGIN deferred TRANSACTION[0m
+------------------------------------------------------------------------
+PurchaseKit::PaywallHelperTest: test_plan_option_renders_radio_and_label
+------------------------------------------------------------------------
+  [1m[36mTRANSACTION (0.0ms)[0m  [1m[31mROLLBACK TRANSACTION[0m
+  [1m[36mTRANSACTION (0.0ms)[0m  [1m[36mBEGIN deferred TRANSACTION[0m
+-----------------------------------------------------------------------------------
+PurchaseKit::PaywallHelperTest: test_purchasekit_paywall_raises_without_customer_id
+-----------------------------------------------------------------------------------
+  [1m[36mTRANSACTION (0.0ms)[0m  [1m[31mROLLBACK TRANSACTION[0m
+  [1m[36mTRANSACTION (0.0ms)[0m  [1m[36mBEGIN deferred TRANSACTION[0m
+------------------------------------------------------------------------
+PurchaseKit::PaywallHelperTest: test_restore_has_correct_data_attributes
+------------------------------------------------------------------------
+  [1m[36mTRANSACTION (0.0ms)[0m  [1m[31mROLLBACK TRANSACTION[0m
+  [1m[36mTRANSACTION (0.0ms)[0m  [1m[36mBEGIN deferred TRANSACTION[0m
+----------------------------------------------------------------------------------------
+PurchaseKit::PaywallHelperTest: test_submit_renders_disabled_button_with_data_attributes
+----------------------------------------------------------------------------------------
+  [1m[36mTRANSACTION (0.0ms)[0m  [1m[31mROLLBACK TRANSACTION[0m
+  [1m[36mTRANSACTION (0.0ms)[0m  [1m[36mBEGIN deferred TRANSACTION[0m
+---------------------------------------------------------------
+PurchaseKit::PaywallHelperTest: test_restore_renders_button_tag
+---------------------------------------------------------------
+  [1m[36mTRANSACTION (0.0ms)[0m  [1m[31mROLLBACK TRANSACTION[0m
+  [1m[36mTRANSACTION (0.0ms)[0m  [1m[36mBEGIN deferred TRANSACTION[0m
+--------------------------------------------------------------------------------------
+PurchaseKit::PaywallHelperTest: test_purchasekit_paywall_defaults_success_path_to_root
+--------------------------------------------------------------------------------------
+  [1m[36mTRANSACTION (0.0ms)[0m  [1m[31mROLLBACK TRANSACTION[0m
+  [1m[36mTRANSACTION (0.0ms)[0m  [1m[36mBEGIN deferred TRANSACTION[0m
+---------------------------------------------------------------------------
+PurchaseKit::PaywallHelperTest: test_price_raises_outside_plan_option_block
+---------------------------------------------------------------------------
+  [1m[36mTRANSACTION (0.0ms)[0m  [1m[31mROLLBACK TRANSACTION[0m
+  [1m[36mTRANSACTION (0.0ms)[0m  [1m[36mBEGIN deferred TRANSACTION[0m
+-------------------------------------------------------------------------------
+PurchaseKit::PaywallHelperTest: test_purchasekit_paywall_includes_hidden_fields
+-------------------------------------------------------------------------------
+  [1m[36mTRANSACTION (0.0ms)[0m  [1m[31mROLLBACK TRANSACTION[0m
+  [1m[36mActiveRecord::InternalMetadata Load (0.1ms)[0m  [1m[34mSELECT * FROM "ar_internal_metadata" WHERE "ar_internal_metadata"."key" = ? ORDER BY "ar_internal_metadata"."key" ASC LIMIT 1[0m  [[nil, "schema_sha1"]]
+  [1m[36mActiveRecord::SchemaMigration Load (0.0ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+  [1m[36mTRANSACTION (0.0ms)[0m  [1m[36mBEGIN immediate TRANSACTION[0m
+  [1m[35m (0.1ms)[0m  [1m[35mPRAGMA foreign_keys[0m
+  [1m[35m (0.0ms)[0m  [1m[35mPRAGMA defer_foreign_keys[0m
+  [1m[35m (0.0ms)[0m  [1m[35mPRAGMA defer_foreign_keys = ON[0m
+  [1m[35m (0.0ms)[0m  [1m[35mPRAGMA foreign_keys = OFF[0m
+  [1m[36mFixtures Load (0.1ms)[0m  [1m[31mDELETE FROM "pay_customers";
+DELETE FROM "pay_subscriptions";
+INSERT INTO "pay_customers" ("id", "created_at", "data", "default", "deleted_at", "object", "owner_id", "owner_type", "processor", "processor_id", "stripe_account", "type", "updated_at") VALUES (1, '2026-02-23 18:21:31.011110', NULL, NULL, NULL, NULL, 1, 'User', 'purchasekit', 'cus_test123', NULL, 'Pay::Purchasekit::Customer', '2026-02-23 18:21:31.011110');
+INSERT INTO "pay_subscriptions" ("id", "application_fee_percent", "created_at", "current_period_end", "current_period_start", "customer_id", "data", "ends_at", "metadata", "metered", "name", "object", "pause_behavior", "pause_resumes_at", "pause_starts_at", "payment_method_id", "processor_id", "processor_plan", "quantity", "status", "stripe_account", "trial_ends_at", "type", "updated_at") VALUES (1, NULL, '2026-02-23 18:21:31.012178', '2026-03-23 18:21:31', '2026-01-23 18:21:31', 1, NULL, NULL, NULL, NULL, 'pro', NULL, NULL, NULL, NULL, NULL, 'sub_existing', 'com.example.annual', 1, 'active', NULL, NULL, 'Pay::Purchasekit::Subscription', '2026-02-23 18:21:31.012178')[0m
+  [1m[35m (0.0ms)[0m  [1m[35mPRAGMA defer_foreign_keys = 0[0m
+  [1m[35m (0.0ms)[0m  [1m[35mPRAGMA foreign_keys = 1[0m
+  [1m[36mTRANSACTION (0.5ms)[0m  [1m[36mCOMMIT TRANSACTION[0m
+  [1m[35m (0.0ms)[0m  [1m[35mPRAGMA foreign_key_check[0m
+  [1m[36mTRANSACTION (0.0ms)[0m  [1m[36mBEGIN deferred TRANSACTION[0m
+-------------------------------------------------------------------------------------------------------
+PurchaseKit::Pay::Webhooks::SubscriptionUpdatedTest: test_broadcasts_redirect_when_success_path_present
+-------------------------------------------------------------------------------------------------------
+  [1m[36mPay::Customer Load (0.1ms)[0m  [1m[34mSELECT "pay_customers".* FROM "pay_customers" WHERE "pay_customers"."id" = ? LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  [1m[36mPay::Subscription Load (0.1ms)[0m  [1m[34mSELECT "pay_subscriptions".* FROM "pay_subscriptions" WHERE "pay_subscriptions"."id" = ? LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  [1m[36mPay::Subscription Load (0.3ms)[0m  [1m[34mSELECT "pay_subscriptions".* FROM "pay_subscriptions" WHERE "pay_subscriptions"."processor_id" = ? LIMIT ?[0m  [["processor_id", "sub_existing"], ["LIMIT", 1]]
+  [1m[36mTRANSACTION (0.0ms)[0m  [1m[35mSAVEPOINT active_record_1[0m
+  [1m[36mPay::Subscription Exists? (0.1ms)[0m  [1m[34mSELECT 1 AS one FROM "pay_subscriptions" WHERE "pay_subscriptions"."processor_id" = ? AND "pay_subscriptions"."id" != ? AND "pay_subscriptions"."customer_id" = ? LIMIT ?[0m  [["processor_id", "sub_existing"], ["id", 1], ["customer_id", 1], ["LIMIT", 1]]
+  [1m[36mPay::Purchasekit::Subscription Update (0.0ms)[0m  [1m[33mUPDATE "pay_subscriptions" SET "current_period_start" = ?, "processor_plan" = ?, "updated_at" = ? WHERE "pay_subscriptions"."id" = ?[0m  [["current_period_start", "2026-02-23 18:21:31"], ["processor_plan", "com.example.monthly"], ["updated_at", "2026-02-23 18:21:31.038389"], ["id", 1]]
+  [1m[36mTRANSACTION (0.0ms)[0m  [1m[35mRELEASE SAVEPOINT active_record_1[0m
+  [1m[36mPay::Customer Load (0.0ms)[0m  [1m[34mSELECT "pay_customers".* FROM "pay_customers" WHERE "pay_customers"."id" = ? LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  [1m[36mTRANSACTION (0.0ms)[0m  [1m[31mROLLBACK TRANSACTION[0m
+  [1m[36mTRANSACTION (0.0ms)[0m  [1m[36mBEGIN deferred TRANSACTION[0m
+-------------------------------------------------------------------------------------------------
+PurchaseKit::Pay::Webhooks::SubscriptionUpdatedTest: test_handles_missing_subscription_gracefully
+-------------------------------------------------------------------------------------------------
+  [1m[36mPay::Customer Load (0.0ms)[0m  [1m[34mSELECT "pay_customers".* FROM "pay_customers" WHERE "pay_customers"."id" = ? LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  [1m[36mPay::Subscription Load (0.0ms)[0m  [1m[34mSELECT "pay_subscriptions".* FROM "pay_subscriptions" WHERE "pay_subscriptions"."id" = ? LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  [1m[36mPay::Subscription Load (0.0ms)[0m  [1m[34mSELECT "pay_subscriptions".* FROM "pay_subscriptions" WHERE "pay_subscriptions"."processor_id" = ? LIMIT ?[0m  [["processor_id", "sub_nonexistent"], ["LIMIT", 1]]
+  [1m[36mTRANSACTION (0.0ms)[0m  [1m[31mROLLBACK TRANSACTION[0m
+  [1m[36mTRANSACTION (0.0ms)[0m  [1m[36mBEGIN deferred TRANSACTION[0m
+------------------------------------------------------------------------------------------------------
+PurchaseKit::Pay::Webhooks::SubscriptionUpdatedTest: test_does_not_broadcast_when_success_path_missing
+------------------------------------------------------------------------------------------------------
+  [1m[36mPay::Customer Load (0.0ms)[0m  [1m[34mSELECT "pay_customers".* FROM "pay_customers" WHERE "pay_customers"."id" = ? LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  [1m[36mPay::Subscription Load (0.0ms)[0m  [1m[34mSELECT "pay_subscriptions".* FROM "pay_subscriptions" WHERE "pay_subscriptions"."id" = ? LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  [1m[36mPay::Subscription Load (0.0ms)[0m  [1m[34mSELECT "pay_subscriptions".* FROM "pay_subscriptions" WHERE "pay_subscriptions"."processor_id" = ? LIMIT ?[0m  [["processor_id", "sub_existing"], ["LIMIT", 1]]
+  [1m[36mTRANSACTION (0.0ms)[0m  [1m[35mSAVEPOINT active_record_1[0m
+  [1m[36mPay::Subscription Exists? (0.1ms)[0m  [1m[34mSELECT 1 AS one FROM "pay_subscriptions" WHERE "pay_subscriptions"."processor_id" = ? AND "pay_subscriptions"."id" != ? AND "pay_subscriptions"."customer_id" = ? LIMIT ?[0m  [["processor_id", "sub_existing"], ["id", 1], ["customer_id", 1], ["LIMIT", 1]]
+  [1m[36mPay::Purchasekit::Subscription Update (0.0ms)[0m  [1m[33mUPDATE "pay_subscriptions" SET "current_period_start" = ?, "processor_plan" = ?, "updated_at" = ? WHERE "pay_subscriptions"."id" = ?[0m  [["current_period_start", "2026-02-23 18:21:31"], ["processor_plan", "com.example.monthly"], ["updated_at", "2026-02-23 18:21:31.044506"], ["id", 1]]
+  [1m[36mTRANSACTION (0.0ms)[0m  [1m[35mRELEASE SAVEPOINT active_record_1[0m
+  [1m[36mTRANSACTION (0.0ms)[0m  [1m[31mROLLBACK TRANSACTION[0m
+  [1m[36mTRANSACTION (0.0ms)[0m  [1m[36mBEGIN deferred TRANSACTION[0m
+-----------------------------------------------------------------------------------------------
+PurchaseKit::Pay::Webhooks::SubscriptionUpdatedTest: test_updates_subscription_status_and_dates
+-----------------------------------------------------------------------------------------------
+  [1m[36mPay::Customer Load (0.0ms)[0m  [1m[34mSELECT "pay_customers".* FROM "pay_customers" WHERE "pay_customers"."id" = ? LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  [1m[36mPay::Subscription Load (0.0ms)[0m  [1m[34mSELECT "pay_subscriptions".* FROM "pay_subscriptions" WHERE "pay_subscriptions"."id" = ? LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  [1m[36mPay::Subscription Load (0.0ms)[0m  [1m[34mSELECT "pay_subscriptions".* FROM "pay_subscriptions" WHERE "pay_subscriptions"."processor_id" = ? LIMIT ?[0m  [["processor_id", "sub_existing"], ["LIMIT", 1]]
+  [1m[36mTRANSACTION (0.0ms)[0m  [1m[35mSAVEPOINT active_record_1[0m
+  [1m[36mPay::Subscription Exists? (0.1ms)[0m  [1m[34mSELECT 1 AS one FROM "pay_subscriptions" WHERE "pay_subscriptions"."processor_id" = ? AND "pay_subscriptions"."id" != ? AND "pay_subscriptions"."customer_id" = ? LIMIT ?[0m  [["processor_id", "sub_existing"], ["id", 1], ["customer_id", 1], ["LIMIT", 1]]
+  [1m[36mPay::Purchasekit::Subscription Update (0.0ms)[0m  [1m[33mUPDATE "pay_subscriptions" SET "current_period_end" = ?, "current_period_start" = ?, "processor_plan" = ?, "updated_at" = ? WHERE "pay_subscriptions"."id" = ?[0m  [["current_period_end", "2026-04-23 18:21:31"], ["current_period_start", "2026-02-23 18:21:31"], ["processor_plan", "com.example.monthly"], ["updated_at", "2026-02-23 18:21:31.046722"], ["id", 1]]
+  [1m[36mTRANSACTION (0.0ms)[0m  [1m[35mRELEASE SAVEPOINT active_record_1[0m
+  [1m[36mPay::Purchasekit::Subscription Load (0.4ms)[0m  [1m[34mSELECT "pay_subscriptions".* FROM "pay_subscriptions" WHERE "pay_subscriptions"."type" = ? AND "pay_subscriptions"."id" = ? LIMIT ?[0m  [["type", "Pay::Purchasekit::Subscription"], ["id", 1], ["LIMIT", 1]]
+  [1m[36mTRANSACTION (0.0ms)[0m  [1m[31mROLLBACK TRANSACTION[0m
+  [1m[36mTRANSACTION (0.0ms)[0m  [1m[36mBEGIN deferred TRANSACTION[0m
+----------------------------------------------------------------------------------------------------------
+PurchaseKit::Pay::Webhooks::SubscriptionCreatedTest: test_creates_new_subscription_and_broadcasts_redirect
+----------------------------------------------------------------------------------------------------------
+  [1m[36mPay::Customer Load (0.0ms)[0m  [1m[34mSELECT "pay_customers".* FROM "pay_customers" WHERE "pay_customers"."id" = ? LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  [1m[36mCACHE Pay::Customer Load (0.0ms)[0m  [1m[34mSELECT "pay_customers".* FROM "pay_customers" WHERE "pay_customers"."id" = ? LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  [1m[36mPay::Purchasekit::Subscription Load (0.1ms)[0m  [1m[34mSELECT "pay_subscriptions".* FROM "pay_subscriptions" WHERE "pay_subscriptions"."type" = ? AND "pay_subscriptions"."customer_id" = ? AND "pay_subscriptions"."processor_id" = ? LIMIT ?[0m  [["type", "Pay::Purchasekit::Subscription"], ["customer_id", 1], ["processor_id", "sub_new123"], ["LIMIT", 1]]
+  [1m[36mTRANSACTION (0.0ms)[0m  [1m[35mSAVEPOINT active_record_1[0m
+  [1m[36mPay::Subscription Exists? (0.1ms)[0m  [1m[34mSELECT 1 AS one FROM "pay_subscriptions" WHERE "pay_subscriptions"."processor_id" = ? AND "pay_subscriptions"."customer_id" = ? LIMIT ?[0m  [["processor_id", "sub_new123"], ["customer_id", 1], ["LIMIT", 1]]
+  [1m[36mPay::Purchasekit::Subscription Create (0.1ms)[0m  [1m[32mINSERT INTO "pay_subscriptions" ("application_fee_percent", "created_at", "current_period_end", "current_period_start", "customer_id", "data", "ends_at", "metadata", "metered", "name", "object", "pause_behavior", "pause_resumes_at", "pause_starts_at", "payment_method_id", "processor_id", "processor_plan", "quantity", "status", "stripe_account", "trial_ends_at", "type", "updated_at") VALUES (?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?) RETURNING "id"[0m  [["application_fee_percent", nil], ["created_at", "2026-02-23 18:21:31.053673"], ["current_period_end", "2027-02-23 18:21:31"], ["current_period_start", "2026-02-23 18:21:31"], ["customer_id", 1], ["data", "{\"store\":\"apple\"}"], ["ends_at", nil], ["metadata", nil], ["metered", nil], ["name", "pro"], ["object", nil], ["pause_behavior", nil], ["pause_resumes_at", nil], ["pause_starts_at", nil], ["payment_method_id", nil], ["processor_id", "sub_new123"], ["processor_plan", "com.example.annual"], ["quantity", 1], ["status", "active"], ["stripe_account", nil], ["trial_ends_at", nil], ["type", "Pay::Purchasekit::Subscription"], ["updated_at", "2026-02-23 18:21:31.053673"]]
+  [1m[36mTRANSACTION (0.0ms)[0m  [1m[35mRELEASE SAVEPOINT active_record_1[0m
+  [1m[36mPay::Subscription Load (0.1ms)[0m  [1m[34mSELECT "pay_subscriptions".* FROM "pay_subscriptions" WHERE "pay_subscriptions"."customer_id" = ? AND "pay_subscriptions"."processor_id" = ? LIMIT ?[0m  [["customer_id", 1], ["processor_id", "sub_new123"], ["LIMIT", 1]]
+  [1m[36mTRANSACTION (0.0ms)[0m  [1m[31mROLLBACK TRANSACTION[0m
+  [1m[36mTRANSACTION (0.0ms)[0m  [1m[36mBEGIN deferred TRANSACTION[0m
+-------------------------------------------------------------------------------------------------------
+PurchaseKit::Pay::Webhooks::SubscriptionCreatedTest: test_subscription_methods_raise_appropriate_errors
+-------------------------------------------------------------------------------------------------------
+  [1m[36mPay::Customer Load (0.0ms)[0m  [1m[34mSELECT "pay_customers".* FROM "pay_customers" WHERE "pay_customers"."id" = ? LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  [1m[36mCACHE Pay::Customer Load (0.0ms)[0m  [1m[34mSELECT "pay_customers".* FROM "pay_customers" WHERE "pay_customers"."id" = ? LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  [1m[36mPay::Purchasekit::Subscription Load (0.0ms)[0m  [1m[34mSELECT "pay_subscriptions".* FROM "pay_subscriptions" WHERE "pay_subscriptions"."type" = ? AND "pay_subscriptions"."customer_id" = ? AND "pay_subscriptions"."processor_id" = ? LIMIT ?[0m  [["type", "Pay::Purchasekit::Subscription"], ["customer_id", 1], ["processor_id", "sub_sti_test"], ["LIMIT", 1]]
+  [1m[36mTRANSACTION (0.0ms)[0m  [1m[35mSAVEPOINT active_record_1[0m
+  [1m[36mPay::Subscription Exists? (0.1ms)[0m  [1m[34mSELECT 1 AS one FROM "pay_subscriptions" WHERE "pay_subscriptions"."processor_id" = ? AND "pay_subscriptions"."customer_id" = ? LIMIT ?[0m  [["processor_id", "sub_sti_test"], ["customer_id", 1], ["LIMIT", 1]]
+  [1m[36mPay::Purchasekit::Subscription Create (0.1ms)[0m  [1m[32mINSERT INTO "pay_subscriptions" ("application_fee_percent", "created_at", "current_period_end", "current_period_start", "customer_id", "data", "ends_at", "metadata", "metered", "name", "object", "pause_behavior", "pause_resumes_at", "pause_starts_at", "payment_method_id", "processor_id", "processor_plan", "quantity", "status", "stripe_account", "trial_ends_at", "type", "updated_at") VALUES (?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?) RETURNING "id"[0m  [["application_fee_percent", nil], ["created_at", "2026-02-23 18:21:31.058170"], ["current_period_end", "2027-02-23 18:21:31"], ["current_period_start", "2026-02-23 18:21:31"], ["customer_id", 1], ["data", "{\"store\":\"apple\"}"], ["ends_at", nil], ["metadata", nil], ["metered", nil], ["name", "pro"], ["object", nil], ["pause_behavior", nil], ["pause_resumes_at", nil], ["pause_starts_at", nil], ["payment_method_id", nil], ["processor_id", "sub_sti_test"], ["processor_plan", "com.example.annual"], ["quantity", 1], ["status", "active"], ["stripe_account", nil], ["trial_ends_at", nil], ["type", "Pay::Purchasekit::Subscription"], ["updated_at", "2026-02-23 18:21:31.058170"]]
+  [1m[36mTRANSACTION (0.0ms)[0m  [1m[35mRELEASE SAVEPOINT active_record_1[0m
+  [1m[36mPay::Subscription Load (0.0ms)[0m  [1m[34mSELECT "pay_subscriptions".* FROM "pay_subscriptions" WHERE "pay_subscriptions"."processor_id" = ? LIMIT ?[0m  [["processor_id", "sub_sti_test"], ["LIMIT", 1]]
+  [1m[36mTRANSACTION (0.0ms)[0m  [1m[31mROLLBACK TRANSACTION[0m
+  [1m[36mTRANSACTION (0.0ms)[0m  [1m[36mBEGIN deferred TRANSACTION[0m
+-------------------------------------------------------------------------------------
+PurchaseKit::Pay::Webhooks::SubscriptionCreatedTest: test_stores_google_store_in_data
+-------------------------------------------------------------------------------------
+  [1m[36mPay::Customer Load (0.0ms)[0m  [1m[34mSELECT "pay_customers".* FROM "pay_customers" WHERE "pay_customers"."id" = ? LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  [1m[36mCACHE Pay::Customer Load (0.0ms)[0m  [1m[34mSELECT "pay_customers".* FROM "pay_customers" WHERE "pay_customers"."id" = ? LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  [1m[36mPay::Purchasekit::Subscription Load (0.0ms)[0m  [1m[34mSELECT "pay_subscriptions".* FROM "pay_subscriptions" WHERE "pay_subscriptions"."type" = ? AND "pay_subscriptions"."customer_id" = ? AND "pay_subscriptions"."processor_id" = ? LIMIT ?[0m  [["type", "Pay::Purchasekit::Subscription"], ["customer_id", 1], ["processor_id", "sub_google123"], ["LIMIT", 1]]
+  [1m[36mTRANSACTION (0.0ms)[0m  [1m[35mSAVEPOINT active_record_1[0m
+  [1m[36mPay::Subscription Exists? (0.0ms)[0m  [1m[34mSELECT 1 AS one FROM "pay_subscriptions" WHERE "pay_subscriptions"."processor_id" = ? AND "pay_subscriptions"."customer_id" = ? LIMIT ?[0m  [["processor_id", "sub_google123"], ["customer_id", 1], ["LIMIT", 1]]
+  [1m[36mPay::Purchasekit::Subscription Create (0.0ms)[0m  [1m[32mINSERT INTO "pay_subscriptions" ("application_fee_percent", "created_at", "current_period_end", "current_period_start", "customer_id", "data", "ends_at", "metadata", "metered", "name", "object", "pause_behavior", "pause_resumes_at", "pause_starts_at", "payment_method_id", "processor_id", "processor_plan", "quantity", "status", "stripe_account", "trial_ends_at", "type", "updated_at") VALUES (?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?) RETURNING "id"[0m  [["application_fee_percent", nil], ["created_at", "2026-02-23 18:21:31.059609"], ["current_period_end", "2027-02-23 18:21:31"], ["current_period_start", "2026-02-23 18:21:31"], ["customer_id", 1], ["data", "{\"store\":\"google\"}"], ["ends_at", nil], ["metadata", nil], ["metered", nil], ["name", "pro"], ["object", nil], ["pause_behavior", nil], ["pause_resumes_at", nil], ["pause_starts_at", nil], ["payment_method_id", nil], ["processor_id", "sub_google123"], ["processor_plan", "annual_subscription"], ["quantity", 1], ["status", "active"], ["stripe_account", nil], ["trial_ends_at", nil], ["type", "Pay::Purchasekit::Subscription"], ["updated_at", "2026-02-23 18:21:31.059609"]]
+  [1m[36mTRANSACTION (0.0ms)[0m  [1m[35mRELEASE SAVEPOINT active_record_1[0m
+  [1m[36mPay::Subscription Load (0.0ms)[0m  [1m[34mSELECT "pay_subscriptions".* FROM "pay_subscriptions" WHERE "pay_subscriptions"."customer_id" = ? AND "pay_subscriptions"."processor_id" = ? LIMIT ?[0m  [["customer_id", 1], ["processor_id", "sub_google123"], ["LIMIT", 1]]
+  [1m[36mTRANSACTION (0.0ms)[0m  [1m[31mROLLBACK TRANSACTION[0m
+  [1m[36mTRANSACTION (0.0ms)[0m  [1m[36mBEGIN deferred TRANSACTION[0m
+---------------------------------------------------------------------------------------------------------
+PurchaseKit::Pay::Webhooks::SubscriptionCreatedTest: test_updates_existing_subscription_without_broadcast
+---------------------------------------------------------------------------------------------------------
+  [1m[36mPay::Customer Load (0.0ms)[0m  [1m[34mSELECT "pay_customers".* FROM "pay_customers" WHERE "pay_customers"."id" = ? LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  [1m[36mPay::Subscription Load (0.0ms)[0m  [1m[34mSELECT "pay_subscriptions".* FROM "pay_subscriptions" WHERE "pay_subscriptions"."id" = ? LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  [1m[36mCACHE Pay::Customer Load (0.0ms)[0m  [1m[34mSELECT "pay_customers".* FROM "pay_customers" WHERE "pay_customers"."id" = ? LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  [1m[36mPay::Purchasekit::Subscription Load (0.0ms)[0m  [1m[34mSELECT "pay_subscriptions".* FROM "pay_subscriptions" WHERE "pay_subscriptions"."type" = ? AND "pay_subscriptions"."customer_id" = ? AND "pay_subscriptions"."processor_id" = ? LIMIT ?[0m  [["type", "Pay::Purchasekit::Subscription"], ["customer_id", 1], ["processor_id", "sub_existing"], ["LIMIT", 1]]
+  [1m[36mTRANSACTION (0.0ms)[0m  [1m[35mSAVEPOINT active_record_1[0m
+  [1m[36mPay::Subscription Exists? (0.0ms)[0m  [1m[34mSELECT 1 AS one FROM "pay_subscriptions" WHERE "pay_subscriptions"."processor_id" = ? AND "pay_subscriptions"."id" != ? AND "pay_subscriptions"."customer_id" = ? LIMIT ?[0m  [["processor_id", "sub_existing"], ["id", 1], ["customer_id", 1], ["LIMIT", 1]]
+  [1m[36mPay::Purchasekit::Subscription Update (0.0ms)[0m  [1m[33mUPDATE "pay_subscriptions" SET "current_period_start" = ?, "data" = ?, "processor_plan" = ?, "updated_at" = ? WHERE "pay_subscriptions"."id" = ?[0m  [["current_period_start", "2026-02-23 18:21:31"], ["data", "{\"store\":\"apple\"}"], ["processor_plan", "com.example.monthly"], ["updated_at", "2026-02-23 18:21:31.061228"], ["id", 1]]
+  [1m[36mTRANSACTION (0.0ms)[0m  [1m[35mRELEASE SAVEPOINT active_record_1[0m
+  [1m[36mPay::Purchasekit::Subscription Load (0.0ms)[0m  [1m[34mSELECT "pay_subscriptions".* FROM "pay_subscriptions" WHERE "pay_subscriptions"."type" = ? AND "pay_subscriptions"."id" = ? LIMIT ?[0m  [["type", "Pay::Purchasekit::Subscription"], ["id", 1], ["LIMIT", 1]]
+  [1m[36mTRANSACTION (0.0ms)[0m  [1m[31mROLLBACK TRANSACTION[0m
+  [1m[36mTRANSACTION (0.0ms)[0m  [1m[36mBEGIN deferred TRANSACTION[0m
+------------------------------------------------------------------------------------------------------------
+PurchaseKit::WebhooksControllerTest: test_accepts_request_without_signature_when_secret_blank_in_development
+------------------------------------------------------------------------------------------------------------
+  [1m[36mPay::Customer Load (0.0ms)[0m  [1m[34mSELECT "pay_customers".* FROM "pay_customers" WHERE "pay_customers"."id" = ? LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  [1m[36mPay::Webhook Count (0.0ms)[0m  [1m[34mSELECT COUNT(*) FROM "pay_webhooks"[0m
+Started POST "/purchasekit/webhooks" for 127.0.0.1 at 2026-02-23 10:21:31 -0800
+Processing by PurchaseKit::WebhooksController#create as HTML
+  Parameters: {"type"=>"subscription.created", "customer_id"=>1, "subscription_id"=>"sub_123", "store"=>"apple", "store_product_id"=>"com.example.annual", "subscription_name"=>"pro", "status"=>"active", "current_period_start"=>"2026-02-23T18:21:31Z", "current_period_end"=>"2027-02-23T18:21:31Z", "success_path"=>"/dashboard", "webhook"=>{"type"=>"subscription.created", "customer_id"=>1, "subscription_id"=>"sub_123", "store"=>"apple", "store_product_id"=>"com.example.annual", "subscription_name"=>"pro", "status"=>"active", "current_period_start"=>"2026-02-23T18:21:31Z", "current_period_end"=>"2027-02-23T18:21:31Z", "success_path"=>"/dashboard"}}
+  [1m[36mTRANSACTION (0.0ms)[0m  [1m[35mSAVEPOINT active_record_1[0m
+  [1m[36mPay::Webhook Create (0.1ms)[0m  [1m[32mINSERT INTO "pay_webhooks" ("created_at", "event", "event_type", "processor", "updated_at") VALUES (?, ?, ?, ?, ?) RETURNING "id"[0m  [["created_at", "2026-02-23 18:21:31.077278"], ["event", "{\"type\":\"subscription.created\",\"customer_id\":1,\"subscription_id\":\"sub_123\",\"store\":\"apple\",\"store_product_id\":\"com.example.annual\",\"subscription_name\":\"pro\",\"status\":\"active\",\"current_period_start\":\"2026-02-23T18:21:31Z\",\"current_period_end\":\"2027-02-23T18:21:31Z\",\"success_path\":\"/dashboard\"}"], ["event_type", "subscription.created"], ["processor", "purchasekit"], ["updated_at", "2026-02-23 18:21:31.077278"]]
+  [1m[36mTRANSACTION (0.0ms)[0m  [1m[35mRELEASE SAVEPOINT active_record_1[0m
+[ActiveJob] Enqueued PurchaseKit::Pay::Webhook::ProcessWebhookJob (Job ID: 4ebcbc5d-1f23-4c46-9d45-3098d62bb1ea) to Test(default) with arguments: 1
+Completed 200 OK in 3ms (ActiveRecord: 0.2ms (1 query, 0 cached) | GC: 0.1ms)
+  [1m[36mPay::Webhook Count (0.0ms)[0m  [1m[34mSELECT COUNT(*) FROM "pay_webhooks"[0m
+  [1m[36mTRANSACTION (0.0ms)[0m  [1m[31mROLLBACK TRANSACTION[0m
+  [1m[36mTRANSACTION (0.0ms)[0m  [1m[36mBEGIN deferred TRANSACTION[0m
+-------------------------------------------------------------------
+PurchaseKit::WebhooksControllerTest: test_rejects_invalid_signature
+-------------------------------------------------------------------
+  [1m[36mPay::Customer Load (0.0ms)[0m  [1m[34mSELECT "pay_customers".* FROM "pay_customers" WHERE "pay_customers"."id" = ? LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  [1m[36mPay::Webhook Count (0.0ms)[0m  [1m[34mSELECT COUNT(*) FROM "pay_webhooks"[0m
+Started POST "/purchasekit/webhooks" for 127.0.0.1 at 2026-02-23 10:21:31 -0800
+Processing by PurchaseKit::WebhooksController#create as HTML
+  Parameters: {"type"=>"subscription.created", "customer_id"=>1, "subscription_id"=>"sub_123", "store"=>"apple", "store_product_id"=>"com.example.annual", "subscription_name"=>"pro", "status"=>"active", "current_period_start"=>"2026-02-23T18:21:31Z", "current_period_end"=>"2027-02-23T18:21:31Z", "success_path"=>"/dashboard", "webhook"=>{"type"=>"subscription.created", "customer_id"=>1, "subscription_id"=>"sub_123", "store"=>"apple", "store_product_id"=>"com.example.annual", "subscription_name"=>"pro", "status"=>"active", "current_period_start"=>"2026-02-23T18:21:31Z", "current_period_end"=>"2027-02-23T18:21:31Z", "success_path"=>"/dashboard"}}
+[PurchaseKit] Webhook signature error: Invalid signature
+Completed 400 Bad Request in 0ms (ActiveRecord: 0.0ms (0 queries, 0 cached) | GC: 0.0ms)
+  [1m[36mCACHE Pay::Webhook Count (0.0ms)[0m  [1m[34mSELECT COUNT(*) FROM "pay_webhooks"[0m
+  [1m[36mTRANSACTION (0.0ms)[0m  [1m[31mROLLBACK TRANSACTION[0m
+  [1m[36mTRANSACTION (0.0ms)[0m  [1m[36mBEGIN deferred TRANSACTION[0m
+-----------------------------------------------------------------------------------------
+PurchaseKit::WebhooksControllerTest: test_rejects_request_when_secret_blank_in_production
+-----------------------------------------------------------------------------------------
+  [1m[36mPay::Customer Load (0.0ms)[0m  [1m[34mSELECT "pay_customers".* FROM "pay_customers" WHERE "pay_customers"."id" = ? LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  [1m[36mPay::Webhook Count (0.0ms)[0m  [1m[34mSELECT COUNT(*) FROM "pay_webhooks"[0m
+Started POST "/purchasekit/webhooks" for 127.0.0.1 at 2026-02-23 10:21:31 -0800
+Processing by PurchaseKit::WebhooksController#create as HTML
+  Parameters: {"type"=>"subscription.created", "customer_id"=>1, "subscription_id"=>"sub_123", "store"=>"apple", "store_product_id"=>"com.example.annual", "subscription_name"=>"pro", "status"=>"active", "current_period_start"=>"2026-02-23T18:21:31Z", "current_period_end"=>"2027-02-23T18:21:31Z", "success_path"=>"/dashboard", "webhook"=>{"type"=>"subscription.created", "customer_id"=>1, "subscription_id"=>"sub_123", "store"=>"apple", "store_product_id"=>"com.example.annual", "subscription_name"=>"pro", "status"=>"active", "current_period_start"=>"2026-02-23T18:21:31Z", "current_period_end"=>"2027-02-23T18:21:31Z", "success_path"=>"/dashboard"}}
+[PurchaseKit] Webhook signature error: webhook_secret must be configured
+Completed 400 Bad Request in 0ms (ActiveRecord: 0.0ms (0 queries, 0 cached) | GC: 0.0ms)
+  [1m[36mCACHE Pay::Webhook Count (0.0ms)[0m  [1m[34mSELECT COUNT(*) FROM "pay_webhooks"[0m
+  [1m[36mTRANSACTION (0.0ms)[0m  [1m[31mROLLBACK TRANSACTION[0m
+  [1m[36mTRANSACTION (0.0ms)[0m  [1m[36mBEGIN deferred TRANSACTION[0m
+----------------------------------------------------------------------------------------
+PurchaseKit::WebhooksControllerTest: test_creates_webhook_record_with_correct_attributes
+----------------------------------------------------------------------------------------
+  [1m[36mPay::Customer Load (0.0ms)[0m  [1m[34mSELECT "pay_customers".* FROM "pay_customers" WHERE "pay_customers"."id" = ? LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+Started POST "/purchasekit/webhooks" for 127.0.0.1 at 2026-02-23 10:21:31 -0800
+Processing by PurchaseKit::WebhooksController#create as HTML
+  Parameters: {"type"=>"subscription.created", "customer_id"=>1, "subscription_id"=>"sub_123", "store"=>"apple", "store_product_id"=>"com.example.annual", "subscription_name"=>"pro", "status"=>"active", "current_period_start"=>"2026-02-23T18:21:31Z", "current_period_end"=>"2027-02-23T18:21:31Z", "success_path"=>"/dashboard", "webhook"=>{"type"=>"subscription.created", "customer_id"=>1, "subscription_id"=>"sub_123", "store"=>"apple", "store_product_id"=>"com.example.annual", "subscription_name"=>"pro", "status"=>"active", "current_period_start"=>"2026-02-23T18:21:31Z", "current_period_end"=>"2027-02-23T18:21:31Z", "success_path"=>"/dashboard"}}
+  [1m[36mTRANSACTION (0.0ms)[0m  [1m[35mSAVEPOINT active_record_1[0m
+  [1m[36mPay::Webhook Create (0.1ms)[0m  [1m[32mINSERT INTO "pay_webhooks" ("created_at", "event", "event_type", "processor", "updated_at") VALUES (?, ?, ?, ?, ?) RETURNING "id"[0m  [["created_at", "2026-02-23 18:21:31.083326"], ["event", "{\"type\":\"subscription.created\",\"customer_id\":1,\"subscription_id\":\"sub_123\",\"store\":\"apple\",\"store_product_id\":\"com.example.annual\",\"subscription_name\":\"pro\",\"status\":\"active\",\"current_period_start\":\"2026-02-23T18:21:31Z\",\"current_period_end\":\"2027-02-23T18:21:31Z\",\"success_path\":\"/dashboard\"}"], ["event_type", "subscription.created"], ["processor", "purchasekit"], ["updated_at", "2026-02-23 18:21:31.083326"]]
+  [1m[36mTRANSACTION (0.0ms)[0m  [1m[35mRELEASE SAVEPOINT active_record_1[0m
+[ActiveJob] Enqueued PurchaseKit::Pay::Webhook::ProcessWebhookJob (Job ID: b33352cc-d402-43ab-8db0-363806981a82) to Test(default) with arguments: 1
+Completed 200 OK in 0ms (ActiveRecord: 0.1ms (1 query, 0 cached) | GC: 0.0ms)
+  [1m[36mPay::Webhook Load (0.0ms)[0m  [1m[34mSELECT "pay_webhooks".* FROM "pay_webhooks" ORDER BY "pay_webhooks"."id" DESC LIMIT ?[0m  [["LIMIT", 1]]
+  [1m[36mTRANSACTION (0.0ms)[0m  [1m[31mROLLBACK TRANSACTION[0m
+  [1m[36mTRANSACTION (0.0ms)[0m  [1m[36mBEGIN deferred TRANSACTION[0m
+-----------------------------------------------------------------
+PurchaseKit::WebhooksControllerTest: test_accepts_valid_signature
+-----------------------------------------------------------------
+  [1m[36mPay::Customer Load (0.0ms)[0m  [1m[34mSELECT "pay_customers".* FROM "pay_customers" WHERE "pay_customers"."id" = ? LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  [1m[36mPay::Webhook Count (0.0ms)[0m  [1m[34mSELECT COUNT(*) FROM "pay_webhooks"[0m
+Started POST "/purchasekit/webhooks" for 127.0.0.1 at 2026-02-23 10:21:31 -0800
+Processing by PurchaseKit::WebhooksController#create as HTML
+  Parameters: {"type"=>"subscription.created", "customer_id"=>1, "subscription_id"=>"sub_123", "store"=>"apple", "store_product_id"=>"com.example.annual", "subscription_name"=>"pro", "status"=>"active", "current_period_start"=>"2026-02-23T18:21:31Z", "current_period_end"=>"2027-02-23T18:21:31Z", "success_path"=>"/dashboard", "webhook"=>{"type"=>"subscription.created", "customer_id"=>1, "subscription_id"=>"sub_123", "store"=>"apple", "store_product_id"=>"com.example.annual", "subscription_name"=>"pro", "status"=>"active", "current_period_start"=>"2026-02-23T18:21:31Z", "current_period_end"=>"2027-02-23T18:21:31Z", "success_path"=>"/dashboard"}}
+  [1m[36mTRANSACTION (0.0ms)[0m  [1m[35mSAVEPOINT active_record_1[0m
+  [1m[36mPay::Webhook Create (0.1ms)[0m  [1m[32mINSERT INTO "pay_webhooks" ("created_at", "event", "event_type", "processor", "updated_at") VALUES (?, ?, ?, ?, ?) RETURNING "id"[0m  [["created_at", "2026-02-23 18:21:31.084718"], ["event", "{\"type\":\"subscription.created\",\"customer_id\":1,\"subscription_id\":\"sub_123\",\"store\":\"apple\",\"store_product_id\":\"com.example.annual\",\"subscription_name\":\"pro\",\"status\":\"active\",\"current_period_start\":\"2026-02-23T18:21:31Z\",\"current_period_end\":\"2027-02-23T18:21:31Z\",\"success_path\":\"/dashboard\"}"], ["event_type", "subscription.created"], ["processor", "purchasekit"], ["updated_at", "2026-02-23 18:21:31.084718"]]
+  [1m[36mTRANSACTION (0.0ms)[0m  [1m[35mRELEASE SAVEPOINT active_record_1[0m
+[ActiveJob] Enqueued PurchaseKit::Pay::Webhook::ProcessWebhookJob (Job ID: cdd3bfe9-5219-4014-8fd2-056c1f5dce98) to Test(default) with arguments: 1
+Completed 200 OK in 0ms (ActiveRecord: 0.1ms (1 query, 0 cached) | GC: 0.0ms)
+  [1m[36mPay::Webhook Count (0.0ms)[0m  [1m[34mSELECT COUNT(*) FROM "pay_webhooks"[0m
+  [1m[36mTRANSACTION (0.0ms)[0m  [1m[31mROLLBACK TRANSACTION[0m
+  [1m[36mTRANSACTION (0.0ms)[0m  [1m[36mBEGIN deferred TRANSACTION[0m
+-------------------------------------------------------------------
+PurchaseKit::WebhooksControllerTest: test_rejects_missing_signature
+-------------------------------------------------------------------
+  [1m[36mPay::Customer Load (0.0ms)[0m  [1m[34mSELECT "pay_customers".* FROM "pay_customers" WHERE "pay_customers"."id" = ? LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  [1m[36mPay::Webhook Count (0.0ms)[0m  [1m[34mSELECT COUNT(*) FROM "pay_webhooks"[0m
+Started POST "/purchasekit/webhooks" for 127.0.0.1 at 2026-02-23 10:21:31 -0800
+Processing by PurchaseKit::WebhooksController#create as HTML
+  Parameters: {"type"=>"subscription.created", "customer_id"=>1, "subscription_id"=>"sub_123", "store"=>"apple", "store_product_id"=>"com.example.annual", "subscription_name"=>"pro", "status"=>"active", "current_period_start"=>"2026-02-23T18:21:31Z", "current_period_end"=>"2027-02-23T18:21:31Z", "success_path"=>"/dashboard", "webhook"=>{"type"=>"subscription.created", "customer_id"=>1, "subscription_id"=>"sub_123", "store"=>"apple", "store_product_id"=>"com.example.annual", "subscription_name"=>"pro", "status"=>"active", "current_period_start"=>"2026-02-23T18:21:31Z", "current_period_end"=>"2027-02-23T18:21:31Z", "success_path"=>"/dashboard"}}
+[PurchaseKit] Webhook signature error: Missing signature
+Completed 400 Bad Request in 0ms (ActiveRecord: 0.0ms (0 queries, 0 cached) | GC: 0.0ms)
+  [1m[36mCACHE Pay::Webhook Count (0.0ms)[0m  [1m[34mSELECT COUNT(*) FROM "pay_webhooks"[0m
+  [1m[36mTRANSACTION (0.0ms)[0m  [1m[31mROLLBACK TRANSACTION[0m
+  [1m[36mTRANSACTION (0.0ms)[0m  [1m[36mBEGIN deferred TRANSACTION[0m
+--------------------------------------------------------------------------
+PurchaseKit::WebhooksControllerTest: test_ignores_unregistered_event_types
+--------------------------------------------------------------------------
+  [1m[36mPay::Customer Load (0.0ms)[0m  [1m[34mSELECT "pay_customers".* FROM "pay_customers" WHERE "pay_customers"."id" = ? LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  [1m[36mPay::Webhook Count (0.0ms)[0m  [1m[34mSELECT COUNT(*) FROM "pay_webhooks"[0m
+Started POST "/purchasekit/webhooks" for 127.0.0.1 at 2026-02-23 10:21:31 -0800
+Processing by PurchaseKit::WebhooksController#create as HTML
+  Parameters: {"type"=>"unknown.event", "webhook"=>{"type"=>"unknown.event"}}
+Completed 200 OK in 0ms (ActiveRecord: 0.0ms (0 queries, 0 cached) | GC: 0.0ms)
+  [1m[36mCACHE Pay::Webhook Count (0.0ms)[0m  [1m[34mSELECT COUNT(*) FROM "pay_webhooks"[0m
+  [1m[36mTRANSACTION (0.0ms)[0m  [1m[31mROLLBACK TRANSACTION[0m
+  [1m[36mTRANSACTION (0.0ms)[0m  [1m[36mBEGIN deferred TRANSACTION[0m
+--------------------------------------------------------------------------------
+PurchaseKit::PaywallHelperTest: test_restore_without_url_has_no_restore_url_data
+--------------------------------------------------------------------------------
+  [1m[36mTRANSACTION (0.0ms)[0m  [1m[31mROLLBACK TRANSACTION[0m
+  [1m[36mTRANSACTION (0.0ms)[0m  [1m[36mBEGIN deferred TRANSACTION[0m
+---------------------------------------------------------------
+PurchaseKit::PaywallHelperTest: test_restore_renders_button_tag
+---------------------------------------------------------------
+  [1m[36mTRANSACTION (0.0ms)[0m  [1m[31mROLLBACK TRANSACTION[0m
+  [1m[36mTRANSACTION (0.0ms)[0m  [1m[36mBEGIN deferred TRANSACTION[0m
+--------------------------------------------------------------------------------------
+PurchaseKit::PaywallHelperTest: test_purchasekit_paywall_defaults_success_path_to_root
+--------------------------------------------------------------------------------------
+  [1m[36mTRANSACTION (0.0ms)[0m  [1m[31mROLLBACK TRANSACTION[0m
+  [1m[36mTRANSACTION (0.0ms)[0m  [1m[36mBEGIN deferred TRANSACTION[0m
+---------------------------------------------------------------------------------------------
+PurchaseKit::PaywallHelperTest: test_purchasekit_paywall_renders_form_with_correct_attributes
+---------------------------------------------------------------------------------------------
+  [1m[36mTRANSACTION (0.0ms)[0m  [1m[31mROLLBACK TRANSACTION[0m
+  [1m[36mTRANSACTION (0.0ms)[0m  [1m[36mBEGIN deferred TRANSACTION[0m
+---------------------------------------------------------------------------
+PurchaseKit::PaywallHelperTest: test_price_raises_outside_plan_option_block
+---------------------------------------------------------------------------
+  [1m[36mTRANSACTION (0.0ms)[0m  [1m[31mROLLBACK TRANSACTION[0m
+  [1m[36mTRANSACTION (0.0ms)[0m  [1m[36mBEGIN deferred TRANSACTION[0m
+------------------------------------------------------------------------
+PurchaseKit::PaywallHelperTest: test_plan_option_not_selected_by_default
+------------------------------------------------------------------------
+  [1m[36mTRANSACTION (0.0ms)[0m  [1m[31mROLLBACK TRANSACTION[0m
+  [1m[36mTRANSACTION (0.0ms)[0m  [1m[36mBEGIN deferred TRANSACTION[0m
+------------------------------------------------------------------------
+PurchaseKit::PaywallHelperTest: test_restore_has_correct_data_attributes
+------------------------------------------------------------------------
+  [1m[36mTRANSACTION (0.0ms)[0m  [1m[31mROLLBACK TRANSACTION[0m
+  [1m[36mTRANSACTION (0.0ms)[0m  [1m[36mBEGIN deferred TRANSACTION[0m
+----------------------------------------------------------------------------------------
+PurchaseKit::PaywallHelperTest: test_submit_renders_disabled_button_with_data_attributes
+----------------------------------------------------------------------------------------
+  [1m[36mTRANSACTION (0.0ms)[0m  [1m[31mROLLBACK TRANSACTION[0m
+  [1m[36mTRANSACTION (0.0ms)[0m  [1m[36mBEGIN deferred TRANSACTION[0m
+-----------------------------------------------------------
+PurchaseKit::PaywallHelperTest: test_restore_custom_options
+-----------------------------------------------------------
+  [1m[36mTRANSACTION (0.0ms)[0m  [1m[31mROLLBACK TRANSACTION[0m
+  [1m[36mTRANSACTION (0.0ms)[0m  [1m[36mBEGIN deferred TRANSACTION[0m
+----------------------------------------------------------------------
+PurchaseKit::PaywallHelperTest: test_price_with_custom_loading_content
+----------------------------------------------------------------------
+  [1m[36mTRANSACTION (0.0ms)[0m  [1m[31mROLLBACK TRANSACTION[0m
+  [1m[36mTRANSACTION (0.0ms)[0m  [1m[36mBEGIN deferred TRANSACTION[0m
+-------------------------------------------------------------------------------
+PurchaseKit::PaywallHelperTest: test_purchasekit_paywall_includes_hidden_fields
+-------------------------------------------------------------------------------
+  [1m[36mTRANSACTION (0.0ms)[0m  [1m[31mROLLBACK TRANSACTION[0m
+  [1m[36mTRANSACTION (0.0ms)[0m  [1m[36mBEGIN deferred TRANSACTION[0m
+---------------------------------------------------------
+PurchaseKit::PaywallHelperTest: test_restore_default_text
+---------------------------------------------------------
+  [1m[36mTRANSACTION (0.0ms)[0m  [1m[31mROLLBACK TRANSACTION[0m
+  [1m[36mTRANSACTION (0.0ms)[0m  [1m[36mBEGIN deferred TRANSACTION[0m
+------------------------------------------------------------------------
+PurchaseKit::PaywallHelperTest: test_plan_option_renders_radio_and_label
+------------------------------------------------------------------------
+  [1m[36mTRANSACTION (0.0ms)[0m  [1m[31mROLLBACK TRANSACTION[0m
+  [1m[36mTRANSACTION (0.0ms)[0m  [1m[36mBEGIN deferred TRANSACTION[0m
+-----------------------------------------------------
+PurchaseKit::PaywallHelperTest: test_restore_with_url
+-----------------------------------------------------
+  [1m[36mTRANSACTION (0.0ms)[0m  [1m[31mROLLBACK TRANSACTION[0m
+  [1m[36mTRANSACTION (0.0ms)[0m  [1m[36mBEGIN deferred TRANSACTION[0m
+----------------------------------------------------------------------------
+PurchaseKit::PaywallHelperTest: test_price_renders_span_with_data_attributes
+----------------------------------------------------------------------------
+  [1m[36mTRANSACTION (0.0ms)[0m  [1m[31mROLLBACK TRANSACTION[0m
+  [1m[36mTRANSACTION (0.0ms)[0m  [1m[36mBEGIN deferred TRANSACTION[0m
+-----------------------------------------------------------------------------------
+PurchaseKit::PaywallHelperTest: test_purchasekit_paywall_raises_without_customer_id
+-----------------------------------------------------------------------------------
+  [1m[36mTRANSACTION (0.0ms)[0m  [1m[31mROLLBACK TRANSACTION[0m
+  [1m[36mTRANSACTION (0.0ms)[0m  [1m[36mBEGIN deferred TRANSACTION[0m
+-------------------------------------------------------------------------------------------------
+PurchaseKit::Pay::Webhooks::SubscriptionExpiredTest: test_handles_missing_subscription_gracefully
+-------------------------------------------------------------------------------------------------
+  [1m[36mPay::Customer Load (0.0ms)[0m  [1m[34mSELECT "pay_customers".* FROM "pay_customers" WHERE "pay_customers"."id" = ? LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  [1m[36mPay::Subscription Load (0.0ms)[0m  [1m[34mSELECT "pay_subscriptions".* FROM "pay_subscriptions" WHERE "pay_subscriptions"."id" = ? LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  [1m[36mPay::Subscription Load (0.0ms)[0m  [1m[34mSELECT "pay_subscriptions".* FROM "pay_subscriptions" WHERE "pay_subscriptions"."processor_id" = ? LIMIT ?[0m  [["processor_id", "sub_nonexistent"], ["LIMIT", 1]]
+  [1m[36mTRANSACTION (0.0ms)[0m  [1m[31mROLLBACK TRANSACTION[0m
+  [1m[36mTRANSACTION (0.0ms)[0m  [1m[36mBEGIN deferred TRANSACTION[0m
+---------------------------------------------------------------------------------------------
+PurchaseKit::Pay::Webhooks::SubscriptionExpiredTest: test_sets_subscription_status_to_expired
+---------------------------------------------------------------------------------------------
+  [1m[36mPay::Customer Load (0.0ms)[0m  [1m[34mSELECT "pay_customers".* FROM "pay_customers" WHERE "pay_customers"."id" = ? LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  [1m[36mPay::Subscription Load (0.0ms)[0m  [1m[34mSELECT "pay_subscriptions".* FROM "pay_subscriptions" WHERE "pay_subscriptions"."id" = ? LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  [1m[36mPay::Subscription Load (0.0ms)[0m  [1m[34mSELECT "pay_subscriptions".* FROM "pay_subscriptions" WHERE "pay_subscriptions"."processor_id" = ? LIMIT ?[0m  [["processor_id", "sub_existing"], ["LIMIT", 1]]
+  [1m[36mTRANSACTION (0.0ms)[0m  [1m[35mSAVEPOINT active_record_1[0m
+  [1m[36mPay::Subscription Exists? (0.1ms)[0m  [1m[34mSELECT 1 AS one FROM "pay_subscriptions" WHERE "pay_subscriptions"."processor_id" = ? AND "pay_subscriptions"."id" != ? AND "pay_subscriptions"."customer_id" = ? LIMIT ?[0m  [["processor_id", "sub_existing"], ["id", 1], ["customer_id", 1], ["LIMIT", 1]]
+  [1m[36mPay::Purchasekit::Subscription Update (0.0ms)[0m  [1m[33mUPDATE "pay_subscriptions" SET "status" = ?, "updated_at" = ? WHERE "pay_subscriptions"."id" = ?[0m  [["status", "expired"], ["updated_at", "2026-02-23 18:21:31.111798"], ["id", 1]]
+  [1m[36mTRANSACTION (0.0ms)[0m  [1m[35mRELEASE SAVEPOINT active_record_1[0m
+  [1m[36mPay::Purchasekit::Subscription Load (0.0ms)[0m  [1m[34mSELECT "pay_subscriptions".* FROM "pay_subscriptions" WHERE "pay_subscriptions"."type" = ? AND "pay_subscriptions"."id" = ? LIMIT ?[0m  [["type", "Pay::Purchasekit::Subscription"], ["id", 1], ["LIMIT", 1]]
+  [1m[36mTRANSACTION (0.0ms)[0m  [1m[31mROLLBACK TRANSACTION[0m
+  [1m[36mTRANSACTION (0.0ms)[0m  [1m[36mBEGIN deferred TRANSACTION[0m
+---------------------------------------------------------------------------------
+PurchaseKit::Pay::WebhookTest: test_queue_creates_webhook_record_and_enqueues_job
+---------------------------------------------------------------------------------
+  [1m[36mPay::Webhook Count (0.0ms)[0m  [1m[34mSELECT COUNT(*) FROM "pay_webhooks"[0m
+  [1m[36mTRANSACTION (0.0ms)[0m  [1m[35mSAVEPOINT active_record_1[0m
+  [1m[36mPay::Webhook Create (0.1ms)[0m  [1m[32mINSERT INTO "pay_webhooks" ("created_at", "event", "event_type", "processor", "updated_at") VALUES (?, ?, ?, ?, ?) RETURNING "id"[0m  [["created_at", "2026-02-23 18:21:31.112804"], ["event", "{\"type\":\"subscription.created\",\"customer_id\":1}"], ["event_type", "subscription.created"], ["processor", "purchasekit"], ["updated_at", "2026-02-23 18:21:31.112804"]]
+  [1m[36mTRANSACTION (0.0ms)[0m  [1m[35mRELEASE SAVEPOINT active_record_1[0m
+[ActiveJob] Enqueued PurchaseKit::Pay::Webhook::ProcessWebhookJob (Job ID: 2ac8e919-e92c-4601-91da-1406b27b0460) to Test(default) with arguments: 1
+  [1m[36mPay::Webhook Count (0.0ms)[0m  [1m[34mSELECT COUNT(*) FROM "pay_webhooks"[0m
+  [1m[36mPay::Webhook Load (0.0ms)[0m  [1m[34mSELECT "pay_webhooks".* FROM "pay_webhooks" ORDER BY "pay_webhooks"."id" DESC LIMIT ?[0m  [["LIMIT", 1]]
+  [1m[36mTRANSACTION (0.0ms)[0m  [1m[31mROLLBACK TRANSACTION[0m
+  [1m[36mTRANSACTION (0.0ms)[0m  [1m[36mBEGIN deferred TRANSACTION[0m
+------------------------------------------------------------------------
+PurchaseKit::Pay::WebhookTest: test_queue_skips_unregistered_event_types
+------------------------------------------------------------------------
+  [1m[36mPay::Webhook Count (0.0ms)[0m  [1m[34mSELECT COUNT(*) FROM "pay_webhooks"[0m
+  [1m[36mCACHE Pay::Webhook Count (0.0ms)[0m  [1m[34mSELECT COUNT(*) FROM "pay_webhooks"[0m
+  [1m[36mTRANSACTION (0.0ms)[0m  [1m[31mROLLBACK TRANSACTION[0m
+  [1m[36mTRANSACTION (0.0ms)[0m  [1m[36mBEGIN deferred TRANSACTION[0m
+---------------------------------------------------------------------------
+PurchaseKit::PurchasesControllerTest: test_create_handles_not_found_product
+---------------------------------------------------------------------------
+  [1m[36mPay::Customer Load (0.0ms)[0m  [1m[34mSELECT "pay_customers".* FROM "pay_customers" WHERE "pay_customers"."id" = ? LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+Started POST "/purchasekit/purchases" for 127.0.0.1 at 2026-02-23 10:21:31 -0800
+Processing by PurchaseKit::PurchasesController#create as TURBO_STREAM
+  Parameters: {"customer_id"=>"1", "product_id"=>"prod_MISSING", "success_path"=>"/dashboard", "environment"=>"sandbox"}
+rescue_from handled PurchaseKit::NotFoundError (App or product not found) - /Users/joemasilotti/workspace/projects/purchasekit/gem/lib/purchasekit/purchase/intent/remote.rb:28:in `create'
+  Rendered /Users/joemasilotti/workspace/projects/purchasekit/gem/app/views/purchase_kit/purchases/_error.html.erb (Duration: 0.2ms | GC: 0.0ms)
+Completed 200 OK in 5ms (Views: 0.0ms | ActiveRecord: 0.0ms (0 queries, 0 cached) | GC: 0.0ms)
+  [1m[36mTRANSACTION (0.0ms)[0m  [1m[31mROLLBACK TRANSACTION[0m
+  [1m[36mTRANSACTION (0.0ms)[0m  [1m[36mBEGIN deferred TRANSACTION[0m
+---------------------------------------------------------------------------------------
+PurchaseKit::PurchasesControllerTest: test_create_returns_turbo_stream_with_intent_data
+---------------------------------------------------------------------------------------
+  [1m[36mPay::Customer Load (0.0ms)[0m  [1m[34mSELECT "pay_customers".* FROM "pay_customers" WHERE "pay_customers"."id" = ? LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+Started POST "/purchasekit/purchases" for 127.0.0.1 at 2026-02-23 10:21:31 -0800
+Processing by PurchaseKit::PurchasesController#create as TURBO_STREAM
+  Parameters: {"customer_id"=>"1", "product_id"=>"prod_TEST123", "success_path"=>"/dashboard", "environment"=>"sandbox"}
+  Rendered /Users/joemasilotti/workspace/projects/purchasekit/gem/app/views/purchase_kit/purchases/_intent.html.erb (Duration: 0.1ms | GC: 0.0ms)
+Completed 200 OK in 1ms (Views: 0.0ms | ActiveRecord: 0.0ms (0 queries, 0 cached) | GC: 0.0ms)
+  [1m[36mTRANSACTION (0.0ms)[0m  [1m[31mROLLBACK TRANSACTION[0m
+  [1m[36mTRANSACTION (0.0ms)[0m  [1m[36mBEGIN deferred TRANSACTION[0m
+-------------------------------------------------------------------------------------
+PurchaseKit::PurchasesControllerTest: test_create_handles_subscription_required_error
+-------------------------------------------------------------------------------------
+  [1m[36mPay::Customer Load (0.0ms)[0m  [1m[34mSELECT "pay_customers".* FROM "pay_customers" WHERE "pay_customers"."id" = ? LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+Started POST "/purchasekit/purchases" for 127.0.0.1 at 2026-02-23 10:21:31 -0800
+Processing by PurchaseKit::PurchasesController#create as TURBO_STREAM
+  Parameters: {"customer_id"=>"1", "product_id"=>"prod_TEST123", "success_path"=>"/dashboard", "environment"=>"production"}
+rescue_from handled PurchaseKit::SubscriptionRequiredError (Subscription required for production purchases) - /Users/joemasilotti/workspace/projects/purchasekit/gem/lib/purchasekit/purchase/intent/remote.rb:26:in `create'
+  Rendered /Users/joemasilotti/workspace/projects/purchasekit/gem/app/views/purchase_kit/purchases/_error.html.erb (Duration: 0.0ms | GC: 0.0ms)
+Completed 200 OK in 4ms (Views: 0.0ms | ActiveRecord: 0.0ms (0 queries, 0 cached) | GC: 3.0ms)
+  [1m[36mTRANSACTION (0.0ms)[0m  [1m[31mROLLBACK TRANSACTION[0m
+  [1m[36mTRANSACTION (0.0ms)[0m  [1m[36mBEGIN deferred TRANSACTION[0m
+--------------------------------------------------------------------------------------------------
+PurchaseKit::Pay::Webhooks::SubscriptionCanceledTest: test_handles_missing_subscription_gracefully
+--------------------------------------------------------------------------------------------------
+  [1m[36mPay::Customer Load (0.0ms)[0m  [1m[34mSELECT "pay_customers".* FROM "pay_customers" WHERE "pay_customers"."id" = ? LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  [1m[36mPay::Subscription Load (0.0ms)[0m  [1m[34mSELECT "pay_subscriptions".* FROM "pay_subscriptions" WHERE "pay_subscriptions"."id" = ? LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  [1m[36mPay::Subscription Load (0.0ms)[0m  [1m[34mSELECT "pay_subscriptions".* FROM "pay_subscriptions" WHERE "pay_subscriptions"."processor_id" = ? LIMIT ?[0m  [["processor_id", "sub_nonexistent"], ["LIMIT", 1]]
+  [1m[36mTRANSACTION (0.0ms)[0m  [1m[31mROLLBACK TRANSACTION[0m
+  [1m[36mTRANSACTION (0.0ms)[0m  [1m[36mBEGIN deferred TRANSACTION[0m
+-----------------------------------------------------------------------------------------------
+PurchaseKit::Pay::Webhooks::SubscriptionCanceledTest: test_sets_subscription_status_to_canceled
+-----------------------------------------------------------------------------------------------
+  [1m[36mPay::Customer Load (0.0ms)[0m  [1m[34mSELECT "pay_customers".* FROM "pay_customers" WHERE "pay_customers"."id" = ? LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  [1m[36mPay::Subscription Load (0.0ms)[0m  [1m[34mSELECT "pay_subscriptions".* FROM "pay_subscriptions" WHERE "pay_subscriptions"."id" = ? LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  [1m[36mPay::Subscription Load (0.0ms)[0m  [1m[34mSELECT "pay_subscriptions".* FROM "pay_subscriptions" WHERE "pay_subscriptions"."processor_id" = ? LIMIT ?[0m  [["processor_id", "sub_existing"], ["LIMIT", 1]]
+  [1m[36mTRANSACTION (0.0ms)[0m  [1m[35mSAVEPOINT active_record_1[0m
+  [1m[36mPay::Subscription Exists? (0.1ms)[0m  [1m[34mSELECT 1 AS one FROM "pay_subscriptions" WHERE "pay_subscriptions"."processor_id" = ? AND "pay_subscriptions"."id" != ? AND "pay_subscriptions"."customer_id" = ? LIMIT ?[0m  [["processor_id", "sub_existing"], ["id", 1], ["customer_id", 1], ["LIMIT", 1]]
+  [1m[36mPay::Purchasekit::Subscription Update (0.0ms)[0m  [1m[33mUPDATE "pay_subscriptions" SET "ends_at" = ?, "status" = ?, "updated_at" = ? WHERE "pay_subscriptions"."id" = ?[0m  [["ends_at", "2026-03-23 18:21:31"], ["status", "canceled"], ["updated_at", "2026-02-23 18:21:31.137896"], ["id", 1]]
+  [1m[36mTRANSACTION (0.0ms)[0m  [1m[35mRELEASE SAVEPOINT active_record_1[0m
+  [1m[36mPay::Purchasekit::Subscription Load (0.0ms)[0m  [1m[34mSELECT "pay_subscriptions".* FROM "pay_subscriptions" WHERE "pay_subscriptions"."type" = ? AND "pay_subscriptions"."id" = ? LIMIT ?[0m  [["type", "Pay::Purchasekit::Subscription"], ["id", 1], ["LIMIT", 1]]
+  [1m[36mTRANSACTION (0.0ms)[0m  [1m[31mROLLBACK TRANSACTION[0m
+  [1m[36mActiveRecord::InternalMetadata Load (0.1ms)[0m  [1m[34mSELECT * FROM "ar_internal_metadata" WHERE "ar_internal_metadata"."key" = ? ORDER BY "ar_internal_metadata"."key" ASC LIMIT 1[0m  [[nil, "schema_sha1"]]
+  [1m[36mActiveRecord::SchemaMigration Load (0.0ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+  [1m[36mTRANSACTION (0.0ms)[0m  [1m[36mBEGIN immediate TRANSACTION[0m
+  [1m[35m (0.1ms)[0m  [1m[35mPRAGMA foreign_keys[0m
+  [1m[35m (0.0ms)[0m  [1m[35mPRAGMA defer_foreign_keys[0m
+  [1m[35m (0.0ms)[0m  [1m[35mPRAGMA defer_foreign_keys = ON[0m
+  [1m[35m (0.0ms)[0m  [1m[35mPRAGMA foreign_keys = OFF[0m
+  [1m[36mFixtures Load (0.1ms)[0m  [1m[31mDELETE FROM "pay_customers";
+DELETE FROM "pay_subscriptions";
+INSERT INTO "pay_customers" ("id", "created_at", "data", "default", "deleted_at", "object", "owner_id", "owner_type", "processor", "processor_id", "stripe_account", "type", "updated_at") VALUES (1, '2026-02-23 18:23:22.355442', NULL, NULL, NULL, NULL, 1, 'User', 'purchasekit', 'cus_test123', NULL, 'Pay::Purchasekit::Customer', '2026-02-23 18:23:22.355442');
+INSERT INTO "pay_subscriptions" ("id", "application_fee_percent", "created_at", "current_period_end", "current_period_start", "customer_id", "data", "ends_at", "metadata", "metered", "name", "object", "pause_behavior", "pause_resumes_at", "pause_starts_at", "payment_method_id", "processor_id", "processor_plan", "quantity", "status", "stripe_account", "trial_ends_at", "type", "updated_at") VALUES (1, NULL, '2026-02-23 18:23:22.355493', '2026-03-23 18:23:22', '2026-01-23 18:23:22', 1, NULL, NULL, NULL, NULL, 'pro', NULL, NULL, NULL, NULL, NULL, 'sub_existing', 'com.example.annual', 1, 'active', NULL, NULL, 'Pay::Purchasekit::Subscription', '2026-02-23 18:23:22.355493')[0m
+  [1m[35m (0.0ms)[0m  [1m[35mPRAGMA defer_foreign_keys = 0[0m
+  [1m[35m (0.0ms)[0m  [1m[35mPRAGMA foreign_keys = 1[0m
+  [1m[36mTRANSACTION (0.5ms)[0m  [1m[36mCOMMIT TRANSACTION[0m
+  [1m[35m (0.0ms)[0m  [1m[35mPRAGMA foreign_key_check[0m
+  [1m[36mTRANSACTION (0.0ms)[0m  [1m[36mBEGIN deferred TRANSACTION[0m
+-------------------------------------------------------------------------------------------------------
+PurchaseKit::Pay::Webhooks::SubscriptionUpdatedTest: test_broadcasts_redirect_when_success_path_present
+-------------------------------------------------------------------------------------------------------
+  [1m[36mPay::Customer Load (0.1ms)[0m  [1m[34mSELECT "pay_customers".* FROM "pay_customers" WHERE "pay_customers"."id" = ? LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  [1m[36mPay::Subscription Load (0.1ms)[0m  [1m[34mSELECT "pay_subscriptions".* FROM "pay_subscriptions" WHERE "pay_subscriptions"."id" = ? LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  [1m[36mPay::Subscription Load (0.1ms)[0m  [1m[34mSELECT "pay_subscriptions".* FROM "pay_subscriptions" WHERE "pay_subscriptions"."processor_id" = ? LIMIT ?[0m  [["processor_id", "sub_existing"], ["LIMIT", 1]]
+  [1m[36mTRANSACTION (0.0ms)[0m  [1m[35mSAVEPOINT active_record_1[0m
+  [1m[36mPay::Subscription Exists? (0.2ms)[0m  [1m[34mSELECT 1 AS one FROM "pay_subscriptions" WHERE "pay_subscriptions"."processor_id" = ? AND "pay_subscriptions"."id" != ? AND "pay_subscriptions"."customer_id" = ? LIMIT ?[0m  [["processor_id", "sub_existing"], ["id", 1], ["customer_id", 1], ["LIMIT", 1]]
+  [1m[36mPay::Purchasekit::Subscription Update (0.0ms)[0m  [1m[33mUPDATE "pay_subscriptions" SET "current_period_start" = ?, "processor_plan" = ?, "updated_at" = ? WHERE "pay_subscriptions"."id" = ?[0m  [["current_period_start", "2026-02-23 18:23:22"], ["processor_plan", "com.example.monthly"], ["updated_at", "2026-02-23 18:23:22.378869"], ["id", 1]]
+  [1m[36mTRANSACTION (0.0ms)[0m  [1m[35mRELEASE SAVEPOINT active_record_1[0m
+  [1m[36mPay::Customer Load (0.0ms)[0m  [1m[34mSELECT "pay_customers".* FROM "pay_customers" WHERE "pay_customers"."id" = ? LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  [1m[36mTRANSACTION (0.0ms)[0m  [1m[31mROLLBACK TRANSACTION[0m
+  [1m[36mTRANSACTION (0.0ms)[0m  [1m[36mBEGIN deferred TRANSACTION[0m
+-----------------------------------------------------------------------------------------------
+PurchaseKit::Pay::Webhooks::SubscriptionUpdatedTest: test_updates_subscription_status_and_dates
+-----------------------------------------------------------------------------------------------
+  [1m[36mPay::Customer Load (0.0ms)[0m  [1m[34mSELECT "pay_customers".* FROM "pay_customers" WHERE "pay_customers"."id" = ? LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  [1m[36mPay::Subscription Load (0.2ms)[0m  [1m[34mSELECT "pay_subscriptions".* FROM "pay_subscriptions" WHERE "pay_subscriptions"."id" = ? LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  [1m[36mPay::Subscription Load (0.0ms)[0m  [1m[34mSELECT "pay_subscriptions".* FROM "pay_subscriptions" WHERE "pay_subscriptions"."processor_id" = ? LIMIT ?[0m  [["processor_id", "sub_existing"], ["LIMIT", 1]]
+  [1m[36mTRANSACTION (0.0ms)[0m  [1m[35mSAVEPOINT active_record_1[0m
+  [1m[36mPay::Subscription Exists? (0.1ms)[0m  [1m[34mSELECT 1 AS one FROM "pay_subscriptions" WHERE "pay_subscriptions"."processor_id" = ? AND "pay_subscriptions"."id" != ? AND "pay_subscriptions"."customer_id" = ? LIMIT ?[0m  [["processor_id", "sub_existing"], ["id", 1], ["customer_id", 1], ["LIMIT", 1]]
+  [1m[36mPay::Purchasekit::Subscription Update (0.2ms)[0m  [1m[33mUPDATE "pay_subscriptions" SET "current_period_end" = ?, "current_period_start" = ?, "processor_plan" = ?, "updated_at" = ? WHERE "pay_subscriptions"."id" = ?[0m  [["current_period_end", "2026-04-23 18:23:22"], ["current_period_start", "2026-02-23 18:23:22"], ["processor_plan", "com.example.monthly"], ["updated_at", "2026-02-23 18:23:22.383868"], ["id", 1]]
+  [1m[36mTRANSACTION (0.0ms)[0m  [1m[35mRELEASE SAVEPOINT active_record_1[0m
+  [1m[36mPay::Purchasekit::Subscription Load (0.3ms)[0m  [1m[34mSELECT "pay_subscriptions".* FROM "pay_subscriptions" WHERE "pay_subscriptions"."type" = ? AND "pay_subscriptions"."id" = ? LIMIT ?[0m  [["type", "Pay::Purchasekit::Subscription"], ["id", 1], ["LIMIT", 1]]
+  [1m[36mTRANSACTION (0.0ms)[0m  [1m[31mROLLBACK TRANSACTION[0m
+  [1m[36mTRANSACTION (0.0ms)[0m  [1m[36mBEGIN deferred TRANSACTION[0m
+------------------------------------------------------------------------------------------------------
+PurchaseKit::Pay::Webhooks::SubscriptionUpdatedTest: test_does_not_broadcast_when_success_path_missing
+------------------------------------------------------------------------------------------------------
+  [1m[36mPay::Customer Load (0.0ms)[0m  [1m[34mSELECT "pay_customers".* FROM "pay_customers" WHERE "pay_customers"."id" = ? LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  [1m[36mPay::Subscription Load (0.0ms)[0m  [1m[34mSELECT "pay_subscriptions".* FROM "pay_subscriptions" WHERE "pay_subscriptions"."id" = ? LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  [1m[36mPay::Subscription Load (0.0ms)[0m  [1m[34mSELECT "pay_subscriptions".* FROM "pay_subscriptions" WHERE "pay_subscriptions"."processor_id" = ? LIMIT ?[0m  [["processor_id", "sub_existing"], ["LIMIT", 1]]
+  [1m[36mTRANSACTION (0.0ms)[0m  [1m[35mSAVEPOINT active_record_1[0m
+  [1m[36mPay::Subscription Exists? (0.1ms)[0m  [1m[34mSELECT 1 AS one FROM "pay_subscriptions" WHERE "pay_subscriptions"."processor_id" = ? AND "pay_subscriptions"."id" != ? AND "pay_subscriptions"."customer_id" = ? LIMIT ?[0m  [["processor_id", "sub_existing"], ["id", 1], ["customer_id", 1], ["LIMIT", 1]]
+  [1m[36mPay::Purchasekit::Subscription Update (0.0ms)[0m  [1m[33mUPDATE "pay_subscriptions" SET "current_period_start" = ?, "processor_plan" = ?, "updated_at" = ? WHERE "pay_subscriptions"."id" = ?[0m  [["current_period_start", "2026-02-23 18:23:22"], ["processor_plan", "com.example.monthly"], ["updated_at", "2026-02-23 18:23:22.387368"], ["id", 1]]
+  [1m[36mTRANSACTION (0.0ms)[0m  [1m[35mRELEASE SAVEPOINT active_record_1[0m
+  [1m[36mTRANSACTION (0.0ms)[0m  [1m[31mROLLBACK TRANSACTION[0m
+  [1m[36mTRANSACTION (0.0ms)[0m  [1m[36mBEGIN deferred TRANSACTION[0m
+-------------------------------------------------------------------------------------------------
+PurchaseKit::Pay::Webhooks::SubscriptionUpdatedTest: test_handles_missing_subscription_gracefully
+-------------------------------------------------------------------------------------------------
+  [1m[36mPay::Customer Load (0.0ms)[0m  [1m[34mSELECT "pay_customers".* FROM "pay_customers" WHERE "pay_customers"."id" = ? LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  [1m[36mPay::Subscription Load (0.0ms)[0m  [1m[34mSELECT "pay_subscriptions".* FROM "pay_subscriptions" WHERE "pay_subscriptions"."id" = ? LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  [1m[36mPay::Subscription Load (0.0ms)[0m  [1m[34mSELECT "pay_subscriptions".* FROM "pay_subscriptions" WHERE "pay_subscriptions"."processor_id" = ? LIMIT ?[0m  [["processor_id", "sub_nonexistent"], ["LIMIT", 1]]
+  [1m[36mTRANSACTION (0.0ms)[0m  [1m[31mROLLBACK TRANSACTION[0m
+  [1m[36mTRANSACTION (0.0ms)[0m  [1m[36mBEGIN deferred TRANSACTION[0m
+------------------------------------------------------------------------
+PurchaseKit::Pay::WebhookTest: test_queue_skips_unregistered_event_types
+------------------------------------------------------------------------
+  [1m[36mPay::Webhook Count (0.0ms)[0m  [1m[34mSELECT COUNT(*) FROM "pay_webhooks"[0m
+  [1m[36mCACHE Pay::Webhook Count (0.0ms)[0m  [1m[34mSELECT COUNT(*) FROM "pay_webhooks"[0m
+  [1m[36mTRANSACTION (0.2ms)[0m  [1m[31mROLLBACK TRANSACTION[0m
+  [1m[36mTRANSACTION (0.0ms)[0m  [1m[36mBEGIN deferred TRANSACTION[0m
+---------------------------------------------------------------------------------
+PurchaseKit::Pay::WebhookTest: test_queue_creates_webhook_record_and_enqueues_job
+---------------------------------------------------------------------------------
+  [1m[36mPay::Webhook Count (0.0ms)[0m  [1m[34mSELECT COUNT(*) FROM "pay_webhooks"[0m
+  [1m[36mTRANSACTION (0.0ms)[0m  [1m[35mSAVEPOINT active_record_1[0m
+  [1m[36mPay::Webhook Create (0.1ms)[0m  [1m[32mINSERT INTO "pay_webhooks" ("created_at", "event", "event_type", "processor", "updated_at") VALUES (?, ?, ?, ?, ?) RETURNING "id"[0m  [["created_at", "2026-02-23 18:23:22.395628"], ["event", "{\"type\":\"subscription.created\",\"customer_id\":1}"], ["event_type", "subscription.created"], ["processor", "purchasekit"], ["updated_at", "2026-02-23 18:23:22.395628"]]
+  [1m[36mTRANSACTION (0.0ms)[0m  [1m[35mRELEASE SAVEPOINT active_record_1[0m
+[ActiveJob] Enqueued PurchaseKit::Pay::Webhook::ProcessWebhookJob (Job ID: 77bfddbd-ec82-4630-aedb-a34fe99878a2) to Test(default) with arguments: 1
+  [1m[36mPay::Webhook Count (0.0ms)[0m  [1m[34mSELECT COUNT(*) FROM "pay_webhooks"[0m
+  [1m[36mPay::Webhook Load (0.0ms)[0m  [1m[34mSELECT "pay_webhooks".* FROM "pay_webhooks" ORDER BY "pay_webhooks"."id" DESC LIMIT ?[0m  [["LIMIT", 1]]
+  [1m[36mTRANSACTION (0.0ms)[0m  [1m[31mROLLBACK TRANSACTION[0m
+  [1m[36mTRANSACTION (0.0ms)[0m  [1m[36mBEGIN deferred TRANSACTION[0m
+-----------------------------------------------------------------------------------------------
+PurchaseKit::Pay::Webhooks::SubscriptionCanceledTest: test_sets_subscription_status_to_canceled
+-----------------------------------------------------------------------------------------------
+  [1m[36mPay::Customer Load (0.0ms)[0m  [1m[34mSELECT "pay_customers".* FROM "pay_customers" WHERE "pay_customers"."id" = ? LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  [1m[36mPay::Subscription Load (0.0ms)[0m  [1m[34mSELECT "pay_subscriptions".* FROM "pay_subscriptions" WHERE "pay_subscriptions"."id" = ? LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  [1m[36mPay::Subscription Load (0.0ms)[0m  [1m[34mSELECT "pay_subscriptions".* FROM "pay_subscriptions" WHERE "pay_subscriptions"."processor_id" = ? LIMIT ?[0m  [["processor_id", "sub_existing"], ["LIMIT", 1]]
+  [1m[36mTRANSACTION (0.0ms)[0m  [1m[35mSAVEPOINT active_record_1[0m
+  [1m[36mPay::Subscription Exists? (0.1ms)[0m  [1m[34mSELECT 1 AS one FROM "pay_subscriptions" WHERE "pay_subscriptions"."processor_id" = ? AND "pay_subscriptions"."id" != ? AND "pay_subscriptions"."customer_id" = ? LIMIT ?[0m  [["processor_id", "sub_existing"], ["id", 1], ["customer_id", 1], ["LIMIT", 1]]
+  [1m[36mPay::Purchasekit::Subscription Update (0.0ms)[0m  [1m[33mUPDATE "pay_subscriptions" SET "ends_at" = ?, "status" = ?, "updated_at" = ? WHERE "pay_subscriptions"."id" = ?[0m  [["ends_at", "2026-03-23 18:23:22"], ["status", "canceled"], ["updated_at", "2026-02-23 18:23:22.398635"], ["id", 1]]
+  [1m[36mTRANSACTION (0.0ms)[0m  [1m[35mRELEASE SAVEPOINT active_record_1[0m
+  [1m[36mPay::Purchasekit::Subscription Load (0.0ms)[0m  [1m[34mSELECT "pay_subscriptions".* FROM "pay_subscriptions" WHERE "pay_subscriptions"."type" = ? AND "pay_subscriptions"."id" = ? LIMIT ?[0m  [["type", "Pay::Purchasekit::Subscription"], ["id", 1], ["LIMIT", 1]]
+  [1m[36mTRANSACTION (0.0ms)[0m  [1m[31mROLLBACK TRANSACTION[0m
+  [1m[36mTRANSACTION (0.0ms)[0m  [1m[36mBEGIN deferred TRANSACTION[0m
+--------------------------------------------------------------------------------------------------
+PurchaseKit::Pay::Webhooks::SubscriptionCanceledTest: test_handles_missing_subscription_gracefully
+--------------------------------------------------------------------------------------------------
+  [1m[36mPay::Customer Load (0.0ms)[0m  [1m[34mSELECT "pay_customers".* FROM "pay_customers" WHERE "pay_customers"."id" = ? LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  [1m[36mPay::Subscription Load (0.0ms)[0m  [1m[34mSELECT "pay_subscriptions".* FROM "pay_subscriptions" WHERE "pay_subscriptions"."id" = ? LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  [1m[36mPay::Subscription Load (0.0ms)[0m  [1m[34mSELECT "pay_subscriptions".* FROM "pay_subscriptions" WHERE "pay_subscriptions"."processor_id" = ? LIMIT ?[0m  [["processor_id", "sub_nonexistent"], ["LIMIT", 1]]
+  [1m[36mTRANSACTION (0.0ms)[0m  [1m[31mROLLBACK TRANSACTION[0m
+  [1m[36mTRANSACTION (0.0ms)[0m  [1m[36mBEGIN deferred TRANSACTION[0m
+------------------------------------------------------------------------
+PurchaseKit::PaywallHelperTest: test_plan_option_renders_radio_and_label
+------------------------------------------------------------------------
+  [1m[36mTRANSACTION (0.0ms)[0m  [1m[31mROLLBACK TRANSACTION[0m
+  [1m[36mTRANSACTION (0.0ms)[0m  [1m[36mBEGIN deferred TRANSACTION[0m
+----------------------------------------------------------------------------
+PurchaseKit::PaywallHelperTest: test_price_renders_span_with_data_attributes
+----------------------------------------------------------------------------
+  [1m[36mTRANSACTION (0.0ms)[0m  [1m[31mROLLBACK TRANSACTION[0m
+  [1m[36mTRANSACTION (0.0ms)[0m  [1m[36mBEGIN deferred TRANSACTION[0m
+------------------------------------------------------------------------
+PurchaseKit::PaywallHelperTest: test_restore_has_correct_data_attributes
+------------------------------------------------------------------------
+  [1m[36mTRANSACTION (0.0ms)[0m  [1m[31mROLLBACK TRANSACTION[0m
+  [1m[36mTRANSACTION (0.0ms)[0m  [1m[36mBEGIN deferred TRANSACTION[0m
+---------------------------------------------------------------------------
+PurchaseKit::PaywallHelperTest: test_price_raises_outside_plan_option_block
+---------------------------------------------------------------------------
+  [1m[36mTRANSACTION (0.0ms)[0m  [1m[31mROLLBACK TRANSACTION[0m
+  [1m[36mTRANSACTION (0.0ms)[0m  [1m[36mBEGIN deferred TRANSACTION[0m
+----------------------------------------------------------------------
+PurchaseKit::PaywallHelperTest: test_price_with_custom_loading_content
+----------------------------------------------------------------------
+  [1m[36mTRANSACTION (0.0ms)[0m  [1m[31mROLLBACK TRANSACTION[0m
+  [1m[36mTRANSACTION (0.0ms)[0m  [1m[36mBEGIN deferred TRANSACTION[0m
+-----------------------------------------------------------
+PurchaseKit::PaywallHelperTest: test_restore_custom_options
+-----------------------------------------------------------
+  [1m[36mTRANSACTION (0.0ms)[0m  [1m[31mROLLBACK TRANSACTION[0m
+  [1m[36mTRANSACTION (0.0ms)[0m  [1m[36mBEGIN deferred TRANSACTION[0m
+----------------------------------------------------------------------------------------
+PurchaseKit::PaywallHelperTest: test_submit_renders_disabled_button_with_data_attributes
+----------------------------------------------------------------------------------------
+  [1m[36mTRANSACTION (0.0ms)[0m  [1m[31mROLLBACK TRANSACTION[0m
+  [1m[36mTRANSACTION (0.0ms)[0m  [1m[36mBEGIN deferred TRANSACTION[0m
+------------------------------------------------------------------------
+PurchaseKit::PaywallHelperTest: test_plan_option_not_selected_by_default
+------------------------------------------------------------------------
+  [1m[36mTRANSACTION (0.0ms)[0m  [1m[31mROLLBACK TRANSACTION[0m
+  [1m[36mTRANSACTION (0.0ms)[0m  [1m[36mBEGIN deferred TRANSACTION[0m
+---------------------------------------------------------------
+PurchaseKit::PaywallHelperTest: test_restore_renders_button_tag
+---------------------------------------------------------------
+  [1m[36mTRANSACTION (0.0ms)[0m  [1m[31mROLLBACK TRANSACTION[0m
+  [1m[36mTRANSACTION (0.0ms)[0m  [1m[36mBEGIN deferred TRANSACTION[0m
+---------------------------------------------------------
+PurchaseKit::PaywallHelperTest: test_restore_default_text
+---------------------------------------------------------
+  [1m[36mTRANSACTION (0.0ms)[0m  [1m[31mROLLBACK TRANSACTION[0m
+  [1m[36mTRANSACTION (0.0ms)[0m  [1m[36mBEGIN deferred TRANSACTION[0m
+---------------------------------------------------------------------------------------------
+PurchaseKit::PaywallHelperTest: test_purchasekit_paywall_renders_form_with_correct_attributes
+---------------------------------------------------------------------------------------------
+  [1m[36mTRANSACTION (0.0ms)[0m  [1m[31mROLLBACK TRANSACTION[0m
+  [1m[36mTRANSACTION (0.0ms)[0m  [1m[36mBEGIN deferred TRANSACTION[0m
+-----------------------------------------------------------------------------------
+PurchaseKit::PaywallHelperTest: test_purchasekit_paywall_raises_without_customer_id
+-----------------------------------------------------------------------------------
+  [1m[36mTRANSACTION (0.0ms)[0m  [1m[31mROLLBACK TRANSACTION[0m
+  [1m[36mTRANSACTION (0.0ms)[0m  [1m[36mBEGIN deferred TRANSACTION[0m
+--------------------------------------------------------------------------------
+PurchaseKit::PaywallHelperTest: test_restore_without_url_has_no_restore_url_data
+--------------------------------------------------------------------------------
+  [1m[36mTRANSACTION (0.0ms)[0m  [1m[31mROLLBACK TRANSACTION[0m
+  [1m[36mTRANSACTION (0.0ms)[0m  [1m[36mBEGIN deferred TRANSACTION[0m
+-----------------------------------------------------
+PurchaseKit::PaywallHelperTest: test_restore_with_url
+-----------------------------------------------------
+  [1m[36mTRANSACTION (0.0ms)[0m  [1m[31mROLLBACK TRANSACTION[0m
+  [1m[36mTRANSACTION (0.0ms)[0m  [1m[36mBEGIN deferred TRANSACTION[0m
+--------------------------------------------------------------------------------------
+PurchaseKit::PaywallHelperTest: test_purchasekit_paywall_defaults_success_path_to_root
+--------------------------------------------------------------------------------------
+  [1m[36mTRANSACTION (0.0ms)[0m  [1m[31mROLLBACK TRANSACTION[0m
+  [1m[36mTRANSACTION (0.0ms)[0m  [1m[36mBEGIN deferred TRANSACTION[0m
+-------------------------------------------------------------------------------
+PurchaseKit::PaywallHelperTest: test_purchasekit_paywall_includes_hidden_fields
+-------------------------------------------------------------------------------
+  [1m[36mTRANSACTION (0.0ms)[0m  [1m[31mROLLBACK TRANSACTION[0m
+  [1m[36mTRANSACTION (0.0ms)[0m  [1m[36mBEGIN deferred TRANSACTION[0m
+---------------------------------------------------------------------------
+PurchaseKit::PurchasesControllerTest: test_create_handles_not_found_product
+---------------------------------------------------------------------------
+  [1m[36mPay::Customer Load (0.0ms)[0m  [1m[34mSELECT "pay_customers".* FROM "pay_customers" WHERE "pay_customers"."id" = ? LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+Started POST "/purchasekit/purchases" for 127.0.0.1 at 2026-02-23 10:23:22 -0800
+Processing by PurchaseKit::PurchasesController#create as TURBO_STREAM
+  Parameters: {"customer_id"=>"1", "product_id"=>"prod_MISSING", "success_path"=>"/dashboard", "environment"=>"sandbox"}
+rescue_from handled PurchaseKit::NotFoundError (App or product not found) - /Users/joemasilotti/workspace/projects/purchasekit/gem/lib/purchasekit/purchase/intent/remote.rb:28:in `create'
+  Rendered /Users/joemasilotti/workspace/projects/purchasekit/gem/app/views/purchase_kit/purchases/_error.html.erb (Duration: 0.2ms | GC: 0.1ms)
+Completed 200 OK in 5ms (Views: 0.0ms | ActiveRecord: 0.0ms (0 queries, 0 cached) | GC: 0.2ms)
+  [1m[36mTRANSACTION (0.0ms)[0m  [1m[31mROLLBACK TRANSACTION[0m
+  [1m[36mTRANSACTION (0.0ms)[0m  [1m[36mBEGIN deferred TRANSACTION[0m
+-------------------------------------------------------------------------------------
+PurchaseKit::PurchasesControllerTest: test_create_handles_subscription_required_error
+-------------------------------------------------------------------------------------
+  [1m[36mPay::Customer Load (0.0ms)[0m  [1m[34mSELECT "pay_customers".* FROM "pay_customers" WHERE "pay_customers"."id" = ? LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+Started POST "/purchasekit/purchases" for 127.0.0.1 at 2026-02-23 10:23:22 -0800
+Processing by PurchaseKit::PurchasesController#create as TURBO_STREAM
+  Parameters: {"customer_id"=>"1", "product_id"=>"prod_TEST123", "success_path"=>"/dashboard", "environment"=>"production"}
+rescue_from handled PurchaseKit::SubscriptionRequiredError (Subscription required for production purchases) - /Users/joemasilotti/workspace/projects/purchasekit/gem/lib/purchasekit/purchase/intent/remote.rb:26:in `create'
+  Rendered /Users/joemasilotti/workspace/projects/purchasekit/gem/app/views/purchase_kit/purchases/_error.html.erb (Duration: 0.0ms | GC: 0.0ms)
+Completed 200 OK in 1ms (Views: 0.0ms | ActiveRecord: 0.0ms (0 queries, 0 cached) | GC: 0.0ms)
+  [1m[36mTRANSACTION (0.0ms)[0m  [1m[31mROLLBACK TRANSACTION[0m
+  [1m[36mTRANSACTION (0.0ms)[0m  [1m[36mBEGIN deferred TRANSACTION[0m
+---------------------------------------------------------------------------------------
+PurchaseKit::PurchasesControllerTest: test_create_returns_turbo_stream_with_intent_data
+---------------------------------------------------------------------------------------
+  [1m[36mPay::Customer Load (0.0ms)[0m  [1m[34mSELECT "pay_customers".* FROM "pay_customers" WHERE "pay_customers"."id" = ? LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+Started POST "/purchasekit/purchases" for 127.0.0.1 at 2026-02-23 10:23:22 -0800
+Processing by PurchaseKit::PurchasesController#create as TURBO_STREAM
+  Parameters: {"customer_id"=>"1", "product_id"=>"prod_TEST123", "success_path"=>"/dashboard", "environment"=>"sandbox"}
+  Rendered /Users/joemasilotti/workspace/projects/purchasekit/gem/app/views/purchase_kit/purchases/_intent.html.erb (Duration: 0.1ms | GC: 0.0ms)
+Completed 200 OK in 1ms (Views: 0.0ms | ActiveRecord: 0.0ms (0 queries, 0 cached) | GC: 0.1ms)
+  [1m[36mTRANSACTION (0.0ms)[0m  [1m[31mROLLBACK TRANSACTION[0m
+  [1m[36mTRANSACTION (0.0ms)[0m  [1m[36mBEGIN deferred TRANSACTION[0m
+----------------------------------------------------------------------------------------------------------
+PurchaseKit::Pay::Webhooks::SubscriptionCreatedTest: test_creates_new_subscription_and_broadcasts_redirect
+----------------------------------------------------------------------------------------------------------
+  [1m[36mPay::Customer Load (0.0ms)[0m  [1m[34mSELECT "pay_customers".* FROM "pay_customers" WHERE "pay_customers"."id" = ? LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  [1m[36mCACHE Pay::Customer Load (0.0ms)[0m  [1m[34mSELECT "pay_customers".* FROM "pay_customers" WHERE "pay_customers"."id" = ? LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  [1m[36mPay::Purchasekit::Subscription Load (0.1ms)[0m  [1m[34mSELECT "pay_subscriptions".* FROM "pay_subscriptions" WHERE "pay_subscriptions"."type" = ? AND "pay_subscriptions"."customer_id" = ? AND "pay_subscriptions"."processor_id" = ? LIMIT ?[0m  [["type", "Pay::Purchasekit::Subscription"], ["customer_id", 1], ["processor_id", "sub_new123"], ["LIMIT", 1]]
+  [1m[36mTRANSACTION (0.0ms)[0m  [1m[35mSAVEPOINT active_record_1[0m
+  [1m[36mPay::Subscription Exists? (0.1ms)[0m  [1m[34mSELECT 1 AS one FROM "pay_subscriptions" WHERE "pay_subscriptions"."processor_id" = ? AND "pay_subscriptions"."customer_id" = ? LIMIT ?[0m  [["processor_id", "sub_new123"], ["customer_id", 1], ["LIMIT", 1]]
+  [1m[36mPay::Purchasekit::Subscription Create (0.1ms)[0m  [1m[32mINSERT INTO "pay_subscriptions" ("application_fee_percent", "created_at", "current_period_end", "current_period_start", "customer_id", "data", "ends_at", "metadata", "metered", "name", "object", "pause_behavior", "pause_resumes_at", "pause_starts_at", "payment_method_id", "processor_id", "processor_plan", "quantity", "status", "stripe_account", "trial_ends_at", "type", "updated_at") VALUES (?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?) RETURNING "id"[0m  [["application_fee_percent", nil], ["created_at", "2026-02-23 18:23:22.455204"], ["current_period_end", "2027-02-23 18:23:22"], ["current_period_start", "2026-02-23 18:23:22"], ["customer_id", 1], ["data", "{\"store\":\"apple\"}"], ["ends_at", nil], ["metadata", nil], ["metered", nil], ["name", "pro"], ["object", nil], ["pause_behavior", nil], ["pause_resumes_at", nil], ["pause_starts_at", nil], ["payment_method_id", nil], ["processor_id", "sub_new123"], ["processor_plan", "com.example.annual"], ["quantity", 1], ["status", "active"], ["stripe_account", nil], ["trial_ends_at", nil], ["type", "Pay::Purchasekit::Subscription"], ["updated_at", "2026-02-23 18:23:22.455204"]]
+  [1m[36mTRANSACTION (0.0ms)[0m  [1m[35mRELEASE SAVEPOINT active_record_1[0m
+  [1m[36mPay::Subscription Load (0.1ms)[0m  [1m[34mSELECT "pay_subscriptions".* FROM "pay_subscriptions" WHERE "pay_subscriptions"."customer_id" = ? AND "pay_subscriptions"."processor_id" = ? LIMIT ?[0m  [["customer_id", 1], ["processor_id", "sub_new123"], ["LIMIT", 1]]
+  [1m[36mTRANSACTION (0.0ms)[0m  [1m[31mROLLBACK TRANSACTION[0m
+  [1m[36mTRANSACTION (0.2ms)[0m  [1m[36mBEGIN deferred TRANSACTION[0m
+---------------------------------------------------------------------------------------------------------
+PurchaseKit::Pay::Webhooks::SubscriptionCreatedTest: test_updates_existing_subscription_without_broadcast
+---------------------------------------------------------------------------------------------------------
+  [1m[36mPay::Customer Load (0.0ms)[0m  [1m[34mSELECT "pay_customers".* FROM "pay_customers" WHERE "pay_customers"."id" = ? LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  [1m[36mPay::Subscription Load (0.0ms)[0m  [1m[34mSELECT "pay_subscriptions".* FROM "pay_subscriptions" WHERE "pay_subscriptions"."id" = ? LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  [1m[36mCACHE Pay::Customer Load (0.0ms)[0m  [1m[34mSELECT "pay_customers".* FROM "pay_customers" WHERE "pay_customers"."id" = ? LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  [1m[36mPay::Purchasekit::Subscription Load (0.0ms)[0m  [1m[34mSELECT "pay_subscriptions".* FROM "pay_subscriptions" WHERE "pay_subscriptions"."type" = ? AND "pay_subscriptions"."customer_id" = ? AND "pay_subscriptions"."processor_id" = ? LIMIT ?[0m  [["type", "Pay::Purchasekit::Subscription"], ["customer_id", 1], ["processor_id", "sub_existing"], ["LIMIT", 1]]
+  [1m[36mTRANSACTION (0.0ms)[0m  [1m[35mSAVEPOINT active_record_1[0m
+  [1m[36mPay::Subscription Exists? (0.1ms)[0m  [1m[34mSELECT 1 AS one FROM "pay_subscriptions" WHERE "pay_subscriptions"."processor_id" = ? AND "pay_subscriptions"."id" != ? AND "pay_subscriptions"."customer_id" = ? LIMIT ?[0m  [["processor_id", "sub_existing"], ["id", 1], ["customer_id", 1], ["LIMIT", 1]]
+  [1m[36mPay::Purchasekit::Subscription Update (0.0ms)[0m  [1m[33mUPDATE "pay_subscriptions" SET "current_period_start" = ?, "data" = ?, "processor_plan" = ?, "updated_at" = ? WHERE "pay_subscriptions"."id" = ?[0m  [["current_period_start", "2026-02-23 18:23:22"], ["data", "{\"store\":\"apple\"}"], ["processor_plan", "com.example.monthly"], ["updated_at", "2026-02-23 18:23:22.459865"], ["id", 1]]
+  [1m[36mTRANSACTION (0.0ms)[0m  [1m[35mRELEASE SAVEPOINT active_record_1[0m
+  [1m[36mPay::Purchasekit::Subscription Load (0.0ms)[0m  [1m[34mSELECT "pay_subscriptions".* FROM "pay_subscriptions" WHERE "pay_subscriptions"."type" = ? AND "pay_subscriptions"."id" = ? LIMIT ?[0m  [["type", "Pay::Purchasekit::Subscription"], ["id", 1], ["LIMIT", 1]]
+  [1m[36mTRANSACTION (0.0ms)[0m  [1m[31mROLLBACK TRANSACTION[0m
+  [1m[36mTRANSACTION (0.0ms)[0m  [1m[36mBEGIN deferred TRANSACTION[0m
+-------------------------------------------------------------------------------------
+PurchaseKit::Pay::Webhooks::SubscriptionCreatedTest: test_stores_google_store_in_data
+-------------------------------------------------------------------------------------
+  [1m[36mPay::Customer Load (0.0ms)[0m  [1m[34mSELECT "pay_customers".* FROM "pay_customers" WHERE "pay_customers"."id" = ? LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  [1m[36mCACHE Pay::Customer Load (0.0ms)[0m  [1m[34mSELECT "pay_customers".* FROM "pay_customers" WHERE "pay_customers"."id" = ? LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  [1m[36mPay::Purchasekit::Subscription Load (0.0ms)[0m  [1m[34mSELECT "pay_subscriptions".* FROM "pay_subscriptions" WHERE "pay_subscriptions"."type" = ? AND "pay_subscriptions"."customer_id" = ? AND "pay_subscriptions"."processor_id" = ? LIMIT ?[0m  [["type", "Pay::Purchasekit::Subscription"], ["customer_id", 1], ["processor_id", "sub_google123"], ["LIMIT", 1]]
+  [1m[36mTRANSACTION (0.0ms)[0m  [1m[35mSAVEPOINT active_record_1[0m
+  [1m[36mPay::Subscription Exists? (0.1ms)[0m  [1m[34mSELECT 1 AS one FROM "pay_subscriptions" WHERE "pay_subscriptions"."processor_id" = ? AND "pay_subscriptions"."customer_id" = ? LIMIT ?[0m  [["processor_id", "sub_google123"], ["customer_id", 1], ["LIMIT", 1]]
+  [1m[36mPay::Purchasekit::Subscription Create (0.1ms)[0m  [1m[32mINSERT INTO "pay_subscriptions" ("application_fee_percent", "created_at", "current_period_end", "current_period_start", "customer_id", "data", "ends_at", "metadata", "metered", "name", "object", "pause_behavior", "pause_resumes_at", "pause_starts_at", "payment_method_id", "processor_id", "processor_plan", "quantity", "status", "stripe_account", "trial_ends_at", "type", "updated_at") VALUES (?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?) RETURNING "id"[0m  [["application_fee_percent", nil], ["created_at", "2026-02-23 18:23:22.461320"], ["current_period_end", "2027-02-23 18:23:22"], ["current_period_start", "2026-02-23 18:23:22"], ["customer_id", 1], ["data", "{\"store\":\"google\"}"], ["ends_at", nil], ["metadata", nil], ["metered", nil], ["name", "pro"], ["object", nil], ["pause_behavior", nil], ["pause_resumes_at", nil], ["pause_starts_at", nil], ["payment_method_id", nil], ["processor_id", "sub_google123"], ["processor_plan", "annual_subscription"], ["quantity", 1], ["status", "active"], ["stripe_account", nil], ["trial_ends_at", nil], ["type", "Pay::Purchasekit::Subscription"], ["updated_at", "2026-02-23 18:23:22.461320"]]
+  [1m[36mTRANSACTION (0.0ms)[0m  [1m[35mRELEASE SAVEPOINT active_record_1[0m
+  [1m[36mPay::Subscription Load (0.0ms)[0m  [1m[34mSELECT "pay_subscriptions".* FROM "pay_subscriptions" WHERE "pay_subscriptions"."customer_id" = ? AND "pay_subscriptions"."processor_id" = ? LIMIT ?[0m  [["customer_id", 1], ["processor_id", "sub_google123"], ["LIMIT", 1]]
+  [1m[36mTRANSACTION (0.0ms)[0m  [1m[31mROLLBACK TRANSACTION[0m
+  [1m[36mTRANSACTION (0.0ms)[0m  [1m[36mBEGIN deferred TRANSACTION[0m
+-------------------------------------------------------------------------------------------------------
+PurchaseKit::Pay::Webhooks::SubscriptionCreatedTest: test_subscription_methods_raise_appropriate_errors
+-------------------------------------------------------------------------------------------------------
+  [1m[36mPay::Customer Load (0.0ms)[0m  [1m[34mSELECT "pay_customers".* FROM "pay_customers" WHERE "pay_customers"."id" = ? LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  [1m[36mCACHE Pay::Customer Load (0.0ms)[0m  [1m[34mSELECT "pay_customers".* FROM "pay_customers" WHERE "pay_customers"."id" = ? LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  [1m[36mPay::Purchasekit::Subscription Load (0.0ms)[0m  [1m[34mSELECT "pay_subscriptions".* FROM "pay_subscriptions" WHERE "pay_subscriptions"."type" = ? AND "pay_subscriptions"."customer_id" = ? AND "pay_subscriptions"."processor_id" = ? LIMIT ?[0m  [["type", "Pay::Purchasekit::Subscription"], ["customer_id", 1], ["processor_id", "sub_sti_test"], ["LIMIT", 1]]
+  [1m[36mTRANSACTION (0.0ms)[0m  [1m[35mSAVEPOINT active_record_1[0m
+  [1m[36mPay::Subscription Exists? (0.1ms)[0m  [1m[34mSELECT 1 AS one FROM "pay_subscriptions" WHERE "pay_subscriptions"."processor_id" = ? AND "pay_subscriptions"."customer_id" = ? LIMIT ?[0m  [["processor_id", "sub_sti_test"], ["customer_id", 1], ["LIMIT", 1]]
+  [1m[36mPay::Purchasekit::Subscription Create (0.1ms)[0m  [1m[32mINSERT INTO "pay_subscriptions" ("application_fee_percent", "created_at", "current_period_end", "current_period_start", "customer_id", "data", "ends_at", "metadata", "metered", "name", "object", "pause_behavior", "pause_resumes_at", "pause_starts_at", "payment_method_id", "processor_id", "processor_plan", "quantity", "status", "stripe_account", "trial_ends_at", "type", "updated_at") VALUES (?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?) RETURNING "id"[0m  [["application_fee_percent", nil], ["created_at", "2026-02-23 18:23:22.462910"], ["current_period_end", "2027-02-23 18:23:22"], ["current_period_start", "2026-02-23 18:23:22"], ["customer_id", 1], ["data", "{\"store\":\"apple\"}"], ["ends_at", nil], ["metadata", nil], ["metered", nil], ["name", "pro"], ["object", nil], ["pause_behavior", nil], ["pause_resumes_at", nil], ["pause_starts_at", nil], ["payment_method_id", nil], ["processor_id", "sub_sti_test"], ["processor_plan", "com.example.annual"], ["quantity", 1], ["status", "active"], ["stripe_account", nil], ["trial_ends_at", nil], ["type", "Pay::Purchasekit::Subscription"], ["updated_at", "2026-02-23 18:23:22.462910"]]
+  [1m[36mTRANSACTION (0.0ms)[0m  [1m[35mRELEASE SAVEPOINT active_record_1[0m
+  [1m[36mPay::Subscription Load (0.0ms)[0m  [1m[34mSELECT "pay_subscriptions".* FROM "pay_subscriptions" WHERE "pay_subscriptions"."processor_id" = ? LIMIT ?[0m  [["processor_id", "sub_sti_test"], ["LIMIT", 1]]
+  [1m[36mTRANSACTION (0.0ms)[0m  [1m[31mROLLBACK TRANSACTION[0m
+  [1m[36mTRANSACTION (0.0ms)[0m  [1m[36mBEGIN deferred TRANSACTION[0m
+----------------------------------------------------------------------------------------
+PurchaseKit::WebhooksControllerTest: test_creates_webhook_record_with_correct_attributes
+----------------------------------------------------------------------------------------
+  [1m[36mPay::Customer Load (0.0ms)[0m  [1m[34mSELECT "pay_customers".* FROM "pay_customers" WHERE "pay_customers"."id" = ? LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+Started POST "/purchasekit/webhooks" for 127.0.0.1 at 2026-02-23 10:23:22 -0800
+Processing by PurchaseKit::WebhooksController#create as HTML
+  Parameters: {"type"=>"subscription.created", "customer_id"=>1, "subscription_id"=>"sub_123", "store"=>"apple", "store_product_id"=>"com.example.annual", "subscription_name"=>"pro", "status"=>"active", "current_period_start"=>"2026-02-23T18:23:22Z", "current_period_end"=>"2027-02-23T18:23:22Z", "success_path"=>"/dashboard", "webhook"=>{"type"=>"subscription.created", "customer_id"=>1, "subscription_id"=>"sub_123", "store"=>"apple", "store_product_id"=>"com.example.annual", "subscription_name"=>"pro", "status"=>"active", "current_period_start"=>"2026-02-23T18:23:22Z", "current_period_end"=>"2027-02-23T18:23:22Z", "success_path"=>"/dashboard"}}
+  [1m[36mTRANSACTION (0.0ms)[0m  [1m[35mSAVEPOINT active_record_1[0m
+  [1m[36mPay::Webhook Create (0.1ms)[0m  [1m[32mINSERT INTO "pay_webhooks" ("created_at", "event", "event_type", "processor", "updated_at") VALUES (?, ?, ?, ?, ?) RETURNING "id"[0m  [["created_at", "2026-02-23 18:23:22.465094"], ["event", "{\"type\":\"subscription.created\",\"customer_id\":1,\"subscription_id\":\"sub_123\",\"store\":\"apple\",\"store_product_id\":\"com.example.annual\",\"subscription_name\":\"pro\",\"status\":\"active\",\"current_period_start\":\"2026-02-23T18:23:22Z\",\"current_period_end\":\"2027-02-23T18:23:22Z\",\"success_path\":\"/dashboard\"}"], ["event_type", "subscription.created"], ["processor", "purchasekit"], ["updated_at", "2026-02-23 18:23:22.465094"]]
+  [1m[36mTRANSACTION (0.0ms)[0m  [1m[35mRELEASE SAVEPOINT active_record_1[0m
+[ActiveJob] Enqueued PurchaseKit::Pay::Webhook::ProcessWebhookJob (Job ID: 57de13ec-5f9c-45d5-8434-a1264821e80e) to Test(default) with arguments: 1
+Completed 200 OK in 0ms (ActiveRecord: 0.1ms (1 query, 0 cached) | GC: 0.0ms)
+  [1m[36mPay::Webhook Load (0.0ms)[0m  [1m[34mSELECT "pay_webhooks".* FROM "pay_webhooks" ORDER BY "pay_webhooks"."id" DESC LIMIT ?[0m  [["LIMIT", 1]]
+  [1m[36mTRANSACTION (0.0ms)[0m  [1m[31mROLLBACK TRANSACTION[0m
+  [1m[36mTRANSACTION (0.0ms)[0m  [1m[36mBEGIN deferred TRANSACTION[0m
+--------------------------------------------------------------------------
+PurchaseKit::WebhooksControllerTest: test_ignores_unregistered_event_types
+--------------------------------------------------------------------------
+  [1m[36mPay::Customer Load (0.0ms)[0m  [1m[34mSELECT "pay_customers".* FROM "pay_customers" WHERE "pay_customers"."id" = ? LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  [1m[36mPay::Webhook Count (0.0ms)[0m  [1m[34mSELECT COUNT(*) FROM "pay_webhooks"[0m
+Started POST "/purchasekit/webhooks" for 127.0.0.1 at 2026-02-23 10:23:22 -0800
+Processing by PurchaseKit::WebhooksController#create as HTML
+  Parameters: {"type"=>"unknown.event", "webhook"=>{"type"=>"unknown.event"}}
+Completed 200 OK in 0ms (ActiveRecord: 0.0ms (0 queries, 0 cached) | GC: 0.0ms)
+  [1m[36mCACHE Pay::Webhook Count (0.0ms)[0m  [1m[34mSELECT COUNT(*) FROM "pay_webhooks"[0m
+  [1m[36mTRANSACTION (0.0ms)[0m  [1m[31mROLLBACK TRANSACTION[0m
+  [1m[36mTRANSACTION (0.0ms)[0m  [1m[36mBEGIN deferred TRANSACTION[0m
+-----------------------------------------------------------------
+PurchaseKit::WebhooksControllerTest: test_accepts_valid_signature
+-----------------------------------------------------------------
+  [1m[36mPay::Customer Load (0.0ms)[0m  [1m[34mSELECT "pay_customers".* FROM "pay_customers" WHERE "pay_customers"."id" = ? LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  [1m[36mPay::Webhook Count (0.0ms)[0m  [1m[34mSELECT COUNT(*) FROM "pay_webhooks"[0m
+Started POST "/purchasekit/webhooks" for 127.0.0.1 at 2026-02-23 10:23:22 -0800
+Processing by PurchaseKit::WebhooksController#create as HTML
+  Parameters: {"type"=>"subscription.created", "customer_id"=>1, "subscription_id"=>"sub_123", "store"=>"apple", "store_product_id"=>"com.example.annual", "subscription_name"=>"pro", "status"=>"active", "current_period_start"=>"2026-02-23T18:23:22Z", "current_period_end"=>"2027-02-23T18:23:22Z", "success_path"=>"/dashboard", "webhook"=>{"type"=>"subscription.created", "customer_id"=>1, "subscription_id"=>"sub_123", "store"=>"apple", "store_product_id"=>"com.example.annual", "subscription_name"=>"pro", "status"=>"active", "current_period_start"=>"2026-02-23T18:23:22Z", "current_period_end"=>"2027-02-23T18:23:22Z", "success_path"=>"/dashboard"}}
+  [1m[36mTRANSACTION (0.0ms)[0m  [1m[35mSAVEPOINT active_record_1[0m
+  [1m[36mPay::Webhook Create (0.1ms)[0m  [1m[32mINSERT INTO "pay_webhooks" ("created_at", "event", "event_type", "processor", "updated_at") VALUES (?, ?, ?, ?, ?) RETURNING "id"[0m  [["created_at", "2026-02-23 18:23:22.468057"], ["event", "{\"type\":\"subscription.created\",\"customer_id\":1,\"subscription_id\":\"sub_123\",\"store\":\"apple\",\"store_product_id\":\"com.example.annual\",\"subscription_name\":\"pro\",\"status\":\"active\",\"current_period_start\":\"2026-02-23T18:23:22Z\",\"current_period_end\":\"2027-02-23T18:23:22Z\",\"success_path\":\"/dashboard\"}"], ["event_type", "subscription.created"], ["processor", "purchasekit"], ["updated_at", "2026-02-23 18:23:22.468057"]]
+  [1m[36mTRANSACTION (0.0ms)[0m  [1m[35mRELEASE SAVEPOINT active_record_1[0m
+[ActiveJob] Enqueued PurchaseKit::Pay::Webhook::ProcessWebhookJob (Job ID: 7acab48b-7bc8-4ebf-bc4b-5dddca4da7d6) to Test(default) with arguments: 1
+Completed 200 OK in 0ms (ActiveRecord: 0.1ms (1 query, 0 cached) | GC: 0.0ms)
+  [1m[36mPay::Webhook Count (0.0ms)[0m  [1m[34mSELECT COUNT(*) FROM "pay_webhooks"[0m
+  [1m[36mTRANSACTION (0.0ms)[0m  [1m[31mROLLBACK TRANSACTION[0m
+  [1m[36mTRANSACTION (0.0ms)[0m  [1m[36mBEGIN deferred TRANSACTION[0m
+-------------------------------------------------------------------
+PurchaseKit::WebhooksControllerTest: test_rejects_invalid_signature
+-------------------------------------------------------------------
+  [1m[36mPay::Customer Load (0.0ms)[0m  [1m[34mSELECT "pay_customers".* FROM "pay_customers" WHERE "pay_customers"."id" = ? LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  [1m[36mPay::Webhook Count (0.0ms)[0m  [1m[34mSELECT COUNT(*) FROM "pay_webhooks"[0m
+Started POST "/purchasekit/webhooks" for 127.0.0.1 at 2026-02-23 10:23:22 -0800
+Processing by PurchaseKit::WebhooksController#create as HTML
+  Parameters: {"type"=>"subscription.created", "customer_id"=>1, "subscription_id"=>"sub_123", "store"=>"apple", "store_product_id"=>"com.example.annual", "subscription_name"=>"pro", "status"=>"active", "current_period_start"=>"2026-02-23T18:23:22Z", "current_period_end"=>"2027-02-23T18:23:22Z", "success_path"=>"/dashboard", "webhook"=>{"type"=>"subscription.created", "customer_id"=>1, "subscription_id"=>"sub_123", "store"=>"apple", "store_product_id"=>"com.example.annual", "subscription_name"=>"pro", "status"=>"active", "current_period_start"=>"2026-02-23T18:23:22Z", "current_period_end"=>"2027-02-23T18:23:22Z", "success_path"=>"/dashboard"}}
+[PurchaseKit] Webhook signature error: Invalid signature
+Completed 400 Bad Request in 0ms (ActiveRecord: 0.0ms (0 queries, 0 cached) | GC: 0.0ms)
+  [1m[36mCACHE Pay::Webhook Count (0.0ms)[0m  [1m[34mSELECT COUNT(*) FROM "pay_webhooks"[0m
+  [1m[36mTRANSACTION (0.0ms)[0m  [1m[31mROLLBACK TRANSACTION[0m
+  [1m[36mTRANSACTION (0.0ms)[0m  [1m[36mBEGIN deferred TRANSACTION[0m
+------------------------------------------------------------------------------------------------------------
+PurchaseKit::WebhooksControllerTest: test_accepts_request_without_signature_when_secret_blank_in_development
+------------------------------------------------------------------------------------------------------------
+  [1m[36mPay::Customer Load (0.0ms)[0m  [1m[34mSELECT "pay_customers".* FROM "pay_customers" WHERE "pay_customers"."id" = ? LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  [1m[36mPay::Webhook Count (0.0ms)[0m  [1m[34mSELECT COUNT(*) FROM "pay_webhooks"[0m
+Started POST "/purchasekit/webhooks" for 127.0.0.1 at 2026-02-23 10:23:22 -0800
+Processing by PurchaseKit::WebhooksController#create as HTML
+  Parameters: {"type"=>"subscription.created", "customer_id"=>1, "subscription_id"=>"sub_123", "store"=>"apple", "store_product_id"=>"com.example.annual", "subscription_name"=>"pro", "status"=>"active", "current_period_start"=>"2026-02-23T18:23:22Z", "current_period_end"=>"2027-02-23T18:23:22Z", "success_path"=>"/dashboard", "webhook"=>{"type"=>"subscription.created", "customer_id"=>1, "subscription_id"=>"sub_123", "store"=>"apple", "store_product_id"=>"com.example.annual", "subscription_name"=>"pro", "status"=>"active", "current_period_start"=>"2026-02-23T18:23:22Z", "current_period_end"=>"2027-02-23T18:23:22Z", "success_path"=>"/dashboard"}}
+  [1m[36mTRANSACTION (0.0ms)[0m  [1m[35mSAVEPOINT active_record_1[0m
+  [1m[36mPay::Webhook Create (0.1ms)[0m  [1m[32mINSERT INTO "pay_webhooks" ("created_at", "event", "event_type", "processor", "updated_at") VALUES (?, ?, ?, ?, ?) RETURNING "id"[0m  [["created_at", "2026-02-23 18:23:22.470223"], ["event", "{\"type\":\"subscription.created\",\"customer_id\":1,\"subscription_id\":\"sub_123\",\"store\":\"apple\",\"store_product_id\":\"com.example.annual\",\"subscription_name\":\"pro\",\"status\":\"active\",\"current_period_start\":\"2026-02-23T18:23:22Z\",\"current_period_end\":\"2027-02-23T18:23:22Z\",\"success_path\":\"/dashboard\"}"], ["event_type", "subscription.created"], ["processor", "purchasekit"], ["updated_at", "2026-02-23 18:23:22.470223"]]
+  [1m[36mTRANSACTION (0.0ms)[0m  [1m[35mRELEASE SAVEPOINT active_record_1[0m
+[ActiveJob] Enqueued PurchaseKit::Pay::Webhook::ProcessWebhookJob (Job ID: 9a5b4b73-f40d-406e-bb3a-a1363c404527) to Test(default) with arguments: 1
+Completed 200 OK in 0ms (ActiveRecord: 0.1ms (1 query, 0 cached) | GC: 0.0ms)
+  [1m[36mPay::Webhook Count (0.0ms)[0m  [1m[34mSELECT COUNT(*) FROM "pay_webhooks"[0m
+  [1m[36mTRANSACTION (0.0ms)[0m  [1m[31mROLLBACK TRANSACTION[0m
+  [1m[36mTRANSACTION (0.0ms)[0m  [1m[36mBEGIN deferred TRANSACTION[0m
+-------------------------------------------------------------------
+PurchaseKit::WebhooksControllerTest: test_rejects_missing_signature
+-------------------------------------------------------------------
+  [1m[36mPay::Customer Load (0.0ms)[0m  [1m[34mSELECT "pay_customers".* FROM "pay_customers" WHERE "pay_customers"."id" = ? LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  [1m[36mPay::Webhook Count (0.0ms)[0m  [1m[34mSELECT COUNT(*) FROM "pay_webhooks"[0m
+Started POST "/purchasekit/webhooks" for 127.0.0.1 at 2026-02-23 10:23:22 -0800
+Processing by PurchaseKit::WebhooksController#create as HTML
+  Parameters: {"type"=>"subscription.created", "customer_id"=>1, "subscription_id"=>"sub_123", "store"=>"apple", "store_product_id"=>"com.example.annual", "subscription_name"=>"pro", "status"=>"active", "current_period_start"=>"2026-02-23T18:23:22Z", "current_period_end"=>"2027-02-23T18:23:22Z", "success_path"=>"/dashboard", "webhook"=>{"type"=>"subscription.created", "customer_id"=>1, "subscription_id"=>"sub_123", "store"=>"apple", "store_product_id"=>"com.example.annual", "subscription_name"=>"pro", "status"=>"active", "current_period_start"=>"2026-02-23T18:23:22Z", "current_period_end"=>"2027-02-23T18:23:22Z", "success_path"=>"/dashboard"}}
+[PurchaseKit] Webhook signature error: Missing signature
+Completed 400 Bad Request in 0ms (ActiveRecord: 0.0ms (0 queries, 0 cached) | GC: 0.0ms)
+  [1m[36mCACHE Pay::Webhook Count (0.0ms)[0m  [1m[34mSELECT COUNT(*) FROM "pay_webhooks"[0m
+  [1m[36mTRANSACTION (0.0ms)[0m  [1m[31mROLLBACK TRANSACTION[0m
+  [1m[36mTRANSACTION (0.0ms)[0m  [1m[36mBEGIN deferred TRANSACTION[0m
+-----------------------------------------------------------------------------------------
+PurchaseKit::WebhooksControllerTest: test_rejects_request_when_secret_blank_in_production
+-----------------------------------------------------------------------------------------
+  [1m[36mPay::Customer Load (0.0ms)[0m  [1m[34mSELECT "pay_customers".* FROM "pay_customers" WHERE "pay_customers"."id" = ? LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  [1m[36mPay::Webhook Count (0.0ms)[0m  [1m[34mSELECT COUNT(*) FROM "pay_webhooks"[0m
+Started POST "/purchasekit/webhooks" for 127.0.0.1 at 2026-02-23 10:23:22 -0800
+Processing by PurchaseKit::WebhooksController#create as HTML
+  Parameters: {"type"=>"subscription.created", "customer_id"=>1, "subscription_id"=>"sub_123", "store"=>"apple", "store_product_id"=>"com.example.annual", "subscription_name"=>"pro", "status"=>"active", "current_period_start"=>"2026-02-23T18:23:22Z", "current_period_end"=>"2027-02-23T18:23:22Z", "success_path"=>"/dashboard", "webhook"=>{"type"=>"subscription.created", "customer_id"=>1, "subscription_id"=>"sub_123", "store"=>"apple", "store_product_id"=>"com.example.annual", "subscription_name"=>"pro", "status"=>"active", "current_period_start"=>"2026-02-23T18:23:22Z", "current_period_end"=>"2027-02-23T18:23:22Z", "success_path"=>"/dashboard"}}
+[PurchaseKit] Webhook signature error: webhook_secret must be configured
+Completed 400 Bad Request in 0ms (ActiveRecord: 0.0ms (0 queries, 0 cached) | GC: 0.0ms)
+  [1m[36mCACHE Pay::Webhook Count (0.0ms)[0m  [1m[34mSELECT COUNT(*) FROM "pay_webhooks"[0m
+  [1m[36mTRANSACTION (0.0ms)[0m  [1m[31mROLLBACK TRANSACTION[0m
+  [1m[36mTRANSACTION (0.0ms)[0m  [1m[36mBEGIN deferred TRANSACTION[0m
+---------------------------------------------------------------------------------------------
+PurchaseKit::Pay::Webhooks::SubscriptionExpiredTest: test_sets_subscription_status_to_expired
+---------------------------------------------------------------------------------------------
+  [1m[36mPay::Customer Load (0.0ms)[0m  [1m[34mSELECT "pay_customers".* FROM "pay_customers" WHERE "pay_customers"."id" = ? LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  [1m[36mPay::Subscription Load (0.0ms)[0m  [1m[34mSELECT "pay_subscriptions".* FROM "pay_subscriptions" WHERE "pay_subscriptions"."id" = ? LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  [1m[36mPay::Subscription Load (0.0ms)[0m  [1m[34mSELECT "pay_subscriptions".* FROM "pay_subscriptions" WHERE "pay_subscriptions"."processor_id" = ? LIMIT ?[0m  [["processor_id", "sub_existing"], ["LIMIT", 1]]
+  [1m[36mTRANSACTION (0.0ms)[0m  [1m[35mSAVEPOINT active_record_1[0m
+  [1m[36mPay::Subscription Exists? (0.1ms)[0m  [1m[34mSELECT 1 AS one FROM "pay_subscriptions" WHERE "pay_subscriptions"."processor_id" = ? AND "pay_subscriptions"."id" != ? AND "pay_subscriptions"."customer_id" = ? LIMIT ?[0m  [["processor_id", "sub_existing"], ["id", 1], ["customer_id", 1], ["LIMIT", 1]]
+  [1m[36mPay::Purchasekit::Subscription Update (0.0ms)[0m  [1m[33mUPDATE "pay_subscriptions" SET "status" = ?, "updated_at" = ? WHERE "pay_subscriptions"."id" = ?[0m  [["status", "expired"], ["updated_at", "2026-02-23 18:23:22.477137"], ["id", 1]]
+  [1m[36mTRANSACTION (0.0ms)[0m  [1m[35mRELEASE SAVEPOINT active_record_1[0m
+  [1m[36mPay::Purchasekit::Subscription Load (0.0ms)[0m  [1m[34mSELECT "pay_subscriptions".* FROM "pay_subscriptions" WHERE "pay_subscriptions"."type" = ? AND "pay_subscriptions"."id" = ? LIMIT ?[0m  [["type", "Pay::Purchasekit::Subscription"], ["id", 1], ["LIMIT", 1]]
+  [1m[36mTRANSACTION (0.0ms)[0m  [1m[31mROLLBACK TRANSACTION[0m
+  [1m[36mTRANSACTION (0.0ms)[0m  [1m[36mBEGIN deferred TRANSACTION[0m
+-------------------------------------------------------------------------------------------------
+PurchaseKit::Pay::Webhooks::SubscriptionExpiredTest: test_handles_missing_subscription_gracefully
+-------------------------------------------------------------------------------------------------
+  [1m[36mPay::Customer Load (0.0ms)[0m  [1m[34mSELECT "pay_customers".* FROM "pay_customers" WHERE "pay_customers"."id" = ? LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  [1m[36mPay::Subscription Load (0.0ms)[0m  [1m[34mSELECT "pay_subscriptions".* FROM "pay_subscriptions" WHERE "pay_subscriptions"."id" = ? LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  [1m[36mPay::Subscription Load (0.0ms)[0m  [1m[34mSELECT "pay_subscriptions".* FROM "pay_subscriptions" WHERE "pay_subscriptions"."processor_id" = ? LIMIT ?[0m  [["processor_id", "sub_nonexistent"], ["LIMIT", 1]]
+  [1m[36mTRANSACTION (0.0ms)[0m  [1m[31mROLLBACK TRANSACTION[0m

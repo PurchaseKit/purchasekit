@@ -56,8 +56,11 @@ The `purchasekit_paywall` helper renders a paywall form:
     Annual - <%= paywall.price %>/year
   <% end %>
   <%= paywall.submit "Subscribe" %>
+  <%= paywall.restore %>
 <% end %>
 ```
+
+Builder methods: `plan_option`, `price`, `submit`, `restore`. The `restore` method accepts an optional `url:` parameter. When provided, the JS controller POSTs subscription IDs to the URL after reading them from StoreKit/Play Billing. Without `url:`, it dispatches a `purchasekit--paywall:restore` DOM event for custom handling.
 
 The helper accepts `customer_id:` (a simple ID). When using Pay gem, pass `current_user.payment_processor.id`.
 
@@ -68,7 +71,7 @@ The gem provides a single unified Stimulus controller for both Pay and non-Pay i
 - `purchasekit--paywall` Stimulus controller for Hotwire Native bridge communication
 - `purchasekit/turbo_actions` custom Turbo Stream action for redirects
 
-The controller handles prices, purchases, errors, and includes a 30-second fallback redirect if ActionCable isn't connected.
+The controller handles prices, purchases, restore, errors, and includes a 30-second fallback redirect if ActionCable isn't connected. The `restore()` action sends a bridge message and dispatches a `purchasekit--paywall:restore` CustomEvent with `{ subscriptionIds, error }` in the detail.
 
 Import in your application:
 

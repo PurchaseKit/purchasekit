@@ -123,4 +123,56 @@ class PurchaseKit::PaywallHelperTest < ActionView::TestCase
     assert_match 'data-turbo-submits-with="Subscribe Now"', html
   end
 
+  def test_restore_renders_button_tag
+    html = purchasekit_paywall(customer_id: 123, success_path: "/") do |paywall|
+      paywall.restore
+    end
+
+    assert_match "<button", html
+    assert_match 'type="button"', html
+    refute_match 'type="submit"', html
+  end
+
+  def test_restore_has_correct_data_attributes
+    html = purchasekit_paywall(customer_id: 123, success_path: "/") do |paywall|
+      paywall.restore
+    end
+
+    assert_match 'data-purchasekit--paywall-target="restoreButton"', html
+    assert_match 'data-action="purchasekit--paywall#restore"', html
+  end
+
+  def test_restore_default_text
+    html = purchasekit_paywall(customer_id: 123, success_path: "/") do |paywall|
+      paywall.restore
+    end
+
+    assert_match "Restore purchases", html
+  end
+
+  def test_restore_custom_options
+    html = purchasekit_paywall(customer_id: 123, success_path: "/") do |paywall|
+      paywall.restore("Restore", class: "btn btn-link")
+    end
+
+    assert_match "Restore", html
+    assert_match 'class="btn btn-link"', html
+  end
+
+  def test_restore_with_url
+    html = purchasekit_paywall(customer_id: 123, success_path: "/") do |paywall|
+      paywall.restore(url: "/restore")
+    end
+
+    assert_match 'data-restore-url="/restore"', html
+  end
+
+  def test_restore_without_url_has_no_restore_url_data
+    html = purchasekit_paywall(customer_id: 123, success_path: "/") do |paywall|
+      paywall.restore
+    end
+
+    refute_match "data-restore-url", html
+  end
+
 end
