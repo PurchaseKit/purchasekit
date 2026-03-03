@@ -11,12 +11,13 @@ module PurchaseKit
   #   product.google_product_id # => "pro_annual"
   #
   class Product
-    attr_reader :id, :apple_product_id, :google_product_id
+    attr_reader :id, :apple_product_id, :google_product_id, :google_base_plan_id
 
-    def initialize(id:, apple_product_id: nil, google_product_id: nil)
+    def initialize(id:, apple_product_id: nil, google_product_id: nil, google_base_plan_id: nil)
       @id = id
       @apple_product_id = apple_product_id
       @google_product_id = google_product_id
+      @google_base_plan_id = google_base_plan_id
     end
 
     # Get the store-specific product ID for a platform.

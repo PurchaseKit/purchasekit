@@ -29,6 +29,22 @@ class PurchaseKit::ProductTest < PurchaseKit::TestCase
     end
   end
 
+  def test_google_base_plan_id_attribute
+    product = PurchaseKit::Product.new(
+      id: "prod_TEST",
+      google_product_id: "pro_subscription",
+      google_base_plan_id: "annual"
+    )
+
+    assert_equal "annual", product.google_base_plan_id
+  end
+
+  def test_google_base_plan_id_defaults_to_nil
+    product = PurchaseKit::Product.new(id: "prod_TEST")
+
+    assert_nil product.google_base_plan_id
+  end
+
   def test_store_product_id_returns_apple_id_for_apple_platform
     product = PurchaseKit::Product.new(
       id: "prod_TEST",

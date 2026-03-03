@@ -8,7 +8,8 @@ class PurchaseKit::PaywallHelperTest < ActionView::TestCase
     @product = PurchaseKit::Product.new(
       id: "prod_TEST123",
       apple_product_id: "com.example.annual",
-      google_product_id: "annual_subscription"
+      google_product_id: "annual_subscription",
+      google_base_plan_id: "annual"
     )
   end
 
@@ -68,6 +69,24 @@ class PurchaseKit::PaywallHelperTest < ActionView::TestCase
     assert_match "data-apple-store-product-id=\"#{@product.apple_product_id}\"", html
     assert_match "data-google-store-product-id=\"#{@product.google_product_id}\"", html
     assert_match "Annual Plan", html
+  end
+
+  def test_plan_option_includes_google_base_plan_id_data_attribute
+    html = purchasekit_paywall(customer_id: 123, success_path: "/") do |paywall|
+      paywall.plan_option(product: @product, selected: true) { "Annual Plan" }
+    end
+
+    assert_match 'data-google-store-base-plan-id="annual"', html
+  end
+
+  def test_price_includes_google_base_plan_id_data_attribute
+    html = purchasekit_paywall(customer_id: 123, success_path: "/") do |paywall|
+      paywall.plan_option(product: @product) do
+        paywall.price
+      end
+    end
+
+    assert_match 'data-google-store-base-plan-id="annual"', html
   end
 
   def test_plan_option_not_selected_by_default

@@ -12,7 +12,8 @@ module PurchaseKit
             Product.new(
               id: response["id"],
               apple_product_id: response["apple_product_id"],
-              google_product_id: response["google_product_id"]
+              google_product_id: response["google_product_id"],
+              google_base_plan_id: response["google_base_plan_id"]
             )
           when 404
             raise PurchaseKit::NotFoundError, "Product not found: #{id}"

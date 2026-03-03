@@ -19,7 +19,8 @@ module PurchaseKit
               product = Product.new(
                 id: product_data["id"],
                 apple_product_id: product_data["apple_product_id"],
-                google_product_id: product_data["google_product_id"]
+                google_product_id: product_data["google_product_id"],
+                google_base_plan_id: product_data["google_base_plan_id"]
               )
               new(id: response["id"], uuid: response["uuid"], product: product, success_path: success_path)
             when 402

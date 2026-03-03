@@ -14,6 +14,7 @@ class PurchaseKit::Purchase::IntentTest < PurchaseKit::TestCase
       assert_match(/\A[0-9a-f-]+\z/i, intent.uuid)
       assert_kind_of PurchaseKit::Product, intent.product
       assert_equal "prod_TEST123", intent.product.id
+      assert_equal "annual", intent.product.google_base_plan_id
     end
   end
 

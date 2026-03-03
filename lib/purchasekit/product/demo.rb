@@ -14,7 +14,8 @@ module PurchaseKit
           Product.new(
             id: id,
             apple_product_id: product_data[:apple_product_id],
-            google_product_id: product_data[:google_product_id]
+            google_product_id: product_data[:google_product_id],
+            google_base_plan_id: product_data[:google_base_plan_id]
           )
         end
       end

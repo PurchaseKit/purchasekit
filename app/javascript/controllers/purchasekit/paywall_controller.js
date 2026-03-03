@@ -131,8 +131,8 @@ export default class extends BridgeComponent {
 
   #setPrices(prices) {
     this.priceTargets.forEach(el => {
-      const { appleStoreProductId, googleStoreProductId } = this.#productIds(el)
-      const price = prices[appleStoreProductId] || prices[googleStoreProductId]
+      const { appleStoreProductId, googleStoreProductId, googleStoreBasePlanId } = this.#productIds(el)
+      const price = prices[appleStoreProductId] || prices[googleStoreBasePlanId] || prices[googleStoreProductId]
 
       if (price) {
         el.textContent = price
@@ -145,7 +145,8 @@ export default class extends BridgeComponent {
   #productIds(element) {
     return {
       appleStoreProductId: element.dataset.appleStoreProductId,
-      googleStoreProductId: element.dataset.googleStoreProductId
+      googleStoreProductId: element.dataset.googleStoreProductId,
+      googleStoreBasePlanId: element.dataset.googleStoreBasePlanId
     }
   }
 

@@ -52,7 +52,8 @@ module PurchaseKit
         data: {
           purchasekit__paywall_target: "planRadio",
           apple_store_product_id: product.apple_product_id,
-          google_store_product_id: product.google_product_id
+          google_store_product_id: product.google_product_id,
+          google_store_base_plan_id: product.google_base_plan_id
         }
       )
 
@@ -69,7 +70,8 @@ module PurchaseKit
       data = (options.delete(:data) || {}).merge(
         purchasekit__paywall_target: "price",
         apple_store_product_id: @current_product.apple_product_id,
-        google_store_product_id: @current_product.google_product_id
+        google_store_product_id: @current_product.google_product_id,
+        google_store_base_plan_id: @current_product.google_base_plan_id
       )
 
       loading_content = block ? @template.capture(&block) : "Loading..."

@@ -1,7 +1,7 @@
 PATH
   remote: .
   specs:
-    purchasekit (0.4.5)
+    purchasekit (0.5.0)
       httparty (~> 0.22)
       rails (>= 7.0, < 9)
 
