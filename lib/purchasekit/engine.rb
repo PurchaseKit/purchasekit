@@ -20,6 +20,13 @@ module PurchaseKit
       end
     end
 
+    # Skip autoloading Pay models when Pay gem is not installed
+    initializer "purchasekit.pay_autoloading" do
+      unless PurchaseKit.pay_enabled?
+        Rails.autoloaders.main.ignore(root.join("app/models/pay"))
+      end
+    end
+
     # Pay gem integration (only when Pay is available)
     initializer "purchasekit.pay_processor", before: :load_config_initializers do
       if PurchaseKit.pay_enabled?
