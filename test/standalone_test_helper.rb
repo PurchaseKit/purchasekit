@@ -66,6 +66,10 @@ module PurchaseKit
         parse_time(payload[:ends_at])
       end
 
+      def trial_ends_at
+        parse_time(payload[:trial_ends_at])
+      end
+
       def success_path
         payload[:success_path]
       end

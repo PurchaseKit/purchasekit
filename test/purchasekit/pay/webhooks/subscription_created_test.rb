@@ -87,6 +87,53 @@ class PurchaseKit::Pay::Webhooks::SubscriptionCreatedTest < ActiveSupport::TestC
     assert_equal "Cancel through App Store or Google Play.", error.message
   end
 
+  def test_sets_trial_ends_at_when_present
+    trial_end = 7.days.from_now
+    event = {
+      "customer_id" => @customer.id,
+      "subscription_id" => "sub_trial123",
+      "store" => "apple",
+      "store_product_id" => "com.example.monthly",
+      "subscription_name" => "pro",
+      "status" => "active",
+      "current_period_start" => Time.current.iso8601,
+      "current_period_end" => trial_end.iso8601,
+      "trial_ends_at" => trial_end.iso8601,
+      "ends_at" => nil,
+      "success_path" => "/dashboard"
+    }
+
+    Turbo::StreamsChannel.stub :broadcast_stream_to, ->(*args) {} do
+      @handler.call(event)
+    end
+
+    subscription = @customer.subscriptions.find_by(processor_id: "sub_trial123")
+    assert_in_delta trial_end, subscription.trial_ends_at, 1.second
+  end
+
+  def test_trial_ends_at_nil_when_not_present
+    event = {
+      "customer_id" => @customer.id,
+      "subscription_id" => "sub_notrial123",
+      "store" => "apple",
+      "store_product_id" => "com.example.monthly",
+      "subscription_name" => "pro",
+      "status" => "active",
+      "current_period_start" => Time.current.iso8601,
+      "current_period_end" => 1.month.from_now.iso8601,
+      "trial_ends_at" => nil,
+      "ends_at" => nil,
+      "success_path" => "/dashboard"
+    }
+
+    Turbo::StreamsChannel.stub :broadcast_stream_to, ->(*args) {} do
+      @handler.call(event)
+    end
+
+    subscription = @customer.subscriptions.find_by(processor_id: "sub_notrial123")
+    assert_nil subscription.trial_ends_at
+  end
+
   def test_stores_google_store_in_data
     event = {
       "customer_id" => @customer.id,

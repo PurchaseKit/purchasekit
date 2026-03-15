@@ -19,7 +19,7 @@ module PurchaseKit
           subscription_name: "Demo Subscription",
           status: "active",
           current_period_start: Time.current.iso8601,
-          current_period_end: 1.year.from_now.iso8601,
+          current_period_end: 1.month.from_now.iso8601,
           ends_at: nil,
           success_path: intent.success_path
         }

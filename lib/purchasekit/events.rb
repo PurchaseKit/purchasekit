@@ -119,6 +119,11 @@ module PurchaseKit
         parse_time(payload[:ends_at])
       end
 
+      # When the trial period ends (nil if no trial)
+      def trial_ends_at
+        parse_time(payload[:trial_ends_at])
+      end
+
       # The success path you passed when creating the purchase intent.
       # Use this for redirecting after purchase completion.
       def success_path

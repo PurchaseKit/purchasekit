@@ -68,6 +68,24 @@ class PurchaseKit::Pay::Webhooks::SubscriptionUpdatedTest < ActiveSupport::TestC
     refute broadcast_called, "Expected no broadcast when success_path is missing"
   end
 
+  def test_clears_trial_ends_at_after_trial
+    event = {
+      "customer_id" => @customer.id,
+      "subscription_id" => @subscription.processor_id,
+      "store_product_id" => "com.example.monthly",
+      "status" => "active",
+      "current_period_start" => Time.current.iso8601,
+      "current_period_end" => 1.month.from_now.iso8601,
+      "trial_ends_at" => nil,
+      "ends_at" => nil
+    }
+
+    @handler.call(event)
+
+    @subscription.reload
+    assert_nil @subscription.trial_ends_at
+  end
+
   def test_handles_missing_subscription_gracefully
     event = {
       "customer_id" => @customer.id,

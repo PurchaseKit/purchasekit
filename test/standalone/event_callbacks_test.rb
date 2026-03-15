@@ -81,15 +81,27 @@ class EventCallbacksTest < PurchaseKit::StandaloneTestCase
     assert_kind_of Time, event.ends_at
   end
 
+  def test_event_provides_parsed_trial_ends_at
+    event_data = {
+      "trial_ends_at" => "2025-01-08T00:00:00Z"
+    }
+
+    event = PurchaseKit::Events::Event.new(type: :subscription_created, payload: event_data)
+
+    assert_kind_of Time, event.trial_ends_at
+  end
+
   def test_event_handles_nil_time_fields
     event_data = {
       "current_period_start" => nil,
-      "ends_at" => nil
+      "ends_at" => nil,
+      "trial_ends_at" => nil
     }
 
     event = PurchaseKit::Events::Event.new(type: :subscription_created, payload: event_data)
 
     assert_nil event.current_period_start
     assert_nil event.ends_at
+    assert_nil event.trial_ends_at
   end
 end
