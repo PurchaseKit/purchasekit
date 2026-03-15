@@ -3,4 +3,9 @@ test/dummy/log/*.log
 test/dummy/storage/*.sqlite3
 test/dummy/storage/*.sqlite
 test/dummy/tmp/
+test/dummy_pay/log/*.log
+test/dummy_pay/storage/*.sqlite3
+test/dummy_pay/storage/*.sqlite
+test/dummy_pay/tmp/
+mise.toml
 .claude/settings.local.json
