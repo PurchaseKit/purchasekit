@@ -66,6 +66,7 @@ class PurchaseKit::PaywallHelperTest < ActionView::TestCase
     assert_match "value=\"#{@product.id}\"", html
     assert_match 'checked="checked"', html
     assert_match 'data-purchasekit--paywall-target="planRadio"', html
+    assert_match 'required="required"', html
     assert_match "data-apple-store-product-id=\"#{@product.apple_product_id}\"", html
     assert_match "data-google-store-product-id=\"#{@product.google_product_id}\"", html
     assert_match "Annual Plan", html

@@ -48,6 +48,7 @@ module PurchaseKit
         selected,
         id: input_id,
         class: input_class,
+        required: true,
         autocomplete: "off",
         data: {
           purchasekit__paywall_target: "planRadio",

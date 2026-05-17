@@ -1,6 +1,8 @@
 module PurchaseKit
   class PurchasesController < ApplicationController
     def create
+      raise PurchaseKit::NotFoundError, "No product selected" if params[:product_id].blank?
+
       intent = PurchaseKit::Purchase::Intent.create(
         product_id: params[:product_id],
         customer_id: params[:customer_id],
