@@ -51,7 +51,8 @@ This adds:
 The `purchasekit_paywall` helper renders a paywall form:
 
 ```erb
-<%= purchasekit_paywall customer_id: current_user.id, success_path: dashboard_path do |paywall| %>
+<% pay_customer = current_user.set_payment_processor(:purchasekit) %>
+<%= purchasekit_paywall customer_id: pay_customer.id, success_path: dashboard_path do |paywall| %>
   <%= paywall.plan_option product: @annual, selected: true do %>
     Annual - <%= paywall.price %>/year
   <% end %>
@@ -62,7 +63,7 @@ The `purchasekit_paywall` helper renders a paywall form:
 
 Builder methods: `plan_option`, `price`, `submit`, `restore`. The `restore` method accepts an optional `url:` parameter. When provided, the JS controller POSTs subscription IDs to the URL after reading them from StoreKit/Play Billing. Without `url:`, it dispatches a `purchasekit--paywall:restore` DOM event for custom handling.
 
-The helper accepts `customer_id:` (a simple ID). When using Pay gem, pass `current_user.payment_processor.id`.
+`customer_id` is whatever identifier you want the webhook to receive back. With Pay, it **must** be `Pay::Customer.id` — `SubscriptionCreated` and `SubscriptionUpdated` both do `Pay::Customer.find(event["customer_id"])`. Without Pay, use your own user ID.
 
 ### JavaScript
 
@@ -118,7 +119,12 @@ Handlers are stored in `@event_handlers` hash, keyed by event type symbol.
 3. Broadcasts Turbo Stream redirect for `subscription_created` (when Pay is not enabled)
 4. Returns an `Event` object with parsed payload
 
-**Turbo Stream broadcasts:** For non-Pay users, `Events.publish` broadcasts a redirect action to `purchasekit_customer_#{customer_id}`. Views should subscribe with `turbo_stream_from "purchasekit_customer_#{current_user.id}"`. A 30-second fallback redirect fires if ActionCable isn't connected.
+**Turbo Stream broadcasts:**
+
+- *Without Pay:* `Events.publish` broadcasts to `purchasekit_customer_#{customer_id}`. Subscribe with `turbo_stream_from "purchasekit_customer_#{current_user.id}"`.
+- *With Pay:* `SubscriptionCreated` and `SubscriptionUpdated` broadcast to `dom_id(pay_customer)` (i.e., `pay_customer_<id>`). Subscribe with `turbo_stream_from dom_id(current_user.payment_processor)`.
+
+A 30-second fallback redirect fires if ActionCable isn't connected. Subscribing to the wrong channel only loses the realtime redirect — the JS fallback still works after 30s.
 
 **Idempotency:** Webhooks may be delivered more than once. Handlers should be idempotent (use `find_or_create_by`). The `event.event_id` is available for custom deduplication if needed.
 

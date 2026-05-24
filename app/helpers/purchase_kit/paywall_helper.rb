@@ -2,12 +2,15 @@ module PurchaseKit
   module PaywallHelper
     # Renders a paywall form that triggers native in-app purchases
     #
-    # @param customer_id [String, Integer] Your user/customer identifier
+    # @param customer_id [String, Integer] The identifier passed back in webhook
+    #   events. With Pay, this must be `Pay::Customer.id` (the webhook handler
+    #   does `Pay::Customer.find(customer_id)`). Without Pay, use your own user ID.
     # @param success_path [String] Where to redirect after successful purchase
     # @yield [PaywallBuilder] Builder for plan options and buttons
     #
-    # Example:
-    #   <%= purchasekit_paywall customer_id: current_user.id, success_path: dashboard_path do |paywall| %>
+    # Example (with Pay):
+    #   <% pay_customer = current_user.set_payment_processor(:purchasekit) %>
+    #   <%= purchasekit_paywall customer_id: pay_customer.id, success_path: dashboard_path do |paywall| %>
     #     <%= paywall.plan_option product: @annual, selected: true do %>
     #       Annual - <%= paywall.price %>
     #     <% end %>

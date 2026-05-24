@@ -125,7 +125,36 @@ Webhooks may be delivered more than once. Write idempotent callbacks using `find
 
 ## Paywall helper
 
-Build a paywall using the included helper. Subscribe to the Turbo Stream for real-time redirects:
+Build a paywall using the included helper. Subscribe to a Turbo Stream channel for real-time redirects after purchase. The `customer_id` you pass flows through the store and back to your webhook handler, so it must match what the handler expects.
+
+### With Pay
+
+Pass the `Pay::Customer.id` (not your user ID), and subscribe to the Pay customer's `dom_id` channel:
+
+```erb
+<% pay_customer = current_user.set_payment_processor(:purchasekit) %>
+
+<%= turbo_stream_from dom_id(pay_customer) %>
+
+<%= purchasekit_paywall customer_id: pay_customer.id, success_path: dashboard_path do |paywall| %>
+  <%= paywall.plan_option product: @annual, selected: true do %>
+    Annual - <%= paywall.price %>/year
+  <% end %>
+
+  <%= paywall.plan_option product: @monthly do %>
+    Monthly - <%= paywall.price %>/month
+  <% end %>
+
+  <%= paywall.submit "Subscribe" %>
+  <%= paywall.restore url: restore_purchases_path, class: "btn btn-link" %>
+<% end %>
+```
+
+`set_payment_processor(:purchasekit)` finds or creates the `Pay::Customer` row. Calling it on every paywall render guarantees the row exists before the webhook tries to look it up.
+
+### Without Pay
+
+Use your own user ID for both the `customer_id` and the Turbo Stream channel:
 
 ```erb
 <%= turbo_stream_from "purchasekit_customer_#{current_user.id}" %>
