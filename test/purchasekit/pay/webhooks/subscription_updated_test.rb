@@ -86,17 +86,33 @@ class PurchaseKit::Pay::Webhooks::SubscriptionUpdatedTest < ActiveSupport::TestC
     assert_nil @subscription.trial_ends_at
   end
 
-  def test_handles_missing_subscription_gracefully
+  # Apple's sandbox sends DID_RENEW (mapped to subscription.updated) on a fresh
+  # purchase when the same Apple ID previously subscribed to the same product,
+  # so the first webhook for a sandbox subscription can be `subscription.updated`
+  # with no prior `subscription.created`. Same shape happens in production for
+  # users who subscribed before PurchaseKit was integrated: their next renewal
+  # arrives as `subscription.updated` with no row yet.
+  def test_creates_subscription_when_row_missing
     event = {
       "customer_id" => @customer.id,
-      "subscription_id" => "sub_nonexistent",
+      "subscription_id" => "sub_renewed_first",
+      "store" => "apple",
       "store_product_id" => "com.example.monthly",
+      "subscription_name" => "pro",
       "status" => "active",
       "current_period_start" => Time.current.iso8601,
       "current_period_end" => 1.month.from_now.iso8601,
       "ends_at" => nil
     }
 
-    assert_nothing_raised { @handler.call(event) }
+    @handler.call(event)
+
+    subscription = @customer.subscriptions.find_by(processor_id: "sub_renewed_first")
+    assert subscription.present?, "Expected handler to create subscription when no row exists"
+    assert_equal "pro", subscription.name
+    assert_equal "com.example.monthly", subscription.processor_plan
+    assert_equal "active", subscription.status
+    assert_equal "apple", subscription.data["store"]
+    assert_kind_of Pay::Purchasekit::Subscription, subscription
   end
 end
