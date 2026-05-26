@@ -155,4 +155,51 @@ class PurchaseKit::Pay::Webhooks::SubscriptionCreatedTest < ActiveSupport::TestC
     subscription = @customer.subscriptions.find_by(processor_id: "sub_google123")
     assert_equal "google", subscription.data["store"]
   end
+
+  def test_stores_google_base_plan_id_when_present
+    event = {
+      "customer_id" => @customer.id,
+      "subscription_id" => "sub_umbrella123",
+      "store" => "google",
+      "store_product_id" => "com.example.pro",
+      "google_base_plan_id" => "annual",
+      "subscription_name" => "pro",
+      "status" => "active",
+      "current_period_start" => Time.current.iso8601,
+      "current_period_end" => 1.year.from_now.iso8601,
+      "ends_at" => nil,
+      "success_path" => "/paid"
+    }
+
+    Turbo::StreamsChannel.stub :broadcast_stream_to, ->(*args) {} do
+      @handler.call(event)
+    end
+
+    subscription = @customer.subscriptions.find_by(processor_id: "sub_umbrella123")
+    assert_equal "com.example.pro", subscription.processor_plan
+    assert_equal "annual", subscription.data["google_base_plan_id"]
+  end
+
+  def test_omits_google_base_plan_id_from_data_when_nil
+    event = {
+      "customer_id" => @customer.id,
+      "subscription_id" => "sub_apple_nobase",
+      "store" => "apple",
+      "store_product_id" => "com.example.annual",
+      "google_base_plan_id" => nil,
+      "subscription_name" => "pro",
+      "status" => "active",
+      "current_period_start" => Time.current.iso8601,
+      "current_period_end" => 1.year.from_now.iso8601,
+      "ends_at" => nil,
+      "success_path" => "/dashboard"
+    }
+
+    Turbo::StreamsChannel.stub :broadcast_stream_to, ->(*args) {} do
+      @handler.call(event)
+    end
+
+    subscription = @customer.subscriptions.find_by(processor_id: "sub_apple_nobase")
+    refute subscription.data.key?("google_base_plan_id")
+  end
 end

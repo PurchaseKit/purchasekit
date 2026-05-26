@@ -46,6 +46,10 @@ module PurchaseKit
         payload[:store_product_id]
       end
 
+      def google_base_plan_id
+        payload[:google_base_plan_id]
+      end
+
       def subscription_name
         payload[:subscription_name]
       end

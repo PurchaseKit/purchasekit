@@ -91,6 +91,24 @@ class EventCallbacksTest < PurchaseKit::StandaloneTestCase
     assert_kind_of Time, event.trial_ends_at
   end
 
+  def test_event_exposes_google_base_plan_id
+    event_data = {
+      "store" => "google",
+      "store_product_id" => "com.example.pro",
+      "google_base_plan_id" => "annual"
+    }
+
+    event = PurchaseKit::Events::Event.new(type: :subscription_created, payload: event_data)
+
+    assert_equal "annual", event.google_base_plan_id
+  end
+
+  def test_event_google_base_plan_id_is_nil_when_missing
+    event = PurchaseKit::Events::Event.new(type: :subscription_created, payload: {"store" => "apple"})
+
+    assert_nil event.google_base_plan_id
+  end
+
   def test_event_handles_nil_time_fields
     event_data = {
       "current_period_start" => nil,

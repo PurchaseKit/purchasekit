@@ -113,6 +113,7 @@ end
 | `event.subscription_id` | Store's subscription ID |
 | `event.store` | `"apple"` or `"google"` |
 | `event.store_product_id` | e.g., `"com.example.pro.annual"` |
+| `event.google_base_plan_id` | Google Play base plan ID (e.g., `"annual"`) when using umbrella subscriptions, nil otherwise |
 | `event.status` | `"active"`, `"canceled"`, `"expired"` |
 | `event.current_period_start` | Start of billing period |
 | `event.current_period_end` | End of billing period |

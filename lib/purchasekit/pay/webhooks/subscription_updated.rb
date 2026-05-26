@@ -22,7 +22,10 @@ module PurchaseKit
             current_period_end: parse_time(event["current_period_end"]),
             trial_ends_at: parse_time(event["trial_ends_at"]),
             ends_at: parse_time(event["ends_at"]),
-            data: (subscription.data || {}).merge("store" => event["store"])
+            data: (subscription.data || {}).merge(
+              "store" => event["store"],
+              "google_base_plan_id" => event["google_base_plan_id"]
+            ).compact
           )
 
           broadcast_redirect(customer, event) if event["success_path"].present?

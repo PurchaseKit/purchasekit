@@ -137,6 +137,7 @@ A 30-second fallback redirect fires if ActionCable isn't connected. Subscribing 
 - `subscription_id` - Store's transaction/purchase ID
 - `store` - "apple" or "google"
 - `store_product_id` - Store-specific product ID
+- `google_base_plan_id` - Google Play base plan ID when using umbrella subscriptions (nil for Apple and flat Google products)
 - `subscription_name` - Name from PurchaseKit dashboard
 - `status` - "active", "canceled", "expired"
 - `current_period_start/end` - Billing period timestamps

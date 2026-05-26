@@ -94,6 +94,13 @@ module PurchaseKit
         payload[:store_product_id]
       end
 
+      # The Google Play base plan ID (e.g., "annual", "monthly").
+      # Only present when the purchase used Google's umbrella subscription
+      # with multiple base plans. Nil for Apple and for flat Google products.
+      def google_base_plan_id
+        payload[:google_base_plan_id]
+      end
+
       # The subscription name you configured in PurchaseKit
       def subscription_name
         payload[:subscription_name]

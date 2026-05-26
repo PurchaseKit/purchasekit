@@ -28,6 +28,7 @@ The SaaS normalizes Apple/Google data into this format:
   "subscription_id" => "123456789", # Apple originalTransactionId or Google purchaseToken
   "store" => "apple",               # "apple" or "google"
   "store_product_id" => "com.example.pro.annual",
+  "google_base_plan_id" => nil,     # Set when Google uses umbrella subscription + base plans, nil otherwise
   "subscription_name" => "pro",
   "status" => "active",
   "current_period_start" => "2025-01-01T00:00:00Z",
