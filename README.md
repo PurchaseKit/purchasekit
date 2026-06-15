@@ -220,6 +220,35 @@ Products are fetched from the PurchaseKit API:
 @monthly = PurchaseKit::Product.find("prod_YYYYYYYY")
 ```
 
+### Plan upgrades (Android)
+
+When a user switches base plans within one umbrella subscription on Google Play (for example monthly to annual), the Android bridge passes the existing purchase token so the swap goes through instead of being rejected. Set the proration policy with `proration_mode:` (defaults to `charge_prorated_price`):
+
+```erb
+<%= purchasekit_paywall customer_id: ..., success_path: ..., proration_mode: "with_time_proration" do |paywall| %>
+  ...
+<% end %>
+```
+
+Accepted values: `charge_prorated_price`, `with_time_proration`, `charge_full_price`, `without_proration`, `deferred`. Apple handles intra-group upgrades automatically and ignores the option.
+
+### Purchase lifecycle events
+
+The paywall dispatches a DOM event at each step of a purchase, so you can update your own copy. Same pattern as the restore event above:
+
+| Event | Fires when |
+|-------|-----------|
+| `purchasekit--paywall:initiated` | The intent is created and the native purchase starts. |
+| `purchasekit--paywall:store-confirmed` | The store confirms the purchase. |
+| `purchasekit--paywall:awaiting-webhook` | Waiting for the webhook to land and redirect. |
+| `purchasekit--paywall:complete` | The redirect fires (Turbo Stream broadcast or 30 second fallback). |
+
+```javascript
+document.addEventListener("purchasekit--paywall:awaiting-webhook", () => {
+  // update your copy
+})
+```
+
 ## Demo mode
 
 For local development without a PurchaseKit account:
