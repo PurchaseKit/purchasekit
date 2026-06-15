@@ -3,6 +3,7 @@ import { BridgeComponent } from "@hotwired/hotwire-native-bridge"
 export default class extends BridgeComponent {
   static component = "paywall"
   static targets = ["planRadio", "price", "submitButton", "response", "environment", "restoreButton"]
+  static values = { prorationMode: { type: String, default: "charge_prorated_price" } }
 
   connect() {
     super.connect()
@@ -13,6 +14,7 @@ export default class extends BridgeComponent {
     if (this.#fallbackTimeoutId) {
       clearTimeout(this.#fallbackTimeoutId)
     }
+    this.#stopWatchingForCompletion()
   }
 
   restore() {
@@ -53,11 +55,14 @@ export default class extends BridgeComponent {
 
     element.remove()
     this.#disableForm()
+    this.dispatch("initiated", { detail: { correlationId } })
     this.#triggerNativePurchase(productIds, correlationId, xcodeCompletionUrl, successPath)
   }
 
   #triggerNativePurchase(productIds, correlationId, xcodeCompletionUrl, successPath) {
-    this.send("purchase", { ...productIds, correlationId, xcodeCompletionUrl }, message => {
+    // googleStoreProrationMode only applies on Android plan swaps; iOS ignores it.
+    const googleStoreProrationMode = this.prorationModeValue
+    this.send("purchase", { ...productIds, correlationId, xcodeCompletionUrl, googleStoreProrationMode }, message => {
       const { status, error } = message.data
 
       if (error) {
@@ -72,14 +77,51 @@ export default class extends BridgeComponent {
         return
       }
 
-      // On success, Turbo Stream will broadcast redirect when webhook completes.
-      // Fallback: redirect after 30 seconds in case ActionCable isn't connected.
-      if (successPath) {
-        this.#fallbackTimeoutId = setTimeout(() => {
-          window.Turbo.visit(successPath)
-        }, 30000)
-      }
+      // The store confirmed the purchase. The Pay::Subscription (and the redirect)
+      // still depend on the server webhook, so move into the awaiting state.
+      this.dispatch("store-confirmed", { detail: { status } })
+      this.#awaitCompletion(successPath)
     })
+  }
+
+  // Waits for the webhook-driven redirect after the store confirms a purchase.
+  // The redirect arrives as a Turbo Stream "redirect" action over ActionCable, with
+  // a 30-second fallback for when ActionCable isn't connected.
+  #awaitCompletion(successPath) {
+    this.dispatch("awaiting-webhook", { detail: {} })
+
+    this.#streamRenderListener = event => {
+      if (event.target?.getAttribute("action") === "redirect") {
+        this.#complete()
+      }
+    }
+    document.addEventListener("turbo:before-stream-render", this.#streamRenderListener)
+
+    if (successPath) {
+      this.#fallbackTimeoutId = setTimeout(() => {
+        this.#complete()
+        window.Turbo.visit(successPath)
+      }, 30000)
+    }
+  }
+
+  #complete() {
+    if (this.#completed) return
+    this.#completed = true
+
+    if (this.#fallbackTimeoutId) {
+      clearTimeout(this.#fallbackTimeoutId)
+      this.#fallbackTimeoutId = null
+    }
+    this.#stopWatchingForCompletion()
+    this.dispatch("complete", { detail: {} })
+  }
+
+  #stopWatchingForCompletion() {
+    if (this.#streamRenderListener) {
+      document.removeEventListener("turbo:before-stream-render", this.#streamRenderListener)
+      this.#streamRenderListener = null
+    }
   }
 
   #submitRestore(url, subscriptionIds) {
@@ -103,6 +145,8 @@ export default class extends BridgeComponent {
   }
 
   #fallbackTimeoutId = null
+  #streamRenderListener = null
+  #completed = false
 
   #fetchPrices() {
     const products = this.priceTargets.map(el => this.#productIds(el))

@@ -63,6 +63,8 @@ The `purchasekit_paywall` helper renders a paywall form:
 
 Builder methods: `plan_option`, `price`, `submit`, `restore`. The `restore` method accepts an optional `url:` parameter. When provided, the JS controller POSTs subscription IDs to the URL after reading them from StoreKit/Play Billing. Without `url:`, it dispatches a `purchasekit--paywall:restore` DOM event for custom handling.
 
+`purchasekit_paywall` accepts an optional `proration_mode:` (default `"charge_prorated_price"`) that controls how Google Play handles base plan swaps within one umbrella subscription (for example monthly to annual). It is passed to the Android bridge and ignored on Apple, which handles intra-group upgrades automatically. See `android/CLAUDE.md` for accepted values.
+
 `customer_id` is whatever identifier you want the webhook to receive back. With Pay, it **must** be `Pay::Customer.id` — `SubscriptionCreated` and `SubscriptionUpdated` both do `Pay::Customer.find(event["customer_id"])`. Without Pay, use your own user ID.
 
 ### JavaScript
@@ -73,6 +75,25 @@ The gem provides a single unified Stimulus controller for both Pay and non-Pay i
 - `purchasekit/turbo_actions` custom Turbo Stream action for redirects
 
 The controller handles prices, purchases, restore, errors, and includes a 30-second fallback redirect if ActionCable isn't connected. The `restore()` action sends a bridge message and dispatches a `purchasekit--paywall:restore` CustomEvent with `{ subscriptionIds, error }` in the detail.
+
+#### Purchase lifecycle events
+
+The controller dispatches a CustomEvent at each transition so host apps can swap their own copy (e.g. "Confirming your purchase...") without guessing timing. Same `this.dispatch(...)` pattern as `restore`, so all are prefixed with the controller identifier:
+
+| Event | Fires when |
+|-------|-----------|
+| `purchasekit--paywall:initiated` | The purchase intent is created and the native purchase is about to start. Detail: `{ correlationId }` |
+| `purchasekit--paywall:store-confirmed` | The native bridge replies with a non-terminal-error status (the store confirmed the purchase). Detail: `{ status }` |
+| `purchasekit--paywall:awaiting-webhook` | The form is disabled and waiting for the webhook-driven redirect. Detail: `{}` |
+| `purchasekit--paywall:complete` | The redirect fires, either from the broadcast Turbo Stream `redirect` action or the 30-second fallback. Detail: `{}` |
+
+Listen on the paywall element (or a parent, since these bubble):
+
+```javascript
+document.addEventListener("purchasekit--paywall:awaiting-webhook", () => {
+  // update your copy
+})
+```
 
 Import in your application:
 

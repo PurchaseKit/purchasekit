@@ -1,5 +1,4 @@
 require "test_helper"
-require "ostruct"
 
 class PurchaseKit::PaywallHelperTest < ActionView::TestCase
   include PurchaseKit::PaywallHelper
@@ -15,12 +14,12 @@ class PurchaseKit::PaywallHelperTest < ActionView::TestCase
 
   # Mock the engine routes helper
   def purchase_kit
-    OpenStruct.new(purchases_path: "/purchasekit/purchases")
+    Struct.new(:purchases_path).new("/purchasekit/purchases")
   end
 
   # Mock main_app for default success_path
   def main_app
-    OpenStruct.new(root_path: "/")
+    Struct.new(:root_path).new("/")
   end
 
   def test_purchasekit_paywall_renders_form_with_correct_attributes
@@ -30,6 +29,18 @@ class PurchaseKit::PaywallHelperTest < ActionView::TestCase
     assert_match 'action="/purchasekit/purchases"', html
     assert_match 'data-controller="purchasekit--paywall"', html
     assert_match 'data-purchasekit--paywall-customer-id-value="123"', html
+  end
+
+  def test_purchasekit_paywall_defaults_proration_mode
+    html = purchasekit_paywall(customer_id: 123, success_path: "/dashboard") { "" }
+
+    assert_match 'data-purchasekit--paywall-proration-mode-value="charge_prorated_price"', html
+  end
+
+  def test_purchasekit_paywall_accepts_custom_proration_mode
+    html = purchasekit_paywall(customer_id: 123, success_path: "/dashboard", proration_mode: "deferred") { "" }
+
+    assert_match 'data-purchasekit--paywall-proration-mode-value="deferred"', html
   end
 
   def test_purchasekit_paywall_includes_hidden_fields

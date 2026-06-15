@@ -6,6 +6,11 @@ module PurchaseKit
     #   events. With Pay, this must be `Pay::Customer.id` (the webhook handler
     #   does `Pay::Customer.find(customer_id)`). Without Pay, use your own user ID.
     # @param success_path [String] Where to redirect after successful purchase
+    # @param proration_mode [String] Google Play replacement mode used when a base
+    #   plan is swapped within one umbrella subscription (e.g. monthly to annual).
+    #   One of "charge_prorated_price" (default), "with_time_proration",
+    #   "charge_full_price", "without_proration", or "deferred". Ignored on Apple,
+    #   which handles intra-group upgrades and downgrades automatically.
     # @yield [PaywallBuilder] Builder for plan options and buttons
     #
     # Example (with Pay):
@@ -17,14 +22,15 @@ module PurchaseKit
     #     <%= paywall.submit "Subscribe" %>
     #   <% end %>
     #
-    def purchasekit_paywall(customer_id:, success_path: main_app.root_path, **options)
+    def purchasekit_paywall(customer_id:, success_path: main_app.root_path, proration_mode: "charge_prorated_price", **options)
       raise ArgumentError, "customer_id is required" if customer_id.blank?
 
       builder = PaywallBuilder.new(self)
 
       form_data = (options.delete(:data) || {}).merge(
         controller: "purchasekit--paywall",
-        purchasekit__paywall_customer_id_value: customer_id
+        purchasekit__paywall_customer_id_value: customer_id,
+        purchasekit__paywall_proration_mode_value: proration_mode
       )
 
       form_with(url: purchase_kit.purchases_path, id: "purchasekit_paywall", data: form_data, **options) do |form|
